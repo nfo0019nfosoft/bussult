@@ -1,0 +1,258 @@
+/* =========================
+   MAIN CARD
+========================= */
+
+.preview-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 28px;
+  
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.preview-user {
+  display: flex;
+  gap: 20px;
+}
+
+.preview-photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e5e7eb;
+}
+
+.preview-user h2 {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.preview-user h4 {
+  margin: 8px 0;
+  font-size: 20px;
+  color: #475569;
+}
+
+.preview-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  color: #64748b;
+  font-size: 15px;
+}
+
+.preview-meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.verified-badge {
+  color: #16a34a;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.preview-section {
+  margin-top: 28px;
+}
+
+.preview-section h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 18px;
+}
+
+.preview-section p {
+  color: #64748b;
+  line-height: 1.8;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.service-preview-box {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 14px 16px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: #fff;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.service-preview-box svg {
+  color: #2563eb;
+  font-size: 18px;
+}
+
+/* =========================
+   PRICING
+========================= */
+
+.pricing-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+
+.price-preview-box {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 16px;
+  background: #fff;
+}
+
+.price-preview-box h4 {
+  margin: 0;
+  font-size: 24px;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.price-preview-box p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* =========================
+   BOTTOM INFO
+========================= */
+
+.bottom-info-grid {
+  margin-top: 30px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+
+  border-top: 1px solid #edf2f7;
+  padding-top: 24px;
+}
+
+.bottom-info-box {
+  display: flex;
+  gap: 12px;
+}
+
+.bottom-info-box svg {
+  color: #2563eb;
+  font-size: 22px;
+  margin-top: 2px;
+}
+
+.bottom-info-box h5 {
+  margin: 0;
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.bottom-info-box p {
+  margin-top: 6px;
+  color: #0f172a;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.service-buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.draft-btn,
+.save-btn {
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.draft-btn {
+  border: 1px solid #dbe3ef;
+  background: #fff;
+}
+
+.save-btn {
+  border: none;
+  background: #2563eb;
+  color: #fff;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+
+  .services-preview-grid,
+  .pricing-preview-grid,
+  .bottom-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .preview-header {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .services-preview-grid,
+  .pricing-preview-grid,
+  .bottom-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-user {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .preview-meta {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}

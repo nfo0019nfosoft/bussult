@@ -1,0 +1,374 @@
+/* ==========================
+   SUPPORT PAGE
+========================== */
+
+.support-page {
+  max-width: 1400px;
+  margin: 0px auto;
+  padding: 40px 60px;
+  background-color: white;
+}
+
+.support-breadcrumb {
+  font-size: 14px;
+
+  margin-bottom: 20px;
+}
+
+.support-breadcrumb span {
+  margin: 0 8px;
+    color: #2563eb;
+}
+
+/* ==========================
+   TOP SECTION
+========================== */
+
+.support-top-grid {
+  display: grid;
+  grid-template-columns: 2.2fr 0.8fr;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+
+.support-hero {
+  background: #f6f8ff;
+  border-radius: 18px;
+  padding: 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 550px;
+}
+
+.hero-content h1 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.hero-content p {
+  color: #64748b;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.search-box {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 14px 16px;
+}
+
+.search-box svg {
+  color: #64748b;
+}
+
+.search-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.hero-image img {
+  width: 280px;
+  max-width: 100%;
+}
+
+/* ==========================
+   POPULAR ARTICLES
+========================== */
+
+.popular-articles {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 24px;
+}
+
+.popular-articles h3 {
+  margin-bottom: 20px;
+  color: #0f172a;
+}
+
+.article-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.article-item svg {
+  color: #2563eb;
+}
+
+.article-item span {
+  font-size: 14px;
+}
+
+.popular-articles a {
+  display: inline-block;
+  margin-top: 18px;
+
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* ==========================
+   HELP SECTION
+========================== */
+
+.help-title {
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #0f172a;
+}
+
+.help-layout {
+  display: grid;
+  grid-template-columns: 2fr 0.8fr;
+  gap: 24px;
+}
+
+.help-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.help-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+
+  padding: 24px;
+  position: relative;
+
+  transition: 0.3s;
+}
+
+.help-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.help-icon {
+  width: 58px;
+  height: 58px;
+
+  border-radius: 50%;
+  background: #f3f6ff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #2563eb;
+  font-size: 24px;
+
+  margin-bottom: 20px;
+}
+
+.help-card h4 {
+  margin-bottom: 10px;
+  color: #0f172a;
+}
+
+.help-card p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.card-arrow {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+
+  color: #2563eb;
+}
+
+/* ==========================
+   SIDEBAR
+========================== */
+
+.support-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.need-help-card,
+.social-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.need-help-card h3,
+.social-card h3 {
+  margin-bottom: 12px;
+}
+
+.need-help-card p,
+.social-card p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.primary-btn,
+.secondary-btn {
+  width: 100%;
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  font-weight: 600;
+}
+
+.primary-btn {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  margin-bottom: 12px;
+}
+
+.secondary-btn {
+  background: #fff;
+  color: #0f172a;
+  border: 1px solid #dbe3ea;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icons svg {
+  width: 42px;
+  height: 42px;
+
+  padding: 12px;
+  border-radius: 50%;
+
+  background: #f3f6ff;
+  color: #2563eb;
+  cursor: pointer;
+}
+
+/* ==========================
+   TRACK ISSUE
+========================== */
+
+.track-card {
+  margin-top: 30px;
+
+  background: #f6f8ff;
+  border-radius: 18px;
+
+  padding: 24px;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.track-card h3 {
+  margin-bottom: 6px;
+}
+
+.track-card p {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.track-card input {
+  flex: 1;
+
+  height: 50px;
+  border: 1px solid #dbe3ea;
+  border-radius: 10px;
+
+  padding: 0 15px;
+}
+
+.track-card button {
+  background: #2563eb;
+  color: white;
+
+  border: none;
+  border-radius: 10px;
+
+  padding: 14px 24px;
+  cursor: pointer;
+}
+
+/* ==========================
+   TABLET
+========================== */
+
+@media (max-width: 1024px) {
+
+  .support-top-grid,
+  .help-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .help-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width: 768px) {
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .support-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .help-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .track-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-image img {
+    width: 220px;
+    margin-top: 20px;
+  }
+
+}

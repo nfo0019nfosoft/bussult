@@ -1,0 +1,1530 @@
+.consultation-header{
+  max-width:1200px;
+  margin:30px auto 80px;
+  padding:0 20px;
+  text-align:center;
+}
+
+.consultation-breadcrumb{
+  display:flex;
+  justify-content:left;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:8px;
+
+  font-size:13px;
+  color:#64748b;
+
+  margin-bottom:24px;
+}
+
+.consultation-breadcrumb span{
+  line-height:1.5;
+}
+
+.active-breadcrumb{
+  color:#2563eb;
+  font-weight:600;
+}
+
+.consultation-title{
+  font-size:42px;
+  font-weight:800;
+  color:#0f172a;
+  margin-bottom:12px;
+}
+
+.consultation-title span{
+  color:#2563eb;
+}
+
+.consultation-subtitle{
+  font-size:17px;
+  color:#64748b;
+  max-width:700px;
+  margin:0 auto;
+  line-height:1.7;
+}
+@media (max-width:768px){
+
+  .consultation-header{
+    margin:20px auto 25px;
+  }
+
+  .consultation-breadcrumb{
+    font-size:11px;
+    gap:5px;
+    justify-content:flex-start;
+    text-align:left;
+  }
+
+  .consultation-title{
+    font-size:28px;
+    line-height:1.3;
+  }
+
+  .consultation-subtitle{
+    font-size:14px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+   CONSULTATION STEPPER
+========================================= */
+
+.consult-stepper{
+  max-width:1200px;
+  margin:40px auto;
+  padding:0 20px;
+
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+}
+
+.consult-step{
+  flex:1;
+  text-align:center;
+  min-width:180px;
+}
+
+.consult-step-circle{
+  width:50px;
+  height:50px;
+
+  border-radius:50%;
+
+  background:#fff;
+  border:2px solid #dbe3f0;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  margin:0 auto 14px;
+
+  font-size:18px;
+  font-weight:700;
+  color:#64748b;
+
+  transition:.3s ease;
+}
+
+.consult-step.active
+.consult-step-circle{
+  background:#2563eb;
+  border-color:#2563eb;
+  color:#fff;
+}
+
+.consult-step h4{
+  font-size:15px;
+  font-weight:700;
+  color:#0f172a;
+  margin-bottom:6px;
+}
+
+.consult-step p{
+  font-size:12px;
+  color:#64748b;
+  line-height:1.5;
+}
+
+.consult-line{
+  flex:1;
+  height:3px;
+
+  background:#e5e7eb;
+
+  margin-top:24px;
+
+  margin-left:-25px;
+  margin-right:-25px;
+
+  transition:.3s ease;
+}
+
+.consult-line.active{
+  background:#2563eb;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width:992px){
+
+  .consult-step{
+    min-width:140px;
+  }
+
+  .consult-step-circle{
+    width:46px;
+    height:46px;
+    font-size:16px;
+  }
+
+  .consult-step h4{
+    font-size:13px;
+  }
+
+  .consult-step p{
+    font-size:11px;
+  }
+
+  .consult-line{
+    margin-left:-23px;
+    margin-right:-23px;
+  }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width:768px){
+
+  .consult-stepper{
+
+    overflow-x:auto;
+
+    justify-content:flex-start;
+
+    padding:0 15px 10px;
+
+    scrollbar-width:none;
+
+    -ms-overflow-style:none;
+  }
+
+  .consult-stepper::-webkit-scrollbar{
+    display:none;
+  }
+
+  .consult-step{
+    min-width:130px;
+    flex-shrink:0;
+  }
+
+  .consult-step-circle{
+    width:42px;
+    height:42px;
+
+    font-size:15px;
+
+    margin-bottom:10px;
+  }
+
+  .consult-step h4{
+    font-size:12px;
+    line-height:1.4;
+  }
+
+  .consult-step p{
+    font-size:10px;
+    line-height:1.4;
+  }
+
+  .consult-line{
+    min-width:70px;
+    margin-top:20px;
+
+    margin-left:-21px;
+    margin-right:-21px;
+  }
+
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width:480px){
+
+  .consult-stepper{
+    padding:0 10px 10px;
+  }
+
+  .consult-step{
+    min-width:115px;
+  }
+
+  .consult-step-circle{
+    width:38px;
+    height:38px;
+    font-size:14px;
+  }
+
+  .consult-step h4{
+    font-size:11px;
+  }
+
+  .consult-step p{
+    font-size:9px;
+  }
+
+  .consult-line{
+    min-width:50px;
+    margin-top:18px;
+
+    margin-left:-19px;
+    margin-right:-19px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   LEFT SIDE
+========================= */
+
+.bookconsult-left{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  
+}
+
+.bc-card{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:14px;
+  padding:22px;
+}
+
+.bc-card h3{
+  font-size:18px;
+  font-weight:700;
+  color:#0f172a;
+  margin-bottom:6px;
+}
+
+.bc-card p{
+  font-size:13px;
+  color:#64748b;
+  margin-bottom:18px;
+}
+
+/* =========================
+   CONSULTATION TYPE
+========================= */
+
+.bc-consult-option{
+  border:2px solid #bfdbfe;
+  border-radius:12px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:18px;
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.bc-consult-option:hover{
+  border-color:#2563eb;
+}
+
+.bc-consult-icon{
+  width:58px;
+  height:58px;
+
+  border-radius:50%;
+  background:#eff6ff;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:#2563eb;
+  font-size:24px;
+}
+
+.bc-consult-content{
+  flex:1;
+  padding-left:15px;
+}
+
+.bc-consult-content h4{
+  font-size:16px;
+  color:#0f172a;
+  margin-bottom:4px;
+}
+
+.bc-consult-content span{
+  font-size:13px;
+  color:#64748b;
+}
+
+.bc-selected-icon{
+  color:#2563eb;
+  font-size:18px;
+}
+
+/* =========================
+   DATE & TIME
+========================= */
+
+.bc-datetime-grid{
+  display:grid;
+  grid-template-columns:280px 1fr;
+  gap:25px;
+}
+
+.bc-calendar-box{
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+  padding:15px;
+  background:#fff;
+}
+
+.bc-date-input{
+  width:100%;
+  height:48px;
+
+  border:1px solid #dbe3f0;
+  border-radius:10px;
+
+  padding:0 12px;
+  font-size:14px;
+}
+
+.bc-times-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+}
+
+.bc-time-btn{
+  height:42px;
+
+  border:1px solid #dbe3f0;
+  border-radius:8px;
+
+  background:#fff;
+
+  font-size:13px;
+  font-weight:600;
+
+  cursor:pointer;
+  transition:.3s;
+}
+
+.bc-time-btn:hover{
+  border-color:#2563eb;
+}
+
+.bc-time-btn.active{
+  background:#eff6ff;
+  border-color:#2563eb;
+  color:#2563eb;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.bc-form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+  margin-bottom:15px;
+}
+
+.bc-input-group{
+  position:relative;
+}
+
+.bc-input-group svg{
+  position:absolute;
+  left:14px;
+  top:15px;
+
+  color:#64748b;
+}
+
+.bc-input-group input{
+  width:100%;
+  height:48px;
+
+  border:1px solid #dbe3f0;
+  border-radius:10px;
+
+  padding-left:42px;
+  padding-right:12px;
+}
+
+.bc-form-grid select{
+  width:100%;
+  height:48px;
+
+  border:1px solid #dbe3f0;
+  border-radius:10px;
+
+  padding:0 12px;
+}
+
+.bc-card textarea{
+  width:100%;
+  border:1px solid #dbe3f0;
+  border-radius:10px;
+  padding:12px;
+  resize:none;
+}
+
+/* =========================
+   PAYMENT
+========================= */
+
+.bc-payment-summary{
+  border:1px solid #dbe3f0;
+  border-radius:12px;
+
+  padding:18px;
+  margin-bottom:20px;
+}
+
+.bc-payment-summary div{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.bc-payment-summary span{
+  color:#64748b;
+}
+
+.bc-payment-summary strong{
+  color:#0f172a;
+  font-size:20px;
+}
+
+.bc-pay-btn{
+  width:100%;
+  height:52px;
+
+  border:none;
+  border-radius:10px;
+
+  background:#2563eb;
+  color:#fff;
+
+  font-size:15px;
+  font-weight:600;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+
+  cursor:pointer;
+}
+
+.bc-pay-btn:hover{
+  background:#1d4ed8;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width:992px){
+
+  .bc-datetime-grid{
+    grid-template-columns:1fr;
+  }
+
+  .bc-times-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:768px){
+
+  .bc-card{
+    padding:16px;
+  }
+
+  .bc-card h3{
+    font-size:16px;
+  }
+
+  .bc-card p{
+    font-size:12px;
+  }
+
+  .bc-form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .bc-times-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .bc-consult-option{
+    padding:14px;
+  }
+
+  .bc-consult-icon{
+    width:48px;
+    height:48px;
+    font-size:20px;
+  }
+
+  .bc-consult-content h4{
+    font-size:14px;
+  }
+
+  .bc-consult-content span{
+    font-size:12px;
+  }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width:480px){
+
+  .bc-times-grid{
+    grid-template-columns:1fr;
+  }
+
+  .bc-date-input{
+    font-size:13px;
+  }
+
+  .bc-pay-btn{
+    font-size:14px;
+  }
+
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width:992px){
+
+  .bc-datetime-grid{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+  .bc-times-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:768px){
+
+  .bc-datetime-grid{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+
+  .bc-calendar-box{
+    padding:14px;
+    border-radius:10px;
+  }
+
+  .bc-date-input{
+    height:46px;
+    font-size:13px;
+    border-radius:8px;
+  }
+
+  .bc-times-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+  }
+
+  .bc-time-btn{
+    height:44px;
+    font-size:13px;
+    border-radius:8px;
+  }
+
+}
+
+
+/* =========================
+   SMALL MOBILE (333px)
+========================= */
+
+@media (max-width:480px){
+
+  .bc-datetime-grid{
+    gap:15px;
+  }
+
+  .bc-calendar-box{
+    padding:12px;
+  }
+
+  .bc-date-input{
+    height:44px;
+    padding:0 10px;
+    font-size:12px;
+  }
+
+  .bc-times-grid{
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+  }
+
+  .bc-time-btn{
+    height:42px;
+    font-size:12px;
+    font-weight:500;
+  }
+
+}
+
+
+/* =========================
+   EXTRA SMALL (320-360px)
+========================= */
+
+@media (max-width:360px){
+
+  .bc-times-grid{
+    grid-template-columns:1fr;
+  }
+
+  .bc-time-btn{
+    width:100%;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Upload Documents */
+
+.bc-upload-section{
+  margin-top:20px;
+}
+
+.bc-upload-section label{
+  display:block;
+  margin-bottom:10px;
+
+  font-size:14px;
+  font-weight:600;
+
+  color:#0f172a;
+}
+
+.bc-upload-box{
+  position:relative;
+
+  border:1px solid #dbe3f0;
+  border-radius:10px;
+
+  padding:18px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:15px;
+
+  text-align:center;
+
+  background:#fff;
+}
+
+.bc-upload-icon{
+  font-size:24px;
+  color:#64748b;
+}
+
+.bc-upload-box p{
+  margin:0;
+  font-size:14px;
+  color:#0f172a;
+}
+
+.bc-upload-box p span{
+  color:#2563eb;
+  font-weight:600;
+}
+
+.bc-upload-box small{
+  color:#64748b;
+  font-size:12px;
+}
+
+.bc-file-input{
+  position:absolute;
+  inset:0;
+
+  opacity:0;
+  cursor:pointer;
+}
+
+/* Additional Notes */
+
+.bc-notes-section{
+  margin-top:20px;
+  position:relative;
+}
+
+.bc-notes-section label{
+  display:block;
+  margin-bottom:10px;
+
+  font-size:14px;
+  font-weight:600;
+
+  color:#0f172a;
+}
+
+.bc-notes-section textarea{
+  width:100%;
+
+  border:1px solid #dbe3f0;
+  border-radius:10px;
+
+  padding:12px;
+  resize:none;
+}
+
+.bc-char-count{
+  position:absolute;
+  right:12px;
+  bottom:12px;
+
+  font-size:12px;
+  color:#64748b;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+  .bc-upload-box{
+    flex-direction:column;
+    padding:15px;
+  }
+
+  .bc-upload-icon{
+    font-size:20px;
+  }
+
+}
+
+
+
+
+
+
+
+/* =========================
+   DATE & TIME MOBILE FIX
+========================= */
+
+@media (max-width:768px){
+
+  .bc-datetime-grid{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .bc-calendar-box{
+    width:100%;
+    padding:10px;
+    overflow:hidden;
+  }
+
+  .react-calendar{
+    width:100% !important;
+    max-width:100% !important;
+    border:none !important;
+    font-size:13px;
+  }
+
+  .react-calendar__navigation button{
+    min-width:32px !important;
+    font-size:13px;
+  }
+
+  .react-calendar__month-view__weekdays{
+    font-size:11px;
+  }
+
+  .react-calendar__tile{
+    height:40px !important;
+    font-size:12px;
+  }
+
+  .bc-times-grid{
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+
+  .bc-time-btn{
+    width:100%;
+    height:42px;
+    font-size:13px;
+  }
+
+}
+
+
+/* =========================
+   333px MOBILE
+========================= */
+
+@media (max-width:360px){
+
+  .bc-card{
+    padding:14px;
+  }
+
+  .bc-calendar-box{
+    padding:8px;
+  }
+
+  .react-calendar{
+    font-size:11px;
+  }
+
+  .react-calendar__tile{
+    height:34px !important;
+    padding:4px !important;
+    font-size:11px;
+  }
+
+  .react-calendar__navigation button{
+    min-width:26px !important;
+    font-size:11px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   PAYMENT SECTION
+========================= */
+
+.bc-payment-summary{
+  border:1px solid #e2e8f0;
+  border-radius:12px;
+  padding:18px;
+  margin-bottom:18px;
+  background:#fff;
+}
+
+.bc-payment-summary div{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.bc-payment-summary span{
+  font-size:15px;
+  color:#64748b;
+}
+
+.bc-payment-summary strong{
+  font-size:26px;
+  font-weight:700;
+  color:#0f172a;
+}
+
+/* Secure Box */
+
+.bc-secure-box{
+  display:flex;
+  align-items:center;
+  gap:15px;
+
+  padding:15px 18px;
+
+  border:1px solid #bbf7d0;
+  background:#f0fdf4;
+
+  border-radius:12px;
+
+  margin-bottom:25px;
+}
+
+.bc-secure-box svg{
+  color:#16a34a;
+  font-size:24px;
+}
+
+.bc-secure-box h4{
+  margin:0;
+  font-size:15px;
+  color:#166534;
+}
+
+.bc-secure-box span{
+  font-size:13px;
+  color:#15803d;
+}
+
+/* Payment Title */
+
+.bc-payment-title{
+  font-size:16px;
+  font-weight:700;
+  color:#0f172a;
+  margin-bottom:18px;
+}
+
+/* Payment Methods */
+
+.bc-payment-methods{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  margin-bottom:25px;
+}
+
+.bc-payment-option{
+  border:2px solid #e2e8f0;
+  border-radius:14px;
+
+  padding:18px;
+
+  display:flex;
+  align-items:center;
+  gap:14px;
+
+  cursor:pointer;
+  transition:0.3s ease;
+
+  background:#fff;
+}
+
+.bc-payment-option:hover{
+  border-color:#2563eb;
+}
+
+.bc-payment-option.active{
+  border-color:#2563eb;
+  background:#eff6ff;
+}
+
+.bc-payment-option input{
+  width:18px;
+  height:18px;
+  accent-color:#2563eb;
+}
+
+.bc-payment-option h5{
+  margin:0;
+  font-size:15px;
+  font-weight:700;
+  color:#0f172a;
+}
+
+.bc-payment-option span{
+  font-size:12px;
+  color:#64748b;
+}
+
+/* Pay Button */
+
+.bc-pay-btn{
+  width:100%;
+  height:56px;
+
+  border:none;
+  border-radius:12px;
+
+  background:#2563eb;
+  color:#fff;
+
+  font-size:16px;
+  font-weight:700;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.bc-pay-btn:hover{
+  background:#1d4ed8;
+}
+
+.bc-pay-btn svg{
+  font-size:18px;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+  .bc-payment-methods{
+    grid-template-columns:1fr;
+  }
+
+  .bc-payment-option{
+    padding:15px;
+  }
+
+  .bc-payment-summary strong{
+    font-size:22px;
+  }
+
+  .bc-pay-btn{
+    height:52px;
+    font-size:15px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.bookconsult-right{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.bc-side-card{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:14px;
+  padding:20px;
+}
+
+.bc-side-card h4{
+  font-size:18px;
+  font-weight:700;
+  color:#0f172a;
+  margin-bottom:18px;
+}
+
+.bc-vendor-top{
+  display:flex;
+  gap:15px;
+  align-items:flex-start;
+}
+
+.bc-vendor-img{
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.bc-vendor-info h3{
+  display:flex;
+  align-items:center;
+  gap:6px;
+
+  font-size:17px;
+  color:#0f172a;
+  margin-bottom:5px;
+}
+
+.bc-vendor-info p{
+  font-size:13px;
+  color:#64748b;
+  margin-bottom:4px;
+}
+
+.bc-blue-tick{
+  color:#2563eb;
+  font-size:15px;
+}
+
+.bc-rating{
+  margin-top:8px;
+  font-size:13px;
+  font-weight:600;
+}
+
+.bc-rating span{
+  color:#64748b;
+  margin-left:5px;
+}
+
+.bc-badges{
+  display:flex;
+  gap:10px;
+  margin-top:15px;
+}
+
+.bc-badges span{
+  background:#eff6ff;
+  color:#2563eb;
+
+  padding:7px 12px;
+  border-radius:30px;
+
+  font-size:12px;
+  font-weight:600;
+}
+
+.bc-summary-row{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+
+  padding:14px 0;
+
+  border-bottom:1px solid #eef2f7;
+}
+
+.bc-summary-row:last-child{
+  border-bottom:none;
+}
+
+.bc-summary-row svg{
+  color:#2563eb;
+  font-size:16px;
+  margin-top:3px;
+}
+
+.bc-summary-row span{
+  display:block;
+  font-size:12px;
+  color:#64748b;
+}
+
+.bc-summary-row strong{
+  display:block;
+  margin-top:2px;
+  color:#0f172a;
+}
+
+.bc-benefits{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.bc-benefits li{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+
+  margin-bottom:14px;
+
+  font-size:14px;
+  color:#334155;
+}
+
+.bc-benefits svg{
+  color:#22c55e;
+  margin-top:2px;
+}
+
+.bc-help-text{
+  color:#64748b;
+  font-size:13px;
+  margin-bottom:15px;
+}
+
+.bc-help-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  margin-bottom:12px;
+
+  font-size:14px;
+}
+
+.bc-help-row svg{
+  color:#2563eb;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .bookconsult-right{
+    order:-1;
+  }
+
+  .bc-side-card{
+    padding:16px;
+  }
+
+  .bc-vendor-top{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+
+  .bc-vendor-info h3{
+    justify-content:center;
+  }
+
+  .bc-badges{
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
+}
+.bookconsult-layout{
+  max-width:1400px;
+  margin:40px 40px;
+  padding:0 20px;
+
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 380px;
+  gap:30px;
+
+  align-items:start;
+}
+
+.bookconsult-left{
+  min-width:0;
+}
+
+.bookconsult-right{
+  position:sticky;
+  top:100px;
+
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+/* Tablet */
+@media(max-width:992px){
+
+  .bookconsult-layout{
+    grid-template-columns:1fr;
+  }
+
+  .bookconsult-right{
+    position:static;
+  }
+
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+  .bookconsult-layout{
+    padding:0 15px;
+    gap:20px;
+  }
+
+  .bookconsult-right{
+    order:2;
+  }
+
+  .bookconsult-left{
+    order:1;
+  }
+
+}
+.consult-step.active .consult-step-circle{
+  background:#2563eb;
+  border-color:#2563eb;
+  color:#fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.consult-trust-strip{
+  max-width:1200px;
+  margin:30px auto;
+  background:#fff;
+
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+
+  overflow:hidden;
+}
+
+.consult-trust-item{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+
+  padding:18px 20px;
+
+  border-right:1px solid #e5e7eb;
+
+  font-size:15px;
+  font-weight:600;
+  color:#1e293b;
+}
+
+.consult-trust-item:last-child{
+  border-right:none;
+}
+
+.consult-trust-icon{
+  width:18px;
+  height:18px;
+
+  color:#2563eb;
+  flex-shrink:0;
+}
+
+/* Tablet */
+
+@media(max-width:992px){
+
+  .consult-trust-strip{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .consult-trust-item:nth-child(2){
+    border-right:none;
+  }
+
+  .consult-trust-item:nth-child(1),
+  .consult-trust-item:nth-child(2){
+    border-bottom:1px solid #e5e7eb;
+  }
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+  .consult-trust-strip{
+    grid-template-columns:1fr;
+    margin:20px 15px;
+  }
+
+  .consult-trust-item{
+    justify-content:flex-start;
+    border-right:none;
+    border-bottom:1px solid #e5e7eb;
+    padding:16px;
+    font-size:14px;
+  }
+
+  .consult-trust-item:last-child{
+    border-bottom:none;
+  }
+
+}

@@ -1,0 +1,763 @@
+.vendorhelp-layout{
+    display:flex;
+    min-height:100vh;
+    background:#f5f7fb;
+    max-width:1300px;
+    margin:auto;
+    padding:0 20px;
+}
+
+.vendorhelp-main{
+    flex:1;
+    margin-left:200px;
+    padding:30px;
+}
+
+.vendorhelp-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.vendorhelp-header h1{
+    font-size:32px;
+    font-weight:700;
+    color:#111827;
+    margin-bottom:5px;
+}
+
+.vendorhelp-header p{
+    font-size:14px;
+    color:#6b7280;
+}
+.vendorhelp-grid{
+    display:grid;
+     grid-template-columns:0.9fr 0.9fr 1.2fr 0.9fr;
+    gap:10px;
+    margin-top:30px;
+}
+.vendorhelp-card{
+    background:#fff;
+    border:1px solid #edf1f7;
+    border-radius:20px;
+    padding:30px;
+    min-height:260px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    transition:.3s;
+}
+
+.vendorhelp-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.vendorhelp-top{
+    display:flex;
+    align-items:flex-start;
+    gap:20px;
+    margin-bottom:20px;
+}
+
+.vendorhelp-icon{
+    width:30px;
+    height:30px;
+    min-width:30px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+}
+
+.vendorhelp-heading{
+    flex:1;
+    min-width:0;
+}
+
+.vendorhelp-heading-row{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:15px;
+    flex-wrap:wrap;
+}
+
+.vendorhelp-heading-row h3{
+    font-size:15px;
+    font-weight:700;
+    color:#111827;
+    margin:0;
+    line-height:30px;
+}
+
+.vendorhelp-status{
+    background:#DCFCE7;
+    color:#15803D;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:600;
+}
+
+.vendorhelp-heading p{
+    font-size:12px;
+    color:#6b7280;
+    line-height:28px;
+    margin:0;
+    width:100%;
+}
+
+.vendorhelp-btn{
+    margin-top:30px;
+    border:none;
+    background:none;
+    color:#2563eb;
+    font-size:16px;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    cursor:pointer;
+    padding:0;
+}
+/* Tablet */
+
+@media(max-width:1200px){
+
+    .vendorhelp-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .vendorhelp-main{
+        margin-left:0;
+        padding:20px;
+    }
+
+    .vendorhelp-grid{
+        grid-template-columns:1fr;
+    }
+
+    .vendorhelp-header h1{
+        font-size:28px;
+    }
+
+    .vendorhelp-card{
+        padding:22px;
+    }
+
+}
+@media(max-width:1200px){
+
+    .vendorhelp-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:768px){
+
+    .vendorhelp-main{
+        margin-left:0;
+        padding:20px;
+    }
+
+    .vendorhelp-grid{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .vendorhelp-card{
+        min-height:auto;
+        padding:28px 22px;
+    }
+
+    .vendorhelp-top h3{
+        font-size:17px;
+    }
+
+    .vendorhelp-content p{
+        font-size:14px;
+        line-height:26px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===================================
+   BOTTOM SECTION
+=================================== */
+
+.vendorhelp-bottom-section{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:25px;
+    margin-top:30px;
+}
+
+/* ===================================
+   COMMON CARD
+=================================== */
+
+.vendorhelp-tutorials,
+.vendorhelp-referral{
+    background:#ffffff;
+    border:1px solid #edf2f7;
+    border-radius:22px;
+    padding:28px;
+    box-shadow:0 4px 15px rgba(0,0,0,.04);
+}
+
+/* ===================================
+   HEADER
+=================================== */
+
+.vendorhelp-section-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:25px;
+    gap:20px;
+}
+
+.vendorhelp-section-header h3{
+    font-size:22px;
+    font-weight:700;
+    color:#111827;
+    margin-bottom:6px;
+}
+
+.vendorhelp-section-header p{
+    font-size:14px;
+    color:#6b7280;
+}
+
+.vendorhelp-viewall-btn{
+    border:none;
+    background:none;
+    color:#2563eb;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    transition:.3s;
+}
+
+.vendorhelp-viewall-btn:hover{
+    color:#1d4ed8;
+}
+
+/* ===================================
+   TUTORIAL ITEMS
+=================================== */
+
+.vendorhelp-tutorial-list{
+    display:flex;
+    flex-direction:column;
+}
+
+.vendorhelp-tutorial-item{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    padding:18px 0;
+    border-bottom:1px solid #edf2f7;
+}
+
+.vendorhelp-tutorial-item:last-child{
+    border-bottom:none;
+}
+
+.vendorhelp-video-thumbnail{
+    position:relative;
+    width:95px;
+    height:65px;
+    flex-shrink:0;
+}
+
+.vendorhelp-tutorial-image{
+    width:95px;
+    height:65px;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+.vendorhelp-play-icon{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:34px;
+    height:34px;
+    background:white;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#2563eb;
+    font-size:18px;
+    box-shadow:0 4px 10px rgba(0,0,0,.15);
+}
+
+.vendorhelp-tutorial-content{
+    flex:1;
+}
+
+.vendorhelp-tutorial-content h4{
+    font-size:16px;
+    font-weight:700;
+    color:#111827;
+    margin-bottom:6px;
+}
+
+.vendorhelp-tutorial-content p{
+    font-size:13px;
+    color:#6b7280;
+    line-height:1.7;
+    margin-bottom:8px;
+}
+
+.vendorhelp-duration{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-size:13px;
+    color:#9ca3af;
+}
+
+.vendorhelp-watch-btn{
+    border:1px solid #dbeafe;
+    background:#fff;
+    color:#2563eb;
+    padding:10px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s;
+    flex-shrink:0;
+}
+
+.vendorhelp-watch-btn:hover{
+    background:#2563eb;
+    color:#fff;
+}
+
+/* ===================================
+   REFERRAL SECTION
+=================================== */
+
+.vendorhelp-referral h3{
+    font-size:22px;
+    font-weight:700;
+    color:#111827;
+    margin-bottom:8px;
+}
+
+.vendorhelp-referral-desc{
+    font-size:14px;
+    color:#6b7280;
+    margin-bottom:20px;
+}
+
+.vendorhelp-referral-box{
+    background:#f6fbf7;
+    border:1px solid #e5f3e8;
+    border-radius:16px;
+    padding:20px;
+    margin-bottom:25px;
+}
+
+.vendorhelp-referral-box h4{
+    font-size:16px;
+    font-weight:700;
+    margin-bottom:10px;
+    color:#111827;
+}
+
+.vendorhelp-referral-box p{
+    font-size:13px;
+    color:#6b7280;
+    line-height:1.7;
+}
+
+.vendorhelp-copy-box{
+    display:flex;
+    margin-top:18px;
+}
+
+.vendorhelp-copy-box input{
+    flex:1;
+    height:50px;
+    border:1px solid #e5e7eb;
+    border-right:none;
+    padding:0 15px;
+    border-radius:12px 0 0 12px;
+    background:white;
+    outline:none;
+    font-size:13px;
+}
+
+.vendorhelp-copy-box button{
+    width:55px;
+    border:none;
+    background:white;
+    border:1px solid #e5e7eb;
+    border-left:none;
+    border-radius:0 12px 12px 0;
+    cursor:pointer;
+    color:#2563eb;
+    font-size:18px;
+}
+
+/* ===================================
+   STATS
+=================================== */
+
+.vendorhelp-referral-stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    margin:25px 0;
+    border-top:1px solid #edf2f7;
+    border-bottom:1px solid #edf2f7;
+}
+
+.vendorhelp-stat-card{
+    text-align:center;
+    padding:20px 10px;
+}
+
+.vendorhelp-stat-card:not(:last-child){
+    border-right:1px solid #edf2f7;
+}
+
+.vendorhelp-stat-icon{
+    font-size:26px;
+    margin-bottom:10px;
+}
+
+.vendorhelp-stat-icon.users{
+    color:#22c55e;
+}
+
+.vendorhelp-stat-icon.rewards{
+    color:#f59e0b;
+}
+
+.vendorhelp-stat-icon.pending{
+    color:#8b5cf6;
+}
+
+.vendorhelp-stat-card h5{
+    font-size:13px;
+    color:#6b7280;
+    margin-bottom:10px;
+}
+
+.vendorhelp-stat-card h2{
+    font-size:24px;
+    font-weight:700;
+    color:#111827;
+}
+
+.vendorhelp-referral-btn{
+    border:none;
+    background:none;
+    color:#2563eb;
+    font-weight:600;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+/* ===================================
+   TABLET
+=================================== */
+
+@media(max-width:992px){
+
+    .vendorhelp-bottom-section{
+        grid-template-columns:1fr;
+    }
+
+}
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media(max-width:768px){
+
+    .vendorhelp-section-header{
+        flex-direction:column;
+    }
+
+    .vendorhelp-tutorial-item{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .vendorhelp-video-thumbnail{
+        width:100%;
+        height:180px;
+    }
+
+    .vendorhelp-tutorial-image{
+        width:100%;
+        height:180px;
+    }
+
+    .vendorhelp-watch-btn{
+        width:100%;
+    }
+
+    .vendorhelp-referral-stats{
+        grid-template-columns:1fr;
+    }
+
+    .vendorhelp-stat-card{
+        border-right:none !important;
+        border-bottom:1px solid #edf2f7;
+    }
+
+    .vendorhelp-stat-card:last-child{
+        border-bottom:none;
+    }
+
+    .vendorhelp-copy-box{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .vendorhelp-copy-box input{
+        border-radius:12px;
+        border:1px solid #e5e7eb;
+    }
+
+    .vendorhelp-copy-box button{
+        width:100%;
+        border-radius:12px;
+        border:1px solid #e5e7eb;
+        height:50px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.vendorhelpfaq-wrapper{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:20px;
+    margin-top:30px;
+}
+
+.vendorhelpfaq-left{
+    background:#fff;
+    border-radius:20px;
+    padding:25px;
+    border:1px solid #edf2f7;
+}
+
+.vendorhelpfaq-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.vendorhelpfaq-header h3{
+    font-size:22px;
+    font-weight:700;
+    color:#111827;
+}
+
+.vendorhelpfaq-view-btn{
+    border:none;
+    background:none;
+    color:#2563eb;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.vendorhelpfaq-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.vendorhelpfaq-item{
+    border:1px solid #e5e7eb;
+    border-radius:12px;
+    padding:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.vendorhelpfaq-item:hover{
+    border-color:#2563eb;
+}
+
+.vendorhelpfaq-question{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.vendorhelpfaq-question span:first-child{
+    font-size:14px;
+    font-weight:600;
+    color:#374151;
+}
+
+.vendorhelpfaq-icon{
+    font-size:20px;
+    color:#2563eb;
+    font-weight:700;
+}
+
+.vendorhelpfaq-answer{
+    margin-top:12px;
+    color:#6b7280;
+    font-size:13px;
+    line-height:1.7;
+}
+
+.vendorhelpfaq-support-card{
+    background:#f8fbff;
+    border:1px solid #e5edf9;
+    border-radius:20px;
+    padding:30px;
+    text-align:left;
+}
+
+.vendorhelpfaq-support-icon{
+    width:55px;
+    height:55px;
+    background:#eef4ff;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.vendorhelpfaq-support-card h3{
+    font-size:24px;
+    color:#111827;
+    margin-bottom:15px;
+}
+
+.vendorhelpfaq-support-card p{
+    color:#6b7280;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.vendorhelpfaq-support-btn{
+    width:100%;
+    height:50px;
+    border:none;
+    border-radius:12px;
+    background:#2563eb;
+    color:#fff;
+    font-weight:600;
+    cursor:pointer;
+    margin-bottom:20px;
+}
+
+.vendorhelpfaq-response-time{
+    color:#6b7280;
+    font-size:13px;
+}
+
+/* Tablet */
+
+@media(max-width:992px){
+
+    .vendorhelpfaq-wrapper{
+        grid-template-columns:1fr;
+    }
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .vendorhelpfaq-grid{
+        grid-template-columns:1fr;
+    }
+
+    .vendorhelpfaq-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+
+}
+.vendorhelpfaq-support-icon{
+    width:60px;
+    height:60px;
+    background:#eef4ff;
+    border-radius:16px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:28px;
+    color:#2563eb;
+
+    margin-bottom:20px;
+}

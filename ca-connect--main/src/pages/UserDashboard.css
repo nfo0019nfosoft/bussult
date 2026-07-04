@@ -1,0 +1,1261 @@
+/* ===========================
+   LAYOUT
+=========================== */
+
+.userdashboard-page-layout{
+  display:flex;
+  min-height:100vh;
+  background:#f7f9fc;
+}
+
+.userdashboard-page-content{
+  flex: 1;
+  margin-left: 220px;
+  padding: 30px;
+  width: calc(100% - 220px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userdashboard-page-content > *{
+  width: 100%;
+  max-width: 1400px;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.userdashboard-page-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:35px;
+  gap:20px;
+}
+
+.userdashboard-page-header-left h1{
+  font-size:34px;
+  font-weight:700;
+  color:#111827;
+  margin-bottom:5px;
+}
+
+.userdashboard-page-header-left p{
+  color:#6b7280;
+  font-size:15px;
+}
+
+/* ===========================
+   RIGHT HEADER
+=========================== */
+
+.userdashboard-page-header-right{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+/* ===========================
+   SEARCH
+=========================== */
+
+.userdashboard-page-search-box{
+  width:360px;
+  height:52px;
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  padding:0 18px;
+  gap:12px;
+}
+
+.userdashboard-page-search-box svg{
+  color:#9ca3af;
+  font-size:15px;
+}
+
+.userdashboard-page-search-box input{
+  flex:1;
+  border:none;
+  outline:none;
+  font-size:14px;
+  background:transparent;
+}
+
+.userdashboard-page-search-box span{
+  background:#eef2ff;
+  color:#2563eb;
+  padding:4px 10px;
+  border-radius:8px;
+  font-size:11px;
+  font-weight:600;
+}
+
+/* ===========================
+   ICON BUTTONS
+=========================== */
+
+.userdashboard-page-message-btn,
+.userdashboard-page-notification-btn{
+  width:50px;
+  height:50px;
+  border:none;
+  background:#fff;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  position:relative;
+  transition:0.3s;
+  box-shadow:0 2px 8px rgba(0,0,0,0.04);
+}
+
+.userdashboard-page-message-btn:hover,
+.userdashboard-page-notification-btn:hover{
+  transform:translateY(-2px);
+}
+
+.userdashboard-page-message-btn svg,
+.userdashboard-page-notification-btn svg{
+  font-size:18px;
+  color:#374151;
+}
+
+.userdashboard-page-notification-count{
+  position:absolute;
+  top:6px;
+  right:8px;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:#ef4444;
+  color:#fff;
+  font-size:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:600;
+}
+
+/* ===========================
+   USER BOX
+=========================== */
+
+.userdashboard-page-user-box{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  background:#fff;
+  padding:10px 15px;
+  border-radius:14px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.04);
+}
+
+.userdashboard-page-user-box img{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.userdashboard-page-user-box h4{
+  font-size:15px;
+  color:#111827;
+  margin-bottom:3px;
+}
+
+.userdashboard-page-user-box p{
+  font-size:12px;
+  color:#6b7280;
+}
+
+/* ===========================
+   STATS GRID
+=========================== */
+
+.userdashboard-page-stats-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:20px;
+}
+
+.userdashboard-page-stat-card{
+  background:#fff;
+  border-radius:18px;
+  padding:15px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:0;
+}
+
+.userdashboard-page-stat-card:hover{
+  transform:translateY(-4px);
+}
+.userdashboard-page-stat-icon{
+  width:55px;
+  height:55px;
+  min-width:55px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.userdashboard-page-stat-icon svg{
+  font-size:20px;
+}
+
+.userdashboard-page-stat-card h5{
+  color:#6b7280;
+  font-size:12px;
+  line-height:1.3;
+  margin-bottom:10px;
+  font-weight:500;
+}
+
+.userdashboard-page-stat-card h2{
+  font-size:28px;
+  font-weight:700;
+  color:#111827;
+}
+
+/* ===========================
+   COLORS
+=========================== */
+.userdashboard-blue{
+  background:#dbeafe;
+  color:#2563eb;
+}
+
+.userdashboard-green{
+  background:#dcfce7;
+  color:#16a34a;
+}
+
+.userdashboard-orange{
+  background:#ffedd5;
+  color:#ea580c;
+}
+
+.userdashboard-purple{
+  background:#ede9fe;
+  color:#9333ea;
+}
+
+.userdashboard-pink{
+  background:#ffe4e6;
+  color:#e11d48;
+}
+
+
+/* ===========================
+   TABLET
+=========================== */
+
+@media(max-width:992px){
+
+  .userdashboard-page-content{
+    margin-left:0;
+    padding:20px;
+  }
+
+  .userdashboard-page-header{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .userdashboard-page-header-right{
+    width:100%;
+    flex-wrap:wrap;
+  }
+
+  .userdashboard-page-search-box{
+    width:100%;
+  }
+
+  .userdashboard-page-stats-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+  .userdashboard-page-content{
+    padding:15px;
+  }
+
+  .userdashboard-page-header-left h1{
+    font-size:28px;
+  }
+
+  .userdashboard-page-header-right{
+    gap:10px;
+  }
+
+  .userdashboard-page-search-box{
+    width:100%;
+    height:48px;
+  }
+
+  .userdashboard-page-search-box span{
+    display:none;
+  }
+
+  .userdashboard-page-user-box{
+    width:100%;
+  }
+
+  .userdashboard-page-stats-grid{
+    grid-template-columns:1fr;
+  }
+
+  .userdashboard-page-stat-card{
+    padding:20px;
+  }
+
+  .userdashboard-page-stat-card h2{
+    font-size:28px;
+  }
+
+}
+
+/* ===========================
+   SMALL MOBILE
+=========================== */
+
+@media(max-width:480px){
+
+  .userdashboard-page-header-left h1{
+    font-size:24px;
+  }
+
+  .userdashboard-page-header-left p{
+    font-size:13px;
+  }
+
+  .userdashboard-page-message-btn,
+  .userdashboard-page-notification-btn{
+    width:45px;
+    height:45px;
+  }
+
+  .userdashboard-page-user-box img{
+    width:42px;
+    height:42px;
+  }
+
+  .userdashboard-page-user-box h4{
+    font-size:14px;
+  }
+
+  .userdashboard-page-user-box p{
+    font-size:11px;
+  }
+
+  .userdashboard-page-stat-icon{
+    width:55px;
+    height:55px;
+  }
+
+  .userdashboard-page-stat-icon svg{
+    font-size:22px;
+  }
+
+  .userdashboard-page-stat-card h2{
+    font-size:24px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =====================================
+   DASHBOARD MIDDLE SECTION
+===================================== */
+
+.userdashboard-section-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+  margin-top:30px;
+}
+
+.userdashboard-section-card{
+  background:#fff;
+  border-radius:18px;
+  padding:25px;
+  border:1px solid #edf2f7;
+  box-shadow:0 2px 10px rgba(0,0,0,0.04);
+}
+
+/* =====================================
+   CARD HEADER
+===================================== */
+
+.userdashboard-section-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:25px;
+}
+
+.userdashboard-section-top h3{
+  font-size:18px;
+  font-weight:700;
+  color:#111827;
+}
+
+.userdashboard-section-top button{
+  border:none;
+  background:none;
+  color:#2563eb;
+  font-size:14px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* =====================================
+   APPOINTMENTS
+===================================== */
+
+.userdashboard-appointment-item{
+  display:flex;
+  gap:15px;
+  padding:15px 0;
+  border-bottom:1px solid #f1f5f9;
+}
+
+.userdashboard-appointment-item:last-child{
+  border-bottom:none;
+}
+
+.userdashboard-date-box{
+  width:65px;
+  min-width:65px;
+  height:75px;
+  background:#f8fafc;
+  border-radius:14px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.userdashboard-date-box h2{
+  font-size:24px;
+  color:#1e3a8a;
+  margin-bottom:3px;
+}
+
+.userdashboard-date-box span{
+  font-size:12px;
+  color:#64748b;
+  text-transform:uppercase;
+  font-weight:600;
+}
+
+.userdashboard-appointment-info{
+  flex:1;
+}
+
+.userdashboard-appointment-info h4{
+  font-size:15px;
+  color:#111827;
+  margin-bottom:6px;
+}
+
+.userdashboard-appointment-info p{
+  font-size:13px;
+  color:#64748b;
+  margin-bottom:6px;
+}
+
+.userdashboard-appointment-info small{
+  color:#2563eb;
+  font-size:12px;
+}
+
+/* =====================================
+   ENQUIRIES
+===================================== */
+
+.userdashboard-enquiry-item{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  padding:18px 0;
+  border-bottom:1px solid #f1f5f9;
+}
+
+.userdashboard-enquiry-item:last-child{
+  border-bottom:none;
+}
+
+.userdashboard-enquiry-icon{
+  width:45px;
+  height:45px;
+  border-radius:12px;
+  background:#eef2ff;
+  color:#4f46e5;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+}
+
+.userdashboard-enquiry-info{
+  flex:1;
+}
+
+.userdashboard-enquiry-info h4{
+  font-size:15px;
+  color:#111827;
+  margin-bottom:5px;
+}
+
+.userdashboard-enquiry-info p{
+  font-size:13px;
+  color:#64748b;
+}
+
+/* =====================================
+   ACTIVITIES
+===================================== */
+
+.userdashboard-activity-item{
+  display:flex;
+  gap:15px;
+  padding:16px 0;
+  border-bottom:1px solid #f1f5f9;
+}
+
+.userdashboard-activity-item:last-child{
+  border-bottom:none;
+}
+
+.userdashboard-activity-icon{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:#ecfdf5;
+  color:#16a34a;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:42px;
+}
+
+.userdashboard-activity-info{
+  flex:1;
+}
+
+.userdashboard-activity-info p{
+  font-size:14px;
+  color:#111827;
+  line-height:1.5;
+  margin-bottom:6px;
+}
+
+.userdashboard-activity-info small{
+  color:#94a3b8;
+  font-size:12px;
+}
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media(max-width:992px){
+
+  .userdashboard-section-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media(max-width:768px){
+
+  .userdashboard-section-grid{
+    gap:18px;
+    margin-top:20px;
+  }
+
+  .userdashboard-section-card{
+    padding:18px;
+    border-radius:14px;
+  }
+
+  .userdashboard-section-top h3{
+    font-size:16px;
+  }
+
+  .userdashboard-section-top button{
+    font-size:13px;
+  }
+
+  .userdashboard-date-box{
+    width:55px;
+    min-width:55px;
+    height:65px;
+  }
+
+  .userdashboard-date-box h2{
+    font-size:20px;
+  }
+
+  .userdashboard-appointment-info h4,
+  .userdashboard-enquiry-info h4{
+    font-size:14px;
+  }
+
+  .userdashboard-appointment-info p,
+  .userdashboard-enquiry-info p{
+    font-size:12px;
+  }
+
+  .userdashboard-activity-info p{
+    font-size:13px;
+  }
+
+}
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
+@media(max-width:480px){
+
+  .userdashboard-section-card{
+    padding:15px;
+  }
+
+  .userdashboard-section-top{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:8px;
+  }
+
+  .userdashboard-appointment-item,
+  .userdashboard-enquiry-item,
+  .userdashboard-activity-item{
+    gap:12px;
+  }
+
+  .userdashboard-date-box{
+    width:50px;
+    min-width:50px;
+    height:60px;
+  }
+
+  .userdashboard-date-box h2{
+    font-size:18px;
+  }
+
+  .userdashboard-date-box span{
+    font-size:10px;
+  }
+
+  .userdashboard-enquiry-icon,
+  .userdashboard-activity-icon{
+    width:38px;
+    height:38px;
+    min-width:38px;
+    font-size:15px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================
+   APPOINTMENT META
+========================== */
+
+.userdashboard-appointment-meta{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-top:8px;
+  flex-wrap:wrap;
+}
+
+.userdashboard-appointment-meta span{
+  font-size:12px;
+  color:#64748b;
+  font-weight:500;
+}
+
+/* ==========================
+   APPOINTMENT STATUS
+========================== */
+
+.userdashboard-appointment-status{
+  background:#dcfce7;
+  color:#15803d;
+  padding:7px 14px;
+  border-radius:30px;
+  font-size:12px;
+  font-weight:600;
+  text-transform:capitalize;
+  white-space:nowrap;
+  height:fit-content;
+  align-self:flex-start;
+}
+.userdashboard-appointment-info{
+  flex:1;
+}
+
+.userdashboard-appointment-info h4{
+  font-size:16px;
+  font-weight:700;
+  color:#111827;
+  margin-bottom:6px;
+  line-height:1.4;
+}
+
+.userdashboard-appointment-info p{
+  font-size:14px;
+  color:#64748b;
+  margin-bottom:8px;
+}
+
+/* ==========================
+   ENQUIRY RIGHT
+========================== */
+
+.userdashboard-enquiry-right{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:8px;
+  min-width:100px;
+}
+
+.userdashboard-enquiry-right small{
+  font-size:11px;
+  color:#94a3b8;
+}
+
+/* ==========================
+   ENQUIRY STATUS
+========================== */
+
+.userdashboard-enquiry-status{
+  background:#eff6ff;
+  color:#2563eb;
+  padding:6px 12px;
+  border-radius:20px;
+  font-size:11px;
+  font-weight:600;
+  text-transform:capitalize;
+}
+
+/* ==========================
+   VIEW ALL BUTTON
+========================== */
+
+.userdashboard-view-link{
+  margin-top:20px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  border:none;
+  background:none;
+  color:#2563eb;
+  font-size:14px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.userdashboard-view-link:hover{
+  gap:12px;
+}
+
+.userdashboard-view-link svg{
+  font-size:12px;
+}
+
+/* ==========================
+   MOBILE CSS
+========================== */
+
+@media(max-width:768px){
+
+  .userdashboard-appointment-item{
+    flex-wrap:wrap;
+  }
+
+  .userdashboard-appointment-status{
+    margin-left:80px;
+  }
+
+  .userdashboard-enquiry-item{
+    flex-wrap:wrap;
+  }
+
+  .userdashboard-enquiry-right{
+    width:100%;
+    align-items:flex-start;
+    margin-left:60px;
+  }
+
+  .userdashboard-view-link{
+    font-size:13px;
+  }
+
+}
+
+@media(max-width:480px){
+
+  .userdashboard-appointment-meta{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:5px;
+  }
+
+  .userdashboard-appointment-status{
+    margin-left:0;
+    margin-top:10px;
+  }
+
+  .userdashboard-enquiry-right{
+    margin-left:0;
+  }
+
+  .userdashboard-enquiry-status{
+    font-size:10px;
+    padding:5px 10px;
+  }
+
+  .userdashboard-view-link{
+    font-size:12px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =====================================
+   BOTTOM SECTION GRID
+===================================== */
+
+.userdashboard-bottom-grid{
+  display:grid;
+  grid-template-columns:1fr 2fr 0.8fr;
+  gap:10px;
+  margin-top:30px;
+}
+
+/* =====================================
+   COMMON CARD
+===================================== */
+
+.userdashboard-bottom-card,
+.userdashboard-help-card{
+  background:#ffffff;
+  border-radius:20px;
+  padding:25px;
+  border:1px solid #edf2f7;
+  box-shadow:0 4px 18px rgba(15,23,42,0.05);
+}
+
+/* =====================================
+   HEADER
+===================================== */
+
+.userdashboard-bottom-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:25px;
+}
+
+.userdashboard-bottom-header h3{
+  font-size:18px;
+  font-weight:700;
+  color:#111827;
+}
+
+.userdashboard-bottom-header button{
+  border:none;
+  background:none;
+  color:#2563eb;
+  font-size:14px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* =====================================
+   NOTIFICATIONS
+===================================== */
+
+.userdashboard-notification-item{
+  display:flex;
+  gap:14px;
+  padding:15px 0;
+  border-bottom:1px solid #f1f5f9;
+}
+
+.userdashboard-notification-item:last-child{
+  border-bottom:none;
+}
+
+.userdashboard-notification-icon{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:#ecfdf5;
+  color:#16a34a;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  font-size:15px;
+}
+
+.userdashboard-notification-content{
+  flex:1;
+}
+
+.userdashboard-notification-content p{
+  font-size:13px;
+  color:#1f2937;
+  line-height:1.6;
+  margin-bottom:6px;
+}
+
+.userdashboard-notification-content small{
+  color:#94a3b8;
+  font-size:12px;
+}
+
+/* =====================================
+   RECOMMENDED SERVICES
+===================================== */
+
+.userdashboard-recommend-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:5px;
+}
+
+.userdashboard-recommend-card{
+  border:1px solid #eef2f7;
+  border-radius:16px;
+  padding:18px;
+  text-align:center;
+  transition:0.3s;
+}
+
+.userdashboard-recommend-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.07);
+}
+
+.userdashboard-recommend-icon{
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:#eff6ff;
+  color:#2563eb;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:auto;
+  margin-bottom:15px;
+  font-size:24px;
+}
+
+.userdashboard-recommend-card h4{
+  font-size:13px;
+  font-weight:700;
+  color:#111827;
+  margin-bottom:5px;
+  min-height:42px;
+}
+
+.userdashboard-recommend-card p{
+  font-size:12px;
+  color:#6b7280;
+  line-height:1.6;
+  margin-bottom:15px;
+  min-height:50px;
+}
+
+.userdashboard-recommend-card h3{
+  color:#111827;
+  font-size:20px;
+  margin-bottom:15px;
+}
+
+.userdashboard-recommend-card button{
+  width:100%;
+  height:40px;
+  border:1px solid #2563eb;
+  background:white;
+  color:#2563eb;
+  border-radius:10px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.userdashboard-recommend-card button:hover{
+  background:#2563eb;
+  color:white;
+}
+
+/* =====================================
+   HELP CARD
+===================================== */
+
+.userdashboard-help-card{
+  background:linear-gradient(
+    180deg,
+    #f8f7ff 0%,
+    #eef4ff 100%
+  );
+}
+
+.userdashboard-help-icon{
+  width:70px;
+  height:70px;
+  border-radius:18px;
+  background:#ede9fe;
+  color:#7c3aed;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  margin-bottom:25px;
+}
+
+.userdashboard-help-card h3{
+  font-size:24px;
+  color:#111827;
+  margin-bottom:15px;
+}
+
+.userdashboard-help-card p{
+  color:#6b7280;
+  line-height:1.8;
+  margin-bottom:25px;
+  font-size:14px;
+}
+
+.userdashboard-help-card button{
+  width:100%;
+  height:48px;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  font-size:15px;
+  font-weight:600;
+}
+
+.userdashboard-help-card button:first-of-type{
+  background:#2563eb;
+  color:white;
+  margin-bottom:20px;
+}
+
+.userdashboard-help-link{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  background:transparent !important;
+  color:#2563eb !important;
+  padding:0;
+  height:auto !important;
+}
+
+/* =====================================
+   LARGE TABLET
+===================================== */
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media(max-width:992px){
+
+  .userdashboard-bottom-grid{
+    gap:20px;
+  }
+
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media(max-width:768px){
+
+  .userdashboard-bottom-card,
+  .userdashboard-help-card{
+    padding:18px;
+    border-radius:16px;
+  }
+
+  .userdashboard-bottom-header{
+    margin-bottom:18px;
+  }
+
+  .userdashboard-bottom-header h3{
+    font-size:16px;
+  }
+
+  .userdashboard-bottom-header button{
+    font-size:12px;
+  }
+
+  .userdashboard-notification-content p{
+    font-size:12px;
+  }
+
+  .userdashboard-notification-content small{
+    font-size:11px;
+  }
+
+  .userdashboard-recommend-grid{
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+  }
+
+  .userdashboard-recommend-card{
+    padding:15px;
+  }
+
+  .userdashboard-recommend-icon{
+    width:50px;
+    height:50px;
+    font-size:20px;
+  }
+
+  .userdashboard-recommend-card h4{
+    font-size:14px;
+    min-height:auto;
+  }
+
+  .userdashboard-recommend-card p{
+    font-size:11px;
+    min-height:auto;
+  }
+
+  .userdashboard-recommend-card h3{
+    font-size:17px;
+  }
+
+  .userdashboard-help-icon{
+    width:60px;
+    height:60px;
+    font-size:24px;
+  }
+
+  .userdashboard-help-card h3{
+    font-size:20px;
+  }
+
+}
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
+@media(max-width:480px){
+
+  .userdashboard-recommend-grid{
+    grid-template-columns:1fr;
+  }
+
+  .userdashboard-help-card{
+    text-align:center;
+  }
+
+  .userdashboard-help-icon{
+    margin:auto;
+    margin-bottom:20px;
+  }
+
+  .userdashboard-help-card h3{
+    font-size:18px;
+  }
+
+  .userdashboard-help-card p{
+    font-size:13px;
+  }
+
+  .userdashboard-help-card button{
+    height:44px;
+    font-size:14px;
+  }
+
+}

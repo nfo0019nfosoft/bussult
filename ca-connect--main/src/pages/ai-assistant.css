@@ -1,0 +1,597 @@
+/* ====================================
+   AI ASSISTANT PAGE
+==================================== */
+
+.ai-page {
+  padding: 24px;
+  background: #ffffff;
+    max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ====================================
+   BREADCRUMB
+==================================== */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.breadcrumb span {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.breadcrumb svg {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+/* ====================================
+   HERO SECTION
+==================================== */
+
+.ai-hero {
+  display: flex;
+  align-items: flex-end;
+
+  gap: 50px;
+
+  background: linear-gradient(
+    135deg,
+    #f8fbff 0%,
+    #f4f7fc 100%
+  );
+
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+
+  min-height: 260px;
+
+  padding: 0 40px;
+
+  overflow: hidden;
+}
+
+/* ====================================
+   IMAGE
+==================================== */
+
+.ai-image {
+  display: flex;
+  align-items: flex-end;
+  align-self: flex-end;
+}
+
+.ai-image img {
+  width: 260px;
+  display: block;
+  height:300px;
+  margin: 0;
+  padding: 0;
+}
+
+/* ====================================
+   CONTENT
+==================================== */
+
+.ai-content {
+  flex: 1;
+  padding: 40px 0;
+}
+
+.ai-content h1 {
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #0f172a;
+  margin-bottom: 16px;
+}
+
+.ai-content h1 span {
+  color: #2563eb;
+}
+
+.ai-content p {
+  max-width: 550px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #475569;
+  margin-bottom: 28px;
+}
+
+.ai-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ai-content li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 14px;
+
+  font-size: 17px;
+  font-weight: 500;
+
+  color: #1e293b;
+}
+
+.ai-content li svg {
+  color: #2563eb;
+  font-size: 17px;
+}
+
+/* ====================================
+   TABLET
+==================================== */
+
+@media (max-width: 992px) {
+
+  .ai-page {
+    padding: 20px;
+  }
+
+  .ai-hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    padding: 30px;
+
+    min-height: auto;
+
+    gap: 25px;
+  }
+
+  .ai-image {
+    align-self: center;
+  }
+
+  .ai-image img {
+    width: 200px;
+  }
+
+  .ai-content {
+    padding: 0;
+  }
+
+  .ai-content h1 {
+    font-size: 42px;
+  }
+
+  .ai-content p {
+    font-size: 16px;
+    margin: 0 auto 24px;
+  }
+
+  .ai-content li {
+    justify-content: center;
+  }
+}
+
+/* ====================================
+   MOBILE
+==================================== */
+
+@media (max-width: 576px) {
+
+  .ai-page {
+    padding: 16px;
+  }
+
+  .breadcrumb {
+    font-size: 13px;
+    margin-bottom: 18px;
+  }
+
+  .ai-hero {
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+
+  .ai-image img {
+    width: 160px;
+  }
+
+  .ai-content h1 {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+
+  .ai-content p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .ai-content li {
+    font-size: 14px;
+    line-height: 1.5;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .ai-content li svg {
+    font-size: 14px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================
+   HELP TOPICS SECTION
+========================== */
+
+.assistant-topics{
+  padding:30px 50px;
+  background-color: white;
+    max-width: 1400px;
+  margin: 0 auto;
+}
+
+.assistant-topics h2{
+  font-size:30px;
+  font-weight:700;
+  color:#0f172a;
+  margin-bottom:28px;
+}
+
+.topics-grid{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:20px;
+}
+
+.topic-card{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:16px;
+
+  padding:28px 20px;
+
+  text-align:center;
+
+  transition:.3s ease;
+  cursor:pointer;
+}
+
+.topic-card:hover{
+  transform:translateY(-4px);
+
+  box-shadow:
+  0 10px 30px rgba(0,0,0,.06);
+
+  border-color:#dbeafe;
+}
+
+.topic-icon{
+  width:64px;
+  height:64px;
+
+  margin:0 auto 18px;
+
+  border-radius:50%;
+
+  background:#f8fafc;
+  color:#2563eb;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:28px;
+}
+
+.topic-card h3{
+  font-size:18px;
+  font-weight:700;
+  color:#1e293b;
+
+  margin-bottom:10px;
+}
+
+.topic-card p{
+  font-size:14px;
+  line-height:1.7;
+  color:#64748b;
+}
+
+/* ==========================
+   TABLET
+========================== */
+
+@media(max-width:1200px){
+
+  .topics-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+}
+
+@media(max-width:768px){
+
+  .topics-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .assistant-topics h2{
+    font-size:24px;
+  }
+
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:576px){
+
+  .topics-grid{
+    grid-template-columns:1fr;
+  }
+
+  .topic-card{
+    padding:24px 18px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===================================
+   AI CHAT SECTION
+=================================== */
+
+.ai-chat-section{
+  padding:30px 60px;
+  background-color: white;
+    max-width: 1400px;
+  margin: 0 auto;
+}
+
+.ai-chat-section h3{
+  font-size:28px;
+  font-weight:700;
+  color:#0f172a;
+  margin-bottom:24px;
+}
+
+/* ===================================
+   SUGGESTIONS
+=================================== */
+
+.suggestion-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+  margin-bottom:30px;
+}
+
+.suggestion-card{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  background:#f8fafc;
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+
+  padding:14px 16px;
+
+  cursor:pointer;
+  transition:.3s;
+}
+
+.suggestion-card:hover{
+  border-color:#bfdbfe;
+  background:#eff6ff;
+}
+
+.suggestion-card span{
+  flex:1;
+  text-align:left;
+
+  font-size:14px;
+  color:#334155;
+  line-height:1.5;
+}
+
+.suggestion-card svg:first-child{
+  color:#2563eb;
+  font-size:14px;
+}
+
+.suggestion-card svg:last-child{
+  color:#64748b;
+  font-size:14px;
+}
+
+/* ===================================
+   ASK BOX
+=================================== */
+
+.ask-box{
+  display:flex;
+  gap:16px;
+  margin-bottom:18px;
+}
+
+.ask-input-wrapper{
+  flex:1;
+  display:flex;
+  align-items:center;
+
+  background:#fff;
+  border:1px solid #dbe3ee;
+  border-radius:14px;
+
+  padding:0 16px;
+  height:62px;
+}
+
+.ask-input-wrapper input{
+  flex:1;
+  border:none;
+  outline:none;
+  font-size:15px;
+  background:transparent;
+}
+
+.attach-btn{
+  border:none;
+  background:none;
+  cursor:pointer;
+
+  color:#64748b;
+  font-size:18px;
+}
+
+.ask-btn{
+  min-width:220px;
+
+  border:none;
+  border-radius:14px;
+
+  background:#2563eb;
+  color:#fff;
+
+  font-size:16px;
+  font-weight:600;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.ask-btn:hover{
+  background:#1d4ed8;
+}
+
+/* ===================================
+   NOTE
+=================================== */
+
+.ai-note{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  color:#64748b;
+  font-size:14px;
+}
+
+.ai-note svg{
+  color:#94a3b8;
+}
+.privacy-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+.privacy-breadcrumb a {
+  text-decoration: none;
+  color: #64748b;
+}
+
+.privacy-breadcrumb span {
+  color: #2563eb;
+  font-weight: 600;
+}
+/* ===================================
+   TABLET
+=================================== */
+
+@media(max-width:992px){
+
+  .suggestion-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .ask-box{
+    flex-direction:column;
+  }
+
+  .ask-btn{
+    width:100%;
+    min-width:auto;
+    height:56px;
+  }
+}
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media(max-width:576px){
+
+  .ai-chat-section{
+    padding:40px 0;
+  }
+
+  .ai-chat-section h3{
+    font-size:22px;
+  }
+
+  .suggestion-grid{
+    grid-template-columns:1fr;
+  }
+
+  .suggestion-card{
+    padding:12px 14px;
+  }
+
+  .suggestion-card span{
+    font-size:13px;
+  }
+
+  .ask-input-wrapper{
+    height:56px;
+  }
+
+  .ai-note{
+    align-items:flex-start;
+    font-size:13px;
+  }
+}

@@ -1,0 +1,711 @@
+/* ===================================
+VENDOR AVAILABILITY
+=================================== */
+
+.vendoravailability-layout{
+  display:flex;
+  min-height:100vh;
+  background:#f5f7fb;
+   max-width:1300px;
+  margin:auto;
+  padding:0 20px;
+}
+
+.vendoravailability-main{
+  flex:1;
+  margin-left:220px;
+  padding:30px;
+}
+
+/* ===================================
+HEADER
+=================================== */
+
+.vendoravailability-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:25px;
+  gap:20px;
+}
+
+.vendoravailability-header h1{
+  font-size:32px;
+  font-weight:700;
+  color:#111827;
+  margin-bottom:6px;
+}
+
+.vendoravailability-header p{
+  font-size:13px;
+  color:#6b7280;
+}
+
+.vendoravailability-right{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.vendoravailability-icon{
+  width:46px;
+  height:46px;
+  border:none;
+  border-radius:12px;
+  background:#fff;
+  box-shadow:0 2px 12px rgba(0,0,0,.05);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  font-size:18px;
+  color:#4b5563;
+}
+
+.vendoravailability-profile{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  background:#fff;
+  padding:8px 15px;
+  border-radius:14px;
+  box-shadow:0 2px 12px rgba(0,0,0,.05);
+}
+
+.vendoravailability-profile img{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.vendoravailability-profile h4{
+  font-size:15px;
+  color:#111827;
+  margin-bottom:3px;
+}
+
+.vendoravailability-profile p{
+  font-size:12px;
+  color:#6b7280;
+}
+
+/* ===================================
+BOOKING LINK
+=================================== */
+
+.booking-link{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:#2563eb;
+  font-size:14px;
+  font-weight:600;
+  text-decoration:none;
+  margin-bottom:25px;
+}
+
+/* ===================================
+CARD
+=================================== */
+
+.availability-card,
+.availability-preview{
+  background:#fff;
+  border-radius:18px;
+  padding:28px;
+  margin-bottom:25px;
+  box-shadow:0 2px 15px rgba(0,0,0,.05);
+}
+
+.availability-card h3,
+.availability-preview h3{
+  font-size:20px;
+  color:#111827;
+  margin-bottom:10px;
+}
+
+.availability-card p{
+  color:#6b7280;
+  font-size:14px;
+  margin-bottom:20px;
+}
+
+/* DAYS */
+
+.days-grid{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:10px;
+  margin-bottom:25px;
+}
+
+.days-grid button{
+  height:48px;
+  border:none;
+  border-radius:12px;
+  background:#f3f4f6;
+  color:#374151;
+  font-size:14px;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.days-grid button:hover{
+  background:#dbeafe;
+}
+
+.active-day{
+  background:#2563eb !important;
+  color:#fff !important;
+}
+
+/* LABELS */
+
+.availability-card label{
+  display:block;
+  font-size:14px;
+  font-weight:600;
+  color:#111827;
+  margin-bottom:10px;
+  margin-top:20px;
+}
+
+/* SELECT */
+
+.availability-select{
+  width:100%;
+  height:52px;
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+  padding:0 16px;
+  font-size:15px;
+  outline:none;
+  background:#fff;
+  color:#111827;
+  margin-bottom:10px;
+}
+
+.availability-select:focus{
+  border-color:#2563eb;
+}
+
+/* ACTIONS */
+
+.availability-actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:15px;
+  margin-top:30px;
+}
+
+.cancel-butn{
+  padding:12px 24px;
+  border:none;
+  border-radius:12px;
+  background:#f3f4f6;
+  color:#374151;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.save-butn{
+  padding:12px 24px;
+  border:none;
+  border-radius:12px;
+  background:#2563eb;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.save-butn:hover{
+  opacity:.9;
+}
+
+
+
+/* =========================
+TABLET
+========================= */
+
+@media(max-width:992px){
+
+  .days-grid{
+    grid-template-columns:repeat(4,1fr);
+  }
+
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:768px){
+
+  .availability-card,
+  .availability-preview{
+    padding:20px;
+    border-radius:16px;
+  }
+
+  .availability-card h3,
+  .availability-preview h3{
+    font-size:18px;
+  }
+
+  .availability-card p{
+    font-size:13px;
+    margin-bottom:18px;
+  }
+
+  .days-grid{
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+  }
+
+  .days-grid button{
+    height:42px;
+    font-size:13px;
+    border-radius:10px;
+  }
+
+  .availability-select{
+    height:48px;
+    font-size:14px;
+    padding:0 14px;
+  }
+
+  .availability-actions{
+    flex-direction:column;
+    gap:12px;
+  }
+
+  .cancel-butn,
+  .save-butn{
+    width:100%;
+    height:48px;
+    font-size:14px;
+  }
+
+}
+
+/* =========================
+SMALL MOBILE
+========================= */
+
+@media(max-width:480px){
+
+  .availability-card,
+  .availability-preview{
+    padding:16px;
+  }
+
+  .availability-card h3{
+    font-size:17px;
+  }
+
+  .days-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .days-grid button{
+    height:40px;
+    font-size:12px;
+  }
+
+  .availability-select{
+    height:45px;
+    font-size:13px;
+  }
+
+  .cancel-butn,
+  .save-butn{
+    height:45px;
+    font-size:13px;
+  }
+
+}.availability-days-wrapper{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.availability-day-row{
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+.availability-day-name{
+  min-width:90px;
+  font-size:15px;
+  font-weight:600;
+  color:#111827;
+}
+
+.availability-select{
+  flex:1;
+  height:50px;
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+  padding:0 15px;
+  outline:none;
+  font-size:14px;
+  background:#fff;
+}
+
+.availability-select:focus{
+  border-color:#2563eb;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .availability-day-row{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+  }
+
+  .availability-day-name{
+    min-width:100%;
+  }
+
+  .availability-select{
+    width:100%;
+  }
+
+}
+
+/* ===================================
+SERVICE
+=================================== */
+
+.service-row{
+  display:flex;
+  gap:15px;
+  margin-bottom:20px;
+}
+
+.service-row select{
+  flex:1;
+}
+
+.service-row button{
+  height:52px;
+  padding:0 20px;
+  border:none;
+  border-radius:12px;
+  background:#2563eb;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.service-info{
+  display:flex;
+  gap:25px;
+  background:#f1f5ff;
+  padding:18px;
+  border-radius:12px;
+}
+
+.service-info span{
+  font-size:14px;
+  font-weight:600;
+  color:#374151;
+}
+
+/* ===================================
+INPUTS
+=================================== */
+
+.availability-card select,
+.availability-card input{
+  width:100%;
+  height:52px;
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+  padding:0 15px;
+  outline:none;
+  background:#fff;
+  font-size:14px;
+}
+
+/* ===================================
+DAYS
+=================================== */
+
+.days-grid{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin:25px 0;
+}
+
+.days-grid button{
+  width:70px;
+  height:45px;
+  border:none;
+  border-radius:10px;
+  background:#f3f4f6;
+  color:#4b5563;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.days-grid button:hover{
+  background:#2563eb;
+  color:#fff;
+}
+
+.active-day{
+  background:#2563eb !important;
+  color:#fff !important;
+}
+
+/* ===================================
+TIME SLOT
+=================================== */
+
+.slot-row{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin-bottom:15px;
+}
+
+.slot-row span{
+  font-weight:600;
+  color:#6b7280;
+}
+
+.slot-row button{
+  width:50px;
+  height:50px;
+  border:none;
+  border-radius:12px;
+  background:#fee2e2;
+  color:#dc2626;
+  cursor:pointer;
+  font-size:16px;
+}
+
+.add-slot-btn{
+  width:100%;
+  height:50px;
+  border:2px dashed #d1d5db;
+  background:#fff;
+  border-radius:12px;
+  margin:20px 0;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  color:#2563eb;
+  font-weight:600;
+}
+
+.add-slot-btn:hover{
+  background:#f8fafc;
+}
+
+/* ===================================
+LABELS
+=================================== */
+
+.availability-card label{
+  display:block;
+  margin-top:20px;
+  margin-bottom:10px;
+  font-size:14px;
+  font-weight:600;
+  color:#374151;
+}
+
+/* ===================================
+BUTTONS
+=================================== */
+
+.availability-actions{
+  display:flex;
+  gap:15px;
+  margin-top:30px;
+}
+
+.cancel-btn{
+  flex:1;
+  height:55px;
+  border:none;
+  border-radius:12px;
+  background:#f3f4f6;
+  color:#374151;
+  font-size:15px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.save-btn{
+  flex:2;
+  height:55px;
+  border:none;
+  border-radius:12px;
+  background:linear-gradient(
+    135deg,
+    #2563eb,
+    #1d4ed8
+  );
+  color:#fff;
+  font-size:15px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.save-btn:hover{
+  transform:translateY(-2px);
+}
+
+/* ===================================
+PREVIEW
+=================================== */
+
+.availability-preview h4{
+  font-size:18px;
+  margin:15px 0;
+  color:#111827;
+}
+
+.availability-preview p{
+  margin-bottom:10px;
+  color:#6b7280;
+}
+
+.availability-preview span{
+  display:inline-block;
+  background:#dcfce7;
+  color:#166534;
+  padding:8px 15px;
+  border-radius:8px;
+  margin:5px;
+  font-size:13px;
+  font-weight:600;
+}
+
+/* ===================================
+TABLET
+=================================== */
+
+@media(max-width:992px){
+
+  .vendoravailability-main{
+    margin-left:0;
+    padding:20px;
+  }
+
+  .vendoravailability-header{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .vendoravailability-right{
+    width:100%;
+    justify-content:space-between;
+  }
+
+  .service-row{
+    flex-direction:column;
+  }
+
+  .service-info{
+    flex-direction:column;
+    gap:10px;
+  }
+
+}
+
+/* ===================================
+MOBILE
+=================================== */
+
+@media(max-width:768px){
+
+  .vendoravailability-main{
+    padding:15px;
+  }
+
+  .vendoravailability-header h1{
+    font-size:28px;
+  }
+
+  .vendoravailability-profile{
+    width:100%;
+  }
+
+  .slot-row{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .slot-row span{
+    text-align:center;
+  }
+
+  .slot-row button{
+    width:100%;
+  }
+
+  .days-grid{
+    justify-content:center;
+  }
+
+  .days-grid button{
+    width:60px;
+    height:42px;
+    font-size:13px;
+  }
+
+  .availability-actions{
+    flex-direction:column;
+  }
+
+  .cancel-btn,
+  .save-btn{
+    width:100%;
+  }
+
+}
+
+/* ===================================
+SMALL MOBILE
+=================================== */
+
+@media(max-width:480px){
+
+  .vendoravailability-header h1{
+    font-size:24px;
+  }
+
+  .vendoravailability-profile img{
+    width:42px;
+    height:42px;
+  }
+
+  .availability-card,
+  .availability-preview{
+    padding:18px;
+  }
+
+  .booking-link{
+    font-size:13px;
+  }
+
+  .service-info span{
+    font-size:13px;
+  }
+
+}
