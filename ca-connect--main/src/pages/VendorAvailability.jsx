@@ -542,7 +542,7 @@ fee
   </h3>
 
   <p>
-    Select your available days and working hours
+    Select your available days and  the working hours
   </p>
 
   {/* DAYS */}
