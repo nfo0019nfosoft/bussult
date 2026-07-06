@@ -287,6 +287,20 @@ No Show
 <span>
 {counts.noShow || 0}
 </span>
+
+<div className="appt-tab">
+Scheduled
+<span>
+{counts.scheduled || 0}
+</span>
+</div>
+
+<div className="appt-tab">
+Rescheduled
+<span>
+{counts.rescheduled || 0}
+</span>
+</div>
 </div>
 
 </div>
@@ -556,20 +570,70 @@ appointments.map((item)=>(
 
   <td>
 
-    <span
-      className={`status-badge ${
-        item.status
-      }`}
-    >
+<select
+className="vendorappointments-status-select"
 
-      {
-        item.status ||
-        "Upcoming"
-      }
+value={
+item.status || "upcoming"
+}
 
-    </span>
+onChange={
+async(e)=>{
 
-  </td>
+try{
+
+await axios.put(
+`${API_URL}/api/vendor/appointments/${item._id}/status`,
+{
+status:
+e.target.value
+}
+);
+
+fetchAppointments();
+
+}catch(err){
+
+console.log(err);
+
+}
+
+}
+}
+
+>
+
+<option value="upcoming">
+Upcoming
+</option>
+
+
+
+<option value="scheduled">
+Scheduled
+</option>
+
+
+<option value="completed">
+Completed
+</option>
+
+<option value="cancelled">
+Cancelled
+</option>
+
+
+<option value="rescheduled">
+ReScheduled
+</option>
+
+<option value="no-show">
+No Show
+</option>
+
+</select>
+
+</td>
 
 
   {/* AMOUNT */}

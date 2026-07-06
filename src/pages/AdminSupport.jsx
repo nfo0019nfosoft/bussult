@@ -232,31 +232,21 @@ function AdminSupportHeader() {
 
             );
 
-            if (res.data.success) {
+           if (res.data.success) {
 
-                setSelectedTicket(
-                    res.data.ticket
-                );
+    await fetchTickets();
 
-                setTickets(
+    const latestTicket =
+        await axios.get(
+            `${API_URL}/api/admin/tickets/${selectedTicket._id}`
+        );
 
-                    tickets.map((ticket) =>
+    setSelectedTicket(
+        latestTicket.data.ticket
+    );
 
-                        ticket._id ===
-                            res.data.ticket._id
-
-                            ? res.data.ticket
-
-                            : ticket
-
-                    )
-
-                );
-
-                setReply("");
-
-            }
-
+    setReply("");
+}
         }
 
         catch (err) {

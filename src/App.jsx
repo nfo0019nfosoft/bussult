@@ -55,6 +55,7 @@ import BlogDetails from "./pages/BlogDetails";
 import AdminBlogs from "./pages/AdminBlogs";
 import AdminBlogDetails from "./pages/AdminBlogDetails";
 import AdminVendors from "./pages/AdminVendors";
+import AdminAppointments from "./pages/AdminAppointments";
 
 
 function Layout() {
@@ -82,6 +83,7 @@ function Layout() {
     "/lead-details",
     "/admin-vendors",
     "/admin-users",
+     "/admin-appointments",
     "/login",
     "/user-saved-ca",
     "/user-enquiry",
@@ -93,7 +95,8 @@ function Layout() {
     "/user-help",
      "/user-settings",
       "/vendor-subscription",
-      "/pricing-plans"
+      "/pricing-plans",
+     
   ];
 
   const hideNavbarFooter =
@@ -201,6 +204,16 @@ function Layout() {
           path="/admin-support"
           element={<AdminSupport />}
         />
+
+ 
+
+        <Route
+          path="/admin-appointments"
+          element={<AdminAppointments />}
+        />
+
+
+
 
 
 

@@ -592,3 +592,19 @@ TABLE MOBILE
   }
 
 }
+
+
+.vendorappointments-status-select{
+    width:140px;
+    padding:8px 12px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    outline:none;
+    font-size:13px;
+    background:#fff;
+    cursor:pointer;
+}
+
+.vendorappointments-status-select:focus{
+    border-color:#4f46e5;
+}
