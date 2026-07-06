@@ -241,6 +241,22 @@ const saveProfile = async () => {
 
 
 
+const handleLogout = () => {
+
+  const confirmLogout = window.confirm(
+    "Are you sure you want to logout?"
+  );
+
+  if (!confirmLogout) return;
+
+  localStorage.removeItem("token");
+  localStorage.removeItem("user");
+
+  navigate("/login");
+
+};
+
+
 
 
 
@@ -287,7 +303,7 @@ const saveProfile = async () => {
 
             <FaBell className="icon" />
 
-            <div className="user-info">
+            <div className="user-info"  onClick={handleLogout}>
 <img
   src={
     user.profileImage
@@ -303,7 +319,7 @@ const saveProfile = async () => {
     </h4>
 
     <p>
-      {user.role || "Business User"}
+      {user.role || "User"}
     </p>
   </div>
 

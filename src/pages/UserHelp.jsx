@@ -232,6 +232,100 @@ async()=>{
 };
 
 
+
+
+
+
+
+const [showTicketPopup, setShowTicketPopup] = useState(false);
+
+const [ticketData, setTicketData] = useState({
+    category: "",
+    subject: "",
+    priority: "Medium",
+    description: "",
+    attachment: null
+});
+
+
+
+
+const handleSubmitTicket = async () => {
+
+    try {
+
+        const formData = new FormData();
+
+        formData.append("category", ticketData.category);
+        formData.append("subject", ticketData.subject);
+        formData.append("priority", ticketData.priority);
+        formData.append("description", ticketData.description);
+
+        if (ticketData.attachment) {
+            formData.append("attachment", ticketData.attachment);
+        }
+
+        await axios.post(
+            `${API_URL}/api/tickets`,
+            formData,
+            {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("token")}`,
+                    "Content-Type": "multipart/form-data"
+                }
+            }
+        );
+
+        alert("Ticket submitted successfully");
+
+        setShowTicketPopup(false);
+
+        setTicketData({
+            category: "",
+            subject: "",
+            priority: "Medium",
+            description: "",
+            attachment: null
+        });
+
+    } catch (err) {
+
+        alert(
+            err.response?.data?.message ||
+            "Failed to submit ticket"
+        );
+
+    }
+
+};
+
+
+
+
+
+
+
+
+
+const handleLogout = () => {
+
+  const confirmLogout = window.confirm(
+    "Are you sure you want to logout?"
+  );
+
+  if (!confirmLogout) return;
+
+  localStorage.removeItem("token");
+  localStorage.removeItem("user");
+
+  navigate("/login");
+
+};
+
+
+
+
+
   return(
 
     <div className="usersupport-layout">
@@ -285,7 +379,7 @@ async()=>{
              
             </button>
 
-            <div className="usersupport-user-box">
+            <div className="usersupport-user-box"  onClick={handleLogout}>
 
               <img
                 src={
@@ -302,7 +396,7 @@ async()=>{
     </h4>
 
     <p>
-      {user.role || "Business User"}
+      {user.role || "User"}
     </p>
   </div>
 
@@ -368,16 +462,15 @@ async()=>{
               and we'll help resolve it.
             </p>
 
-            <button
-              onClick={()=>
-                navigate("/user-ticket")
-              }
-            >
-              Submit Ticket
-
-              <FaArrowRight/>
-
-            </button>
+          <button
+    type="button"
+    onClick={() => {
+        console.log("Popup:", showTicketPopup);
+        setShowTicketPopup(true);
+    }}
+>
+    Submit Ticket
+</button>
 
           </div>
 

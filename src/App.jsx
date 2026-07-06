@@ -46,6 +46,7 @@ import AdminProtectedRoute from "./pages/AdminProtectedRoute";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminUsers from "./pages/AdminUsers";
 import AdminLeads from "./pages/AdminLeads";
+import AdminSupport from "./pages/AdminSupport";
 import VendorLeads from "./pages/VendorLeads";
 import LeadDetails from "./pages/LeadDetails";
 import UserAppointments from "./pages/UserAppointments";
@@ -76,6 +77,7 @@ function Layout() {
     "/user-account-verification",
     "/admin",
     "/admin-dashboard",
+     "/admin-support",
     "/vendor-leads",
     "/lead-details",
     "/admin-vendors",
@@ -191,6 +193,14 @@ function Layout() {
           element={<AdminLeads />}
         />
 
+
+
+
+
+        <Route
+          path="/admin-support"
+          element={<AdminSupport />}
+        />
 
 
 

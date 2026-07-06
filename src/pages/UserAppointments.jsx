@@ -201,6 +201,40 @@ appointments
 
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const handleLogout = () => {
+
+  const confirmLogout = window.confirm(
+    "Are you sure you want to logout?"
+  );
+
+  if (!confirmLogout) return;
+
+  localStorage.removeItem("token");
+  localStorage.removeItem("user");
+
+  navigate("/login");
+
+};
+
+
+
+
+
+
   return (
 
     <div className="userappointments-layout">
@@ -255,7 +289,7 @@ appointments
               <FaBell />
             </button>
 
-            <div className="userappointments-user">
+            <div className="userappointments-user"   onClick={handleLogout}>
 
               <img
                 src={
@@ -267,12 +301,12 @@ appointments
               />
 
   <div>
-    <h4>
-      {user.name || "User Name"}
+   <h4>
+      {user?.name || "User"}
     </h4>
 
     <p>
-      {user.role || "Business User"}
+       {user.role || "User"}
     </p>
   </div>
 

@@ -261,6 +261,22 @@ const fetchCompare = async () => {
 
 
 
+const handleLogout = () => {
+
+  const confirmLogout = window.confirm(
+    "Are you sure you want to logout?"
+  );
+
+  if (!confirmLogout) return;
+
+  localStorage.removeItem("token");
+  localStorage.removeItem("user");
+
+  navigate("/login");
+
+};
+
+
 
 
 
@@ -505,7 +521,7 @@ const fetchCompare = async () => {
 
                     </button>
 
-                  <div className="dashboard-user">
+                  <div className="dashboard-user"  onClick={handleLogout}>
   <img
   src={
     user?.profileImage
@@ -522,7 +538,7 @@ const fetchCompare = async () => {
     </h4>
 
     <p>
-      {user.role || "Business User"}
+      {user.role || "User"}
     </p>
   </div>
  

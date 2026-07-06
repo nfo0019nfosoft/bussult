@@ -491,6 +491,29 @@ user._id
 
 
 
+
+
+
+
+
+
+
+const handleLogout = () => {
+
+  const confirmLogout = window.confirm(
+    "Are you sure you want to logout?"
+  );
+
+  if (!confirmLogout) return;
+
+  localStorage.removeItem("token");
+  localStorage.removeItem("user");
+
+  navigate("/login");
+
+};
+
+
 return(
 
 <div className="usersettings-layout">
@@ -532,7 +555,7 @@ return(
           </div>
         </button>
 
-        <div className="usersettings-user-box">
+        <div className="usersettings-user-box"  onClick={handleLogout}>
 
           <img
             src={
@@ -545,12 +568,12 @@ return(
 
           <div>
             <h4>
-              {user?.name || "Guest User"}
-            </h4>
+      {user.name || "User Name"}
+    </h4>
 
-            <p>
-              {user?.role || "Business User"}
-            </p>
+    <p>
+      {user.role || "User"}
+    </p>
           </div>
 
         </div>

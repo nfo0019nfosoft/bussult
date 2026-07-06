@@ -555,7 +555,20 @@ useEffect(() => {
 
 
 
+const handleLogout = () => {
 
+  const confirmLogout = window.confirm(
+    "Are you sure you want to logout?"
+  );
+
+  if (!confirmLogout) return;
+
+  localStorage.removeItem("token");
+  localStorage.removeItem("user");
+
+  navigate("/login");
+
+};
 
 
   return (
@@ -625,41 +638,30 @@ useEffect(() => {
 
             {/* User */}
 
-            <div className="userdashboard-page-user-box">
+           <div
+  className="userdashboard-page-user-box"
+  onClick={handleLogout}
+>
 
-              <img
-                src={
-                  user?.profileImage
-                    ? `${API_URL}${user.profileImage}`
-                    : "/avatar.png"
-                }
-                alt="User"
-              />
+  <img
+    src={
+      user?.profileImage
+        ? `${API_URL}${user.profileImage}`
+        : "/avatar.png"
+    }
+    alt="User"
+  />
 
-              <div>
+  <div>
 
-                <h4>
+    <h4>
+      {user?.name || "User"}
+    </h4>
 
-                  {
-                    user?.name ||
-                    "Guest User"
-                  }
 
-                </h4>
+  </div>
 
-                <p>
-
-                  {
-                    user?.role ||
-                    "Business User"
-                  }
-
-                </p>
-
-              </div>
-
-            </div>
-
+</div>
           </div>
 
         </div>

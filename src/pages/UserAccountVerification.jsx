@@ -328,7 +328,7 @@ function UserAccountVerification() {
 
           </div>
 
-          <div className="header-right">
+          <div className="header-right"   onClick={handleLogout}>
 
             <div className="search-box">
 
@@ -356,13 +356,14 @@ function UserAccountVerification() {
               />
 
               <div>
-                <h4>
-                  {user.name || "User Name"}
-                </h4>
+             <h4>
+      {user?.name || "User"}
+    </h4>
 
-                <p>
-                  {user.role || "Business User"}
-                </p>
+    <p>
+         {user.role || "User"}
+         
+    </p>
               </div>
 
             </div>

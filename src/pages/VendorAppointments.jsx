@@ -136,6 +136,21 @@ console.log(res.data);
  }
 
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 return(
 
 <div className="vendorappointments-layout">

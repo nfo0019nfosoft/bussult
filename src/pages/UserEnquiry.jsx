@@ -148,6 +148,38 @@ function UserEnquiry() {
           item.status === "lost"
       );
 
+
+
+
+
+
+
+
+
+
+
+      
+
+const handleLogout = () => {
+
+  const confirmLogout = window.confirm(
+    "Are you sure you want to logout?"
+  );
+
+  if (!confirmLogout) return;
+
+  localStorage.removeItem("token");
+  localStorage.removeItem("user");
+
+  navigate("/login");
+
+};
+
+
+
+
+
+
   return (
 
     <>
@@ -194,7 +226,7 @@ function UserEnquiry() {
 
           </button>
 
-        <div className="userenquiry-user">
+        <div className="userenquiry-user"  onClick={handleLogout}>
 
   <img
     src={
@@ -211,7 +243,7 @@ function UserEnquiry() {
     </h4>
 
     <p>
-      {user?.role || "Business User"}
+        {user.role || "User"}
     </p>
   </div>
 

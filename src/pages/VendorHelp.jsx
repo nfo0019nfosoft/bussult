@@ -27,7 +27,7 @@ import {
     FaPlayCircle,
     FaClock,
     FaHeadset,
-  
+
 } from "react-icons/fa";
 
 import {
@@ -54,7 +54,7 @@ const helpCards = [
         button: "Submit Ticket",
         icon: <FaTicketAlt />,
         color: "#22C55E",
-        link: "/vendor/ticket"
+        // link: "/vendor/ticket"
     },
 
     {
@@ -97,76 +97,76 @@ const VendorHelp = () => {
 
 
 
-        useEffect(() => {
+    useEffect(() => {
 
-    fetchVendor();
+        fetchVendor();
 
-}, []);
-
-  
+    }, []);
 
 
-const fetchVendor = async () => {
 
-    console.log("fetchVendor called");
 
-    try {
+    const fetchVendor = async () => {
 
-        const token =
-            localStorage.getItem(
-                "vendorToken"
+        console.log("fetchVendor called");
+
+        try {
+
+            const token =
+                localStorage.getItem(
+                    "vendorToken"
+                );
+
+            console.log(
+                "Token:",
+                token
             );
 
-        console.log(
-            "Token:",
-            token
-        );
-
-        const res =
-            await axios.get(
-                `${API_URL}/api/vendor/profile`,
-                {
-                    headers: {
-                        Authorization:
-                            `Bearer ${token}`
+            const res =
+                await axios.get(
+                    `${API_URL}/api/vendor/profile`,
+                    {
+                        headers: {
+                            Authorization:
+                                `Bearer ${token}`
+                        }
                     }
-                }
+                );
+
+            console.log(
+                "API Response:",
+                res.data
             );
 
-        console.log(
-            "API Response:",
-            res.data
-        );
+            const vendorData =
+                res.data.vendor ||
+                res.data;
 
-        const vendorData =
-            res.data.vendor ||
-            res.data;
+            console.log(
+                "Vendor Data:",
+                vendorData
+            );
 
-        console.log(
-            "Vendor Data:",
-            vendorData
-        );
+            console.log(
+                "Referral Code:",
+                vendorData?.referralCode
+            );
 
-        console.log(
-            "Referral Code:",
-            vendorData?.referralCode
-        );
+            setVendor(
+                vendorData
+            );
 
-        setVendor(
-            vendorData
-        );
+        } catch (err) {
 
-    } catch (err) {
+            console.log(
+                "Fetch Error:",
+                err.response?.data ||
+                err.message
+            );
 
-        console.log(
-            "Fetch Error:",
-            err.response?.data ||
-            err.message
-        );
+        }
 
-    }
-
-};
+    };
 
 
 
@@ -200,61 +200,127 @@ const fetchVendor = async () => {
 
 
 
+    const [showTicketPopup, setShowTicketPopup] = useState(false);
+
+    const [ticketData, setTicketData] = useState({
+        category: "",
+        subject: "",
+        priority: "Medium",
+        description: "",
+        attachment: null
+    });
+
+
+
+
+    
+const handleSubmitTicket = async () => {
+
+    try {
+
+        const formData = new FormData();
+
+        formData.append("category", ticketData.category);
+        formData.append("subject", ticketData.subject);
+        formData.append("priority", ticketData.priority);
+        formData.append("description", ticketData.description);
+
+        if (ticketData.attachment) {
+            formData.append(
+                "attachment",
+                ticketData.attachment
+            );
+        }
+
+        await axios.post(
+            `${API_URL}/api/tickets`,
+            formData,
+            {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("vendorToken")}`,
+                    "Content-Type": "multipart/form-data"
+                }
+            }
+        );
+
+        alert("Ticket submitted successfully");
+
+        setTicketData({
+            category: "",
+            subject: "",
+            priority: "Medium",
+            description: "",
+            attachment: null
+        });
+
+        setShowTicketPopup(false);
+
+    } catch (err) {
+
+        console.log(err);
+
+        alert(
+            err.response?.data?.message ||
+            "Failed to submit ticket"
+        );
+
+    }
+
+};
+
 
 
 
 
     const tutorials = [
-{
-    _id:1,
-    title:"GST Return Filing & GST Basics",
-    description:
-    "Learn GST registration, return filing and compliance process.",
-    duration:"12 min",
-    videoUrl:
-    "https://www.youtube.com/watch?v=C-N1Ckrgfrg",
-    thumbnail:
-    "https://img.youtube.com/vi/C-N1Ckrgfrg/maxresdefault.jpg"
-},
+        {
+            _id: 1,
+            title: "GST Return Filing & GST Basics",
+            description:
+                "Learn GST registration, return filing and compliance process.",
+            duration: "12 min",
+            videoUrl:
+                "https://www.youtube.com/watch?v=C-N1Ckrgfrg",
+            thumbnail:
+                "https://img.youtube.com/vi/C-N1Ckrgfrg/maxresdefault.jpg"
+        },
 
-{
-    _id:2,
-    title:"Income Tax Filing & Tax Planning",
-    description:
-    "Understand income tax filing and tax planning concepts.",
-    duration:"18 min",
-    videoUrl:
-    "https://www.youtube.com/watch?v=eyXKvOrDoqw",
-    thumbnail:
-    "https://img.youtube.com/vi/eyXKvOrDoqw/maxresdefault.jpg"
-},
+        {
+            _id: 2,
+            title: "Income Tax Filing & Tax Planning",
+            description:
+                "Understand income tax filing and tax planning concepts.",
+            duration: "18 min",
+            videoUrl:
+                "https://www.youtube.com/watch?v=eyXKvOrDoqw",
+            thumbnail:
+                "https://img.youtube.com/vi/eyXKvOrDoqw/maxresdefault.jpg"
+        },
 
-{
-    _id:3,
-    title:"Financial Accounting Fundamentals",
-    description:
-    "Master accounting concepts used by CA professionals.",
-    duration:"15 min",
-    videoUrl:
-    "https://www.youtube.com/watch?v=C-N1Ckrgfrg",
-    thumbnail:
-    "https://img.youtube.com/vi/C-N1Ckrgfrg/maxresdefault.jpg"
-},
+        {
+            _id: 3,
+            title: "Financial Accounting Fundamentals",
+            description:
+                "Master accounting concepts used by CA professionals.",
+            duration: "15 min",
+            videoUrl:
+                "https://www.youtube.com/watch?v=C-N1Ckrgfrg",
+            thumbnail:
+                "https://img.youtube.com/vi/C-N1Ckrgfrg/maxresdefault.jpg"
+        },
 
-{
-    _id:4,
-    title:"CA Course & Career Roadmap",
-    description:
-    "Career guidance for aspiring Chartered Accountants.",
-    duration:"10 min",
-   videoUrl:
-    "https://www.youtube.com/watch?v=eyXKvOrDoqw",
-    thumbnail:
-    "https://img.youtube.com/vi/eyXKvOrDoqw/maxresdefault.jpg"
-}
-];
-
-
+        {
+            _id: 4,
+            title: "CA Course & Career Roadmap",
+            description:
+                "Career guidance for aspiring Chartered Accountants.",
+            duration: "10 min",
+            videoUrl:
+                "https://www.youtube.com/watch?v=eyXKvOrDoqw",
+            thumbnail:
+                "https://img.youtube.com/vi/eyXKvOrDoqw/maxresdefault.jpg"
+        }
+    ];
 
 
 
@@ -266,113 +332,114 @@ const fetchVendor = async () => {
 
 
 
-const referralLink =
-`https://bussult.com/ref/${
-vendor?.referralCode || ""
-}`;
+
+
+    const referralLink =
+        `https://bussult.com/ref/${vendor?.referralCode || ""
+        }`;
 
 
 
-const copyReferralLink = async()=>{
+    const copyReferralLink = async () => {
 
-  try{
+        try {
 
-    await navigator.clipboard.writeText(
-      referralLink
-    );
+            await navigator.clipboard.writeText(
+                referralLink
+            );
 
-    alert(
-      "Referral link copied successfully"
-    );
+            alert(
+                "Referral link copied successfully"
+            );
 
-  }catch(err){
+        } catch (err) {
 
-    const textArea =
-      document.createElement(
-        "textarea"
-      );
+            const textArea =
+                document.createElement(
+                    "textarea"
+                );
 
-    textArea.value =
-      referralLink;
+            textArea.value =
+                referralLink;
 
-    document.body.appendChild(
-      textArea
-    );
+            document.body.appendChild(
+                textArea
+            );
 
-    textArea.select();
+            textArea.select();
 
-    document.execCommand(
-      "copy"
-    );
+            document.execCommand(
+                "copy"
+            );
 
-    document.body.removeChild(
-      textArea
-    );
+            document.body.removeChild(
+                textArea
+            );
 
-    alert(
-      "Referral link copied successfully"
-    );
+            alert(
+                "Referral link copied successfully"
+            );
 
-  }
+        }
 
-};
-
-
+    };
 
 
 
 
-const [openFaq,setOpenFaq] =
-useState(null);
 
-const toggleFaq = (index)=>{
 
-    if(openFaq === index){
-        setOpenFaq(null);
-    }else{
-        setOpenFaq(index);
-    }
+    const [openFaq, setOpenFaq] =
+        useState(null);
 
-};
+    const toggleFaq = (index) => {
 
-const faqs = [
-{
-    question:
-    "How do I update my profile information?",
-    answer:
-    "Navigate to Vendor Profile and click Edit Profile."
-},
-{
-    question:
-    "How can I manage my leads?",
-    answer:
-    "Go to My Leads section to manage all incoming leads."
-},
-{
-    question:
-    "How do I schedule an appointment?",
-    answer:
-    "Open Appointments page and click Schedule Appointment."
-},
-{
-    question:
-    "How do subscriptions and plans work?",
-    answer:
-    "Subscriptions can be upgraded from Subscription page."
-},
-{
-    question:
-    "How do I update my billing information?",
-    answer:
-    "Billing information can be updated under Settings."
-},
-{
-    question:
-    "How can I contact support?",
-    answer:
-    "Use the Contact Support button to reach our team."
-}
-];
+        if (openFaq === index) {
+            setOpenFaq(null);
+        } else {
+            setOpenFaq(index);
+        }
+
+    };
+
+    const faqs = [
+        {
+            question:
+                "How do I update my profile information?",
+            answer:
+                "Navigate to Vendor Profile and click Edit Profile."
+        },
+        {
+            question:
+                "How can I manage my leads?",
+            answer:
+                "Go to My Leads section to manage all incoming leads."
+        },
+        {
+            question:
+                "How do I schedule an appointment?",
+            answer:
+                "Open Appointments page and click Schedule Appointment."
+        },
+        {
+            question:
+                "How do subscriptions and plans work?",
+            answer:
+                "Subscriptions can be upgraded from Subscription page."
+        },
+        {
+            question:
+                "How do I update my billing information?",
+            answer:
+                "Billing information can be updated under Settings."
+        },
+        {
+            question:
+                "How can I contact support?",
+            answer:
+                "Use the Contact Support button to reach our team."
+        }
+    ];
 
 
 
@@ -467,326 +534,134 @@ const faqs = [
                 </div>
                 {/* Cards */}
 
-                  <div className="usersupport-grid">
-              
-                        {/* HELP CENTER */}
-              
-                        <div className="usersupport-card">
-              
-                          <div className="usersupport-card-icon blue">
-              
-                            <FaBookOpen/>
-              
-                          </div>
-              
-                          <h3>
-                            Help Center
-                          </h3>
-              
-                          <p>
-                            Find guides and resources
-                            to help you get started.
-                          </p>
-              
-                          <button
-                            onClick={()=>
-                              navigate("/help-center")
-                            }
-                          >
-                            View Articles
-              
-                            <FaArrowRight/>
-              
-                          </button>
-              
-                        </div>
-              
-                        {/* TICKET */}
-              
-                        <div className="usersupport-card">
-              
-                          <div className="usersupport-card-icon green">
-              
-                            <FaTicketAlt/>
-              
-                          </div>
-              
-                          <h3>
-                            Raise Ticket
-                          </h3>
-              
-                          <p>
-                            Submit a support ticket
-                            and we'll help resolve it.
-                          </p>
-              
-                          <button
-                            onClick={()=>
-                              navigate("/user-ticket")
-                            }
-                          >
-                            Submit Ticket
-              
-                            <FaArrowRight/>
-              
-                          </button>
-              
-                        </div>
-              
-                        {/* CHAT */}
-              
-                        <div className="usersupport-card">
-              
-                          <span className="usersupport-online">
-                            Online
-                          </span>
-              
-                          <div className="usersupport-card-icon purple">
-              
-                            <FaComments/>
-              
-                          </div>
-              
-                          <h3>
-                            Chat Support
-                          </h3>
-              
-                          <p>
-                            Chat with our support
-                            team in real time.
-                          </p>
-              
-                          <button
-                            onClick={()=>
-                              navigate("/user-chat")
-                            }
-                          >
-                            Start Chat
-              
-                            <FaArrowRight/>
-              
-                          </button>
-              
-                        </div>
-              
-                        {/* FAQ */}
-              
-                        <div className="usersupport-card">
-              
-                          <div className="usersupport-card-icon orange">
-              
-                            <FaQuestionCircle/>
-              
-                          </div>
-              
-                          <h3>
-                            FAQs
-                          </h3>
-              
-                          <p>
-                            Find quick answers to
-                            common questions.
-                          </p>
-              
-                          <button
-                            onClick={()=>
-                              navigate("/faq")
-                            }
-                          >
-                            View FAQs
-              
-                            <FaArrowRight/>
-              
-                          </button>
-              
-                        </div>
-              
-                      </div>
-              
+               <div className="vendorsupport-grid">
 
+    {/* HELP CENTER */}
 
+    <div className="vendorsupport-card">
 
+        <div className="vendorsupport-card-icon blue">
 
-
-<div className="vendorhelp-bottom-section">
-
-    {/* ================= Tutorials ================= */}
-
-    <div className="vendorhelp-tutorials">
-
-        <div className="vendorhelp-section-header">
-
-            <div>
-                <h3>
-                    Tutorials / Onboarding
-                </h3>
-
-                <p>
-                    Learn how to make the most out of CA Connect.
-                </p>
-            </div>
-
-            <button className="vendorhelp-viewall-btn">
-                View All Tutorials
-                <FaArrowRight/>
-            </button>
+            <FaBookOpen />
 
         </div>
-
-        <div className="vendorhelp-tutorial-list">
-
-            {tutorials.map((item)=>(
-
-                <div
-                   key={item._id}
-                    className="vendorhelp-tutorial-item"
-                >
-
-                    <div className="vendorhelp-video-thumbnail">
-
-                        <img
-                            src={
-                                item.thumbnail ||
-                                "https://placehold.co/120x70"
-                            }
-                            alt={item.title}
-                            className="vendorhelp-tutorial-image"
-                        />
-
-                        <div className="vendorhelp-play-icon">
-                            <FaPlayCircle/>
-                        </div>
-
-                    </div>
-
-                    <div className="vendorhelp-tutorial-content">
-
-                        <h4>
-                            {item.title}
-                        </h4>
-
-                        <p>
-                            {item.description}
-                        </p>
-
-                        <span className="vendorhelp-duration">
-                            <FaClock/>
-                            {item.duration}
-                        </span>
-
-                    </div>
-<button
-  className="vendorhelp-watch-btn"
-  onClick={() =>
-    window.open(
-      item.videoUrl,
-      "_blank"
-    )
-  }
->
-  Watch Now
-</button>
-
-                </div>
-
-            ))}
-
-        </div>
-
-    </div>
-
-    {/* ================= Refer & Earn ================= */}
-
-    <div className="vendorhelp-referral">
 
         <h3>
-            Refer & Earn
+            Help Center
         </h3>
 
-        <p className="vendorhelp-referral-desc">
-            Refer other professionals and earn exciting rewards.
+        <p>
+            Find guides and resources
+            to help you get started.
         </p>
 
-        <div className="vendorhelp-referral-box">
+        <button
+            onClick={() =>
+                navigate("/help-center")
+            }
+        >
+            View Articles
 
-            <h4>
-                Share your referral link
-            </h4>
+            <FaArrowRight />
 
-            <p>
-                Invite your friends and colleagues to join CA Connect.
-            </p>
+        </button>
 
-            <div className="vendorhelp-copy-box">
+    </div>
 
-                <input
-                    type="text"
-                    readOnly
-                    value={referralLink}
-                />
+    {/* TICKET */}
 
-                <button
-                    onClick={copyReferralLink}
-                    title="Copy Link"
-                >
-                    <FaCopy/>
-                </button>
+    <div className="vendorsupport-card">
 
-            </div>
+        <div className="vendorsupport-card-icon green">
+
+            <FaTicketAlt />
 
         </div>
 
-       <div className="vendorhelp-referral-stats">
+        <h3>
+            Raise Ticket
+        </h3>
 
-    <div className="vendorhelp-stat-card">
+        <p>
+            Submit a support ticket
+            and we'll help resolve it.
+        </p>
 
-        <FaUsers className="vendorhelp-stat-icon users"/>
-
-        <h5>
-            People Joined
-        </h5>
-
-        <h2>
-            {vendor?.totalReferrals || 0}
-        </h2>
-
-    </div>
-
-    <div className="vendorhelp-stat-card">
-
-        <FaGift className="vendorhelp-stat-icon rewards"/>
-
-        <h5>
-            Rewards Earned
-        </h5>
-
-        <h2>
-            ₹{(vendor?.rewardsEarned || 0).toLocaleString()}
-        </h2>
+        <button
+    type="button"
+    onClick={() => {
+        console.log("Popup:", showTicketPopup);
+        setShowTicketPopup(true);
+    }}
+>
+    Submit Ticket
+</button>
 
     </div>
 
-    <div className="vendorhelp-stat-card">
+    {/* CHAT */}
 
-        <FaWallet className="vendorhelp-stat-icon pending"/>
+    <div className="vendorsupport-card">
 
-        <h5>
-            Pending Rewards
-        </h5>
+        <span className="vendorsupport-online">
+            Online
+        </span>
 
-        <h2>
-            ₹{(vendor?.pendingRewards || 0).toLocaleString()}
-        </h2>
+        <div className="vendorsupport-card-icon purple">
+
+            <FaComments />
+
+        </div>
+
+        <h3>
+            Chat Support
+        </h3>
+
+        <p>
+            Chat with our support
+            team in real time.
+        </p>
+
+        <button
+            onClick={() =>
+                navigate("/user-chat")
+            }
+        >
+            Start Chat
+
+            <FaArrowRight />
+
+        </button>
 
     </div>
 
-</div>
+    {/* FAQ */}
 
-        <button className="vendorhelp-referral-btn">
+    <div className="vendorsupport-card">
 
-            View Referral Details
+        <div className="vendorsupport-card-icon orange">
 
-            <FaArrowRight/>
+            <FaQuestionCircle />
+
+        </div>
+
+        <h3>
+            FAQs
+        </h3>
+
+        <p>
+            Find quick answers to
+            common questions.
+        </p>
+
+        <button
+            onClick={() =>
+                navigate("/faq")
+            }
+        >
+            View FAQs
+
+            <FaArrowRight />
 
         </button>
 
@@ -799,6 +674,191 @@ const faqs = [
 
 
 
+                <div className="vendorhelp-bottom-section">
+
+                    {/* ================= Tutorials ================= */}
+
+                    <div className="vendorhelp-tutorials">
+
+                        <div className="vendorhelp-section-header">
+
+                            <div>
+                                <h3>
+                                    Tutorials / Onboarding
+                                </h3>
+
+                                <p>
+                                    Learn how to make the most out of CA Connect.
+                                </p>
+                            </div>
+
+                            <button className="vendorhelp-viewall-btn">
+                                View All Tutorials
+                                <FaArrowRight />
+                            </button>
+
+                        </div>
+
+                        <div className="vendorhelp-tutorial-list">
+
+                            {tutorials.map((item) => (
+
+                                <div
+                                    key={item._id}
+                                    className="vendorhelp-tutorial-item"
+                                >
+
+                                    <div className="vendorhelp-video-thumbnail">
+
+                                        <img
+                                            src={
+                                                item.thumbnail ||
+                                                "https://placehold.co/120x70"
+                                            }
+                                            alt={item.title}
+                                            className="vendorhelp-tutorial-image"
+                                        />
+
+                                        <div className="vendorhelp-play-icon">
+                                            <FaPlayCircle />
+                                        </div>
+
+                                    </div>
+
+                                    <div className="vendorhelp-tutorial-content">
+
+                                        <h4>
+                                            {item.title}
+                                        </h4>
+
+                                        <p>
+                                            {item.description}
+                                        </p>
+
+                                        <span className="vendorhelp-duration">
+                                            <FaClock />
+                                            {item.duration}
+                                        </span>
+
+                                    </div>
+                                    <button
+                                        className="vendorhelp-watch-btn"
+                                        onClick={() =>
+                                            window.open(
+                                                item.videoUrl,
+                                                "_blank"
+                                            )
+                                        }
+                                    >
+                                        Watch Now
+                                    </button>
+
+                                </div>
+
+                            ))}
+
+                        </div>
+
+                    </div>
+
+                    {/* ================= Refer & Earn ================= */}
+
+                    <div className="vendorhelp-referral">
+
+                        <h3>
+                            Refer & Earn
+                        </h3>
+
+                        <p className="vendorhelp-referral-desc">
+                            Refer other professionals and earn exciting rewards.
+                        </p>
+
+                        <div className="vendorhelp-referral-box">
+
+                            <h4>
+                                Share your referral link
+                            </h4>
+
+                            <p>
+                                Invite your friends and colleagues to join CA Connect.
+                            </p>
+
+                            <div className="vendorhelp-copy-box">
+
+                                <input
+                                    type="text"
+                                    readOnly
+                                    value={referralLink}
+                                />
+
+                                <button
+                                    onClick={copyReferralLink}
+                                    title="Copy Link"
+                                >
+                                    <FaCopy />
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <div className="vendorhelp-referral-stats">
+
+                            <div className="vendorhelp-stat-card">
+
+                                <FaUsers className="vendorhelp-stat-icon users" />
+
+                                <h5>
+                                    People Joined
+                                </h5>
+
+                                <h2>
+                                    {vendor?.totalReferrals || 0}
+                                </h2>
+
+                            </div>
+
+                            <div className="vendorhelp-stat-card">
+
+                                <FaGift className="vendorhelp-stat-icon rewards" />
+
+                                <h5>
+                                    Rewards Earned
+                                </h5>
+
+                                <h2>
+                                    ₹{(vendor?.rewardsEarned || 0).toLocaleString()}
+                                </h2>
+
+                            </div>
+
+                            <div className="vendorhelp-stat-card">
+
+                                <FaWallet className="vendorhelp-stat-icon pending" />
+
+                                <h5>
+                                    Pending Rewards
+                                </h5>
+
+                                <h2>
+                                    ₹{(vendor?.pendingRewards || 0).toLocaleString()}
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+                        <button className="vendorhelp-referral-btn">
+
+                            View Referral Details
+
+                            <FaArrowRight />
+
+                        </button>
+
+                    </div>
+
+                </div>
 
 
 
@@ -810,99 +870,262 @@ const faqs = [
 
 
 
-<div className="vendorhelpfaq-wrapper">
 
-    <div className="vendorhelpfaq-left">
 
-        <div className="vendorhelpfaq-header">
 
-            <h3>
-                Popular FAQs
-            </h3>
 
-            <button className="vendorhelpfaq-view-btn">
-                View All FAQs →
-            </button>
 
-        </div>
 
-        <div className="vendorhelpfaq-grid">
+                <div className="vendorhelpfaq-wrapper">
 
-            {faqs.map((faq,index)=>(
+                    <div className="vendorhelpfaq-left">
 
-                <div
-                    key={index}
-                    className="vendorhelpfaq-item"
-                    onClick={()=>
-                        toggleFaq(index)
-                    }
-                >
+                        <div className="vendorhelpfaq-header">
 
-                    <div className="vendorhelpfaq-question">
+                            <h3>
+                                Popular FAQs
+                            </h3>
 
-                        <span>
-                            {faq.question}
-                        </span>
+                            <button className="vendorhelpfaq-view-btn">
+                                View All FAQs →
+                            </button>
 
-                        <span className="vendorhelpfaq-icon">
-                            {
-                                openFaq === index
-                                ? "−"
-                                : "+"
+                        </div>
+
+                        <div className="vendorhelpfaq-grid">
+
+                            {faqs.map((faq, index) => (
+
+                                <div
+                                    key={index}
+                                    className="vendorhelpfaq-item"
+                                    onClick={() =>
+                                        toggleFaq(index)
+                                    }
+                                >
+
+                                    <div className="vendorhelpfaq-question">
+
+                                        <span>
+                                            {faq.question}
+                                        </span>
+
+                                        <span className="vendorhelpfaq-icon">
+                                            {
+                                                openFaq === index
+                                                    ? "−"
+                                                    : "+"
+                                            }
+                                        </span>
+
+                                    </div>
+
+                                    {
+                                        openFaq === index &&
+                                        (
+                                            <div className="vendorhelpfaq-answer">
+                                                {faq.answer}
+                                            </div>
+                                        )
+                                    }
+
+                                </div>
+
+                            ))}
+
+                        </div>
+
+                    </div>
+
+                    <div className="vendorhelpfaq-support-card">
+                        <div className="vendorhelpfaq-support-icon">
+                            <FaHeadset />
+                        </div>
+
+                        <h3>
+                            Still Need Help?
+                        </h3>
+
+                        <p>
+                            Our support team is here to help you with any questions or issues.
+                        </p>
+
+                        <button
+                            className="vendorhelpfaq-support-btn"
+                            onClick={() =>
+                                navigate("/support")
                             }
+                        >
+                            Contact Support
+                        </button>
+
+                        <span className="vendorhelpfaq-response-time">
+                            Response time: Within a few minutes
                         </span>
 
                     </div>
 
-                    {
-                        openFaq === index &&
-                        (
-                            <div className="vendorhelpfaq-answer">
-                                {faq.answer}
-                            </div>
-                        )
-                    }
+                </div>
+
+
+{/* ================= Ticket Popup ================= */}
+
+{showTicketPopup && (
+    <div
+        className="vendorticket-overlay"
+        onClick={() => setShowTicketPopup(false)}
+    >
+        <div
+            className="vendorticket-modal"
+            onClick={(e) => e.stopPropagation()}
+        >
+
+            <div className="vendorticket-header">
+
+                <h2>
+                    Raise Support Ticket
+                </h2>
+
+                <button
+                    className="vendorticket-close"
+                    onClick={() => setShowTicketPopup(false)}
+                >
+                    ✕
+                </button>
+
+            </div>
+
+            <div className="vendorticket-body">
+
+                <div className="vendorticket-group">
+                    <label>Category</label>
+
+                    <select
+                        value={ticketData.category}
+                        onChange={(e)=>
+                            setTicketData({
+                                ...ticketData,
+                                category:e.target.value
+                            })
+                        }
+                    >
+                        <option value="">
+                            Select Category
+                        </option>
+
+                        <option value="Technical Issue">
+                            Technical Issue
+                        </option>
+
+                        <option value="Billing">
+                            Billing
+                        </option>
+
+                        <option value="Subscription">
+                            Subscription
+                        </option>
+
+                        <option value="Profile">
+                            Profile
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
 
                 </div>
 
-            ))}
+                <div className="vendorticket-group">
+                    <label>Subject</label>
+
+                    <input
+                        type="text"
+                        value={ticketData.subject}
+                        onChange={(e)=>
+                            setTicketData({
+                                ...ticketData,
+                                subject:e.target.value
+                            })
+                        }
+                    />
+                </div>
+
+                <div className="vendorticket-group">
+                    <label>Priority</label>
+
+                    <select
+                        value={ticketData.priority}
+                        onChange={(e)=>
+                            setTicketData({
+                                ...ticketData,
+                                priority:e.target.value
+                            })
+                        }
+                    >
+                        <option>Low</option>
+                        <option>Medium</option>
+                        <option>High</option>
+                        <option>Urgent</option>
+                    </select>
+                </div>
+
+                <div className="vendorticket-group">
+                    <label>Attachment</label>
+
+                    <input
+                        type="file"
+                        onChange={(e)=>
+                            setTicketData({
+                                ...ticketData,
+                                attachment:e.target.files[0]
+                            })
+                        }
+                    />
+                </div>
+
+                <div className="vendorticket-group vendorticket-full-width">
+
+                    <label>Description</label>
+
+                    <textarea
+                        rows="5"
+                        value={ticketData.description}
+                        onChange={(e)=>
+                            setTicketData({
+                                ...ticketData,
+                                description:e.target.value
+                            })
+                        }
+                    />
+
+                </div>
+
+            </div>
+
+            <div className="vendorticket-footer">
+
+                <button
+                    className="vendorticket-cancel"
+                    onClick={() => setShowTicketPopup(false)}
+                >
+                    Cancel
+                </button>
+
+                <button
+                    className="vendorticket-submit"
+                    onClick={handleSubmitTicket}
+                >
+                    Submit Ticket
+                </button>
+
+            </div>
 
         </div>
 
     </div>
-
-    <div className="vendorhelpfaq-support-card">
-<div className="vendorhelpfaq-support-icon">
-    <FaHeadset />
-</div>
-
-        <h3>
-            Still Need Help?
-        </h3>
-
-        <p>
-            Our support team is here to help you with any questions or issues.
-        </p>
-
-      <button
-    className="vendorhelpfaq-support-btn"
-    onClick={() =>
-        navigate("/support")
-    }
->
-    Contact Support
-</button>
-
-        <span className="vendorhelpfaq-response-time">
-            Response time: Within a few minutes
-        </span>
-
-    </div>
-
-</div>
-
-
-
+)}
 
 
             </div>
@@ -910,5 +1133,19 @@ const faqs = [
         </div>
     );
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export default VendorHelp;

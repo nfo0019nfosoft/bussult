@@ -643,3 +643,290 @@
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================= OVERLAY ================= */
+
+.userticket-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(15,23,42,.65);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 99999;
+}
+
+/* ================= MODAL ================= */
+
+.userticket-modal{
+    width: 100%;
+    max-width: 850px;
+    background: #fff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0,0,0,.15);
+    animation: ticketPopup .3s ease;
+    max-height: 92vh;
+    overflow-y: auto;
+}
+
+/* ================= SCROLLBAR ================= */
+
+.userticket-modal::-webkit-scrollbar{
+    width: 8px;
+}
+
+.userticket-modal::-webkit-scrollbar-thumb{
+    background: #d1d5db;
+    border-radius: 30px;
+}
+
+/* ================= HEADER ================= */
+
+.userticket-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 30px;
+    border-bottom: 1px solid #eef2f7;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.userticket-header h2{
+    font-size: 26px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+}
+
+.userticket-close{
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: #f1f5f9;
+    font-size: 22px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.userticket-close:hover{
+    background: #e2e8f0;
+    transform: rotate(90deg);
+}
+
+/* ================= BODY ================= */
+
+.userticket-body{
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 22px;
+}
+
+.userticket-group{
+    display: flex;
+    flex-direction: column;
+}
+
+.userticket-full-width{
+    grid-column: span 2;
+}
+
+.userticket-group label{
+    font-size: 15px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 8px;
+}
+
+.userticket-group input,
+.userticket-group select,
+.userticket-group textarea{
+    width: 100%;
+    border: 1px solid #dbe3ef;
+    border-radius: 14px;
+    padding: 14px 16px;
+    font-size: 15px;
+    outline: none;
+    transition: .3s;
+    background: #fafcff;
+}
+
+.userticket-group input:focus,
+.userticket-group select:focus,
+.userticket-group textarea:focus{
+    border-color: #2563eb;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(37,99,235,.12);
+}
+
+.userticket-group textarea{
+    resize: none;
+    min-height: 140px;
+}
+
+.userticket-group input[type="file"]{
+    padding: 12px;
+    background: #fff;
+}
+
+/* ================= FOOTER ================= */
+
+.userticket-footer{
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    padding: 24px 30px;
+    border-top: 1px solid #eef2f7;
+    background: #fff;
+    position: sticky;
+    bottom: 0;
+}
+
+.userticket-cancel{
+    border: 1px solid #dbe3ef;
+    background: #fff;
+    color: #475569;
+    padding: 13px 24px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.userticket-cancel:hover{
+    background: #f8fafc;
+}
+
+.userticket-submit{
+    border: none;
+    background: linear-gradient(135deg,#2563eb,#3b82f6);
+    color: #fff;
+    padding: 13px 28px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.userticket-submit:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(37,99,235,.25);
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes ticketPopup{
+
+    from{
+        opacity: 0;
+        transform: scale(.9);
+    }
+
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+/* ================= TABLET ================= */
+
+@media(max-width:900px){
+
+    .userticket-modal{
+        max-width: 95%;
+    }
+
+    .userticket-body{
+        gap: 18px;
+    }
+
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+    .userticket-overlay{
+        padding: 10px;
+    }
+
+    .userticket-modal{
+        max-height: 95vh;
+        border-radius: 18px;
+    }
+
+    .userticket-header{
+        padding: 18px 20px;
+    }
+
+    .userticket-header h2{
+        font-size: 20px;
+    }
+
+    .userticket-body{
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 16px;
+    }
+
+    .userticket-full-width{
+        grid-column: auto;
+    }
+
+    .userticket-footer{
+        padding: 18px 20px;
+        flex-direction: column;
+    }
+
+    .userticket-submit,
+    .userticket-cancel{
+        width: 100%;
+    }
+
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media(max-width:480px){
+
+    .userticket-header h2{
+        font-size: 18px;
+    }
+
+    .userticket-group input,
+    .userticket-group select,
+    .userticket-group textarea{
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .userticket-submit,
+    .userticket-cancel{
+        padding: 12px;
+        font-size: 14px;
+    }
+
+}

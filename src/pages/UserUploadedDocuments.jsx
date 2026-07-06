@@ -399,6 +399,32 @@ const documents = [
 
 
 
+
+
+
+
+const handleLogout = () => {
+
+  const confirmLogout = window.confirm(
+    "Are you sure you want to logout?"
+  );
+
+  if (!confirmLogout) return;
+
+  localStorage.removeItem("token");
+  localStorage.removeItem("user");
+
+  navigate("/login");
+
+};
+
+
+
+
+
+
+
+
     return (
         <div className="profile-layout">
 
@@ -442,7 +468,7 @@ const documents = [
 
                         <FaBell className="icon" />
 
-                        <div className="user-info">
+                        <div className="user-info"  onClick={handleLogout}>
                             <img
                                 src={
                                     user.profileImage
@@ -453,13 +479,13 @@ const documents = [
                             />
 
                             <div>
-                                <h4>
-                                    {user.name || "User Name"}
-                                </h4>
+                               <h4>
+      {user.name || "User Name"}
+    </h4>
 
-                                <p>
-                                    {user.role || "Business User"}
-                                </p>
+    <p>
+      {user.role || "User"}
+    </p>
                             </div>
 
                         </div>
