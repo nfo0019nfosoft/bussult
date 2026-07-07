@@ -10,7 +10,7 @@
 
 .admin-appointment-content{
     flex:1;
-    margin-left:220px;
+    margin-left:210px;
     width:calc(100% - 220px);
     padding:12px;
     transition:all .3s ease;
@@ -622,7 +622,7 @@
 .admin-appointments-table-section{
     width:100%;
     background:#ffffff;
-    padding:25px;
+    padding:15px;
     border-radius:18px;
     box-shadow:0 4px 20px rgba(0,0,0,0.08);
     margin-top:20px;
@@ -665,7 +665,7 @@
 .admin-appointments-table th{
     padding:18px 15px;
     text-align:left;
-    font-size:14px;
+    font-size:12px;
     font-weight:700;
     color:#444;
     border-bottom:1px solid #e8e8e8;
@@ -674,7 +674,7 @@
 
 .admin-appointments-table td{
     padding:18px 15px;
-    font-size:14px;
+    font-size:12px;
     color:#555;
     border-bottom:1px solid #f1f1f1;
     white-space:nowrap;
@@ -692,7 +692,7 @@
     display:inline-block;
     padding:7px 15px;
     border-radius:30px;
-    font-size:12px;
+    font-size:10px;
     font-weight:600;
 }
 
@@ -720,7 +720,7 @@
     text-align:center;
     padding:50px !important;
     color:#999;
-    font-size:15px;
+    font-size:14px;
 }
 
 /* Mobile Responsive */
@@ -735,7 +735,7 @@
     .admin-appointments-table-header{
         flex-direction:column;
         align-items:flex-start;
-        gap:10px;
+        gap:5px;
     }
 
     .admin-appointments-table-header h2{
@@ -791,4 +791,1746 @@
 .admin-appointment-status-badge.no-show{
     background:#fff3cd;
     color:#ff9800;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===========================================
+   Bottom Grid
+=========================================== */
+
+.admin-dashboard-bottom-grid{
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    gap:24px;
+    margin-top:28px;
+    align-items:flex-start;
+}
+
+/* ===========================================
+   Common Card
+=========================================== */
+
+.admin-upcoming-card,
+.admin-insight-card{
+    background:#fff;
+    border-radius:18px;
+    padding:22px;
+    box-shadow:0 10px 30px rgba(15,23,42,.08);
+    border:1px solid #edf1f7;
+}
+
+/* ===========================================
+   Header
+=========================================== */
+
+.admin-card-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:18px;
+}
+
+.admin-card-header h3{
+    font-size:22px;
+    font-weight:700;
+    color:#14213d;
+}
+
+.admin-view-all-btn{
+    border:none;
+    background:none;
+    color:#2563eb;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.admin-view-all-btn:hover{
+    color:#0f4ad1;
+}
+
+/* ===========================================
+   Upcoming List
+=========================================== */
+
+.admin-upcoming-list{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.admin-upcoming-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px;
+    border-radius:14px;
+    transition:.3s;
+    border:1px solid transparent;
+}
+
+.admin-upcoming-item:hover{
+    background:#f8fbff;
+    border-color:#dbeafe;
+}
+
+.admin-upcoming-left{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.admin-upcoming-icon{
+    width:58px;
+    height:58px;
+    border-radius:16px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#edf4ff;
+    color:#2563eb;
+    font-size:22px;
+    flex-shrink:0;
+}
+
+.admin-upcoming-info h4{
+    font-size:17px;
+    color:#172554;
+    margin-bottom:4px;
+}
+
+.admin-service-name{
+    color:#2563eb;
+    font-size:15px;
+    margin-bottom:5px;
+}
+
+.admin-upcoming-info span{
+    color:#6b7280;
+    font-size:13px;
+}
+
+.admin-upcoming-right span{
+    font-size:15px;
+    font-weight:600;
+    color:#374151;
+}
+
+/* ===========================================
+   Insights
+=========================================== */
+
+.admin-insight-list{
+    display:flex;
+    flex-direction:column;
+}
+
+.admin-insight-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 0;
+    border-bottom:1px solid #eef2f7;
+}
+
+.admin-insight-item:last-child{
+    border-bottom:none;
+}
+
+.admin-insight-left{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.admin-insight-left span{
+    font-size:15px;
+    color:#374151;
+    font-weight:500;
+}
+
+.admin-insight-item strong{
+    color:#111827;
+    font-size:16px;
+    font-weight:700;
+}
+
+.admin-insight-icon{
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:20px;
+}
+
+/* Icon Colors */
+
+.admin-insight-icon.blue{
+    background:#e8f1ff;
+    color:#2563eb;
+}
+
+.admin-insight-icon.green{
+    background:#e9fbf2;
+    color:#10b981;
+}
+
+.admin-insight-icon.purple{
+    background:#f5edff;
+    color:#8b5cf6;
+}
+
+.admin-insight-icon.red{
+    background:#ffe8e8;
+    color:#ef4444;
+}
+
+/* ===========================================
+   Empty
+=========================================== */
+
+.admin-empty-state{
+    text-align:center;
+    padding:40px;
+    color:#9ca3af;
+    font-size:15px;
+}
+
+/* ===========================================
+   Tablet
+=========================================== */
+
+@media(max-width:1100px){
+
+.admin-dashboard-bottom-grid{
+    grid-template-columns:1fr;
+}
+
+}
+
+/* ===========================================
+   Mobile
+=========================================== */
+
+@media(max-width:768px){
+
+.admin-dashboard-bottom-grid{
+    grid-template-columns:1fr;
+    gap:18px;
+}
+
+.admin-upcoming-card,
+.admin-insight-card{
+    padding:18px;
+    border-radius:16px;
+}
+
+.admin-card-header h3{
+    font-size:18px;
+}
+
+.admin-view-all-btn{
+    font-size:13px;
+}
+
+.admin-upcoming-item{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+}
+
+.admin-upcoming-left{
+    width:100%;
+}
+
+.admin-upcoming-right{
+    width:100%;
+    padding-left:72px;
+}
+
+.admin-upcoming-right span{
+    font-size:14px;
+}
+
+.admin-upcoming-icon{
+    width:50px;
+    height:50px;
+    font-size:18px;
+}
+
+.admin-upcoming-info h4{
+    font-size:15px;
+}
+
+.admin-service-name{
+    font-size:14px;
+}
+
+.admin-upcoming-info span{
+    font-size:12px;
+}
+
+.admin-insight-item{
+    gap:15px;
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.admin-insight-left{
+    width:100%;
+}
+
+.admin-insight-item strong{
+    margin-left:68px;
+    font-size:15px;
+}
+
+.admin-insight-icon{
+    width:46px;
+    height:46px;
+    font-size:18px;
+}
+
+}
+
+/* ===========================================
+   Small Mobile
+=========================================== */
+
+@media(max-width:480px){
+
+.admin-card-header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:8px;
+}
+
+.admin-upcoming-right{
+    padding-left:0;
+}
+
+.admin-insight-item strong{
+    margin-left:0;
+}
+
+.admin-upcoming-item{
+    padding:14px;
+}
+
+.admin-insight-item{
+    padding:18px 0;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===========================
+   Bottom Section
+=========================== */
+
+.admin-appointments-bottom{
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    gap:24px;
+    margin-top:30px;
+    align-items:stretch;
+    margin-bottom: 30px;
+}
+
+/* ===========================
+   Common Cards
+=========================== */
+
+.admin-appointments-bottom-card,
+.admin-appointments-insights-card{
+    background:#fff;
+    border-radius:18px;
+    padding:22px;
+    border:1px solid #edf2f7;
+    box-shadow:0 8px 25px rgba(0,0,0,.05);
+    display:flex;
+    flex-direction:column;
+    height:100%;
+    min-height:540px;      /* Same Height */
+}
+
+/* ===========================
+   Header
+=========================== */
+
+.admin-appointments-bottom-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.admin-appointments-bottom-header h3{
+    font-size:22px;
+    font-weight:700;
+    color:#1e293b;
+}
+
+.admin-appointments-view-btn{
+    border:none;
+    background:none;
+    color:#2563eb;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+/* ===========================
+   Upcoming
+=========================== */
+
+.admin-appointments-upcoming-list{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    flex:1;
+}
+
+.admin-appointments-upcoming-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px;
+    border-radius:14px;
+    transition:.3s;
+}
+
+.admin-appointments-upcoming-item:hover{
+    background:#f8fbff;
+}
+
+.admin-appointments-upcoming-left{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.admin-appointments-upcoming-icon{
+    width:55px;
+    height:55px;
+    border-radius:14px;
+    background:#edf4ff;
+    color:#2563eb;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:22px;
+    flex-shrink:0;
+}
+
+.admin-appointments-upcoming-content h4{
+    font-size:17px;
+    font-weight:700;
+    color:#1e293b;
+    margin-bottom:4px;
+}
+
+.admin-appointments-upcoming-content p{
+    font-size:15px;
+    color:#2563eb;
+    margin-bottom:5px;
+}
+
+.admin-appointments-upcoming-content span{
+    font-size:13px;
+    color:#64748b;
+}
+
+.admin-appointments-upcoming-right span{
+    font-size:15px;
+    font-weight:700;
+    color:#475569;
+}
+
+/* ===========================
+   Insights
+=========================== */
+
+.admin-appointments-insights-list{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    flex:1;
+}
+
+.admin-appointments-insight-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 0;
+    border-bottom:1px solid #edf2f7;
+}
+
+.admin-appointments-insight-item:last-child{
+    border-bottom:none;
+}
+
+.admin-appointments-insight-left{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.admin-appointments-insight-left span{
+    font-size:15px;
+    color:#475569;
+    font-weight:500;
+}
+
+.admin-appointments-insight-item strong{
+    font-size:16px;
+    font-weight:700;
+    color:#0f172a;
+}
+
+/* Icons */
+
+.admin-appointments-insight-icon{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:18px;
+}
+
+.admin-appointments-insight-icon.blue{
+    background:#eaf2ff;
+    color:#2563eb;
+}
+
+.admin-appointments-insight-icon.green{
+    background:#eafbf2;
+    color:#16a34a;
+}
+
+.admin-appointments-insight-icon.purple{
+    background:#f4ecff;
+    color:#9333ea;
+}
+
+.admin-appointments-insight-icon.red{
+    background:#ffeaea;
+    color:#ef4444;
+}
+
+/* ===========================
+   Empty
+=========================== */
+
+.admin-empty-state{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#94a3b8;
+    font-size:15px;
+}
+
+/* ===========================
+   Tablet
+=========================== */
+
+@media(max-width:992px){
+
+.admin-appointments-bottom{
+    grid-template-columns:1fr;
+}
+
+.admin-appointments-bottom-card,
+.admin-appointments-insights-card{
+    min-height:auto;
+}
+
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media(max-width:768px){
+
+.admin-appointments-bottom{
+    gap:18px;
+}
+
+.admin-appointments-bottom-card,
+.admin-appointments-insights-card{
+    padding:18px;
+}
+
+.admin-appointments-bottom-header h3{
+    font-size:18px;
+}
+
+.admin-appointments-upcoming-item{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+}
+
+.admin-appointments-upcoming-right{
+    padding-left:70px;
+}
+
+.admin-appointments-insight-item{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+}
+
+.admin-appointments-insight-item strong{
+    margin-left:64px;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===========================================
+   PERFORMANCE OVERVIEW
+=========================================== */
+
+.admin-performance-section{
+    margin-top:52px;
+    margin-bottom: 30px;
+}
+
+.admin-performance-grid{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:12px;
+}
+
+/* ========================= */
+
+.admin-performance-card{
+    background:#fff;
+    border:1px solid #edf2f7;
+    border-radius:14px;
+    padding:14px;
+    box-shadow:0 4px 12px rgba(15,23,42,.05);
+    transition:.3s;
+}
+
+.admin-performance-card:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(15,23,42,.08);
+}
+
+.admin-performance-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+}
+
+.admin-performance-left{
+    display:flex;
+    gap:10px;
+    width:100%;
+}
+
+.admin-performance-icon{
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:18px;
+    flex-shrink:0;
+}
+
+.admin-performance-icon.green{
+    background:#ecfdf5;
+    color:#10b981;
+}
+
+.admin-performance-icon.red{
+    background:#fef2f2;
+    color:#ef4444;
+}
+
+.admin-performance-icon.orange{
+    background:#fff7ed;
+    color:#f59e0b;
+}
+
+.admin-performance-icon.purple{
+    background:#f5f3ff;
+    color:#8b5cf6;
+}
+
+.admin-performance-content{
+    flex:1;
+}
+
+.admin-performance-content h5{
+    font-size:12px;
+    font-weight:600;
+    color:#64748b;
+    margin-bottom:4px;
+}
+
+.admin-performance-content h2{
+    font-size:24px;
+    font-weight:700;
+    color:#0f172a;
+    margin-bottom:4px;
+    line-height:1;
+}
+
+.admin-performance-content span{
+    font-size:11px;
+    font-weight:600;
+    color:#16a34a;
+}
+
+.admin-performance-chart{
+    width:100%;
+    height:52px;
+    margin-top:8px;
+}
+
+.recharts-wrapper{
+    font-size:10px;
+}
+
+/* ===========================
+   Tablet
+=========================== */
+
+@media(max-width:1200px){
+
+.admin-performance-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media(max-width:768px){
+
+.admin-performance-grid{
+    grid-template-columns:1fr;
+    gap:10px;
+}
+
+.admin-performance-card{
+    padding:12px;
+}
+
+.admin-performance-left{
+    gap:8px;
+}
+
+.admin-performance-icon{
+    width:38px;
+    height:38px;
+    font-size:16px;
+}
+
+.admin-performance-content h5{
+    font-size:11px;
+}
+
+.admin-performance-content h2{
+    font-size:20px;
+}
+
+.admin-performance-content span{
+    font-size:10px;
+}
+
+.admin-performance-chart{
+    height:45px;
+}
+
+}
+
+/* ===========================
+   Small Mobile
+=========================== */
+
+@media(max-width:480px){
+
+.admin-performance-card{
+    padding:10px;
+}
+
+.admin-performance-icon{
+    width:34px;
+    height:34px;
+    font-size:15px;
+}
+
+.admin-performance-content h2{
+    font-size:18px;
+}
+
+.admin-performance-chart{
+    height:40px;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===========================================
+        TREND + DONUT SECTION
+=========================================== */
+
+.admin-chart-section{
+
+    display:grid;
+
+    grid-template-columns:1.6fr 1fr;
+
+    gap:24px;
+
+    margin-top:30px;
+
+    align-items:stretch;
+    margin-bottom: 30px;
+
+}
+
+
+/* ===========================================
+        COMMON CARD
+=========================================== */
+
+.admin-trend-card,
+.admin-type-card{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    border:1px solid #edf2f7;
+
+    box-shadow:0 8px 24px rgba(15,23,42,.05);
+
+    padding:22px;
+
+}
+
+
+/* ===========================================
+        HEADER
+=========================================== */
+
+.admin-trend-header,
+.admin-type-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+}
+
+.admin-trend-header h3,
+.admin-type-header h3{
+
+    font-size:20px;
+
+    font-weight:700;
+
+    color:#1f2937;
+
+}
+
+.admin-trend-filter{
+
+    border:1px solid #e5e7eb;
+
+    border-radius:8px;
+
+    padding:8px 14px;
+
+    font-size:14px;
+
+    outline:none;
+
+    cursor:pointer;
+
+    background:#fff;
+
+}
+
+
+/* ===========================================
+        LEGEND
+=========================================== */
+
+.admin-trend-legend{
+
+    display:flex;
+
+    gap:22px;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+    flex-wrap:wrap;
+
+}
+
+.legend-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+.legend-item p{
+
+    font-size:13px;
+
+    color:#64748b;
+
+    font-weight:500;
+
+}
+
+.legend-dot{
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+}
+
+.legend-dot.blue{
+
+    background:#2563eb;
+
+}
+
+.legend-dot.green{
+
+    background:#10b981;
+
+}
+
+.legend-dot.orange{
+
+    background:#f59e0b;
+
+}
+
+.legend-dot.pink{
+
+    background:#ec4899;
+
+}
+
+
+/* ===========================================
+        LINE CHART
+=========================================== */
+
+.admin-trend-chart{
+
+    width:100%;
+
+    height:320px;
+
+}
+
+
+/* ===========================================
+        DONUT
+=========================================== */
+
+.admin-type-body{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:22px;
+
+}
+
+.admin-type-chart{
+
+    flex:1;
+
+    min-width:240px;
+
+    height:260px;
+
+}
+
+
+/* ===========================================
+        TYPE LIST
+=========================================== */
+
+.admin-type-list{
+
+    width:220px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+.admin-type-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.admin-type-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.admin-type-color{
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+}
+
+.admin-type-left p{
+
+    font-size:14px;
+
+    color:#475569;
+
+    font-weight:500;
+
+}
+
+.admin-type-item strong{
+
+    font-size:13px;
+
+    color:#111827;
+
+    font-weight:700;
+
+}
+
+
+/* ===========================================
+        RECHARTS
+=========================================== */
+
+.recharts-cartesian-grid line{
+
+    stroke:#edf2f7;
+
+}
+
+.recharts-default-tooltip{
+
+    border:none !important;
+
+    border-radius:12px !important;
+
+    box-shadow:0 8px 24px rgba(0,0,0,.12);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===========================================
+        TABLET
+=========================================== */
+
+@media (max-width:1200px){
+
+.admin-chart-section{
+
+    grid-template-columns:1fr;
+
+    gap:20px;
+
+}
+
+.admin-type-body{
+
+    justify-content:center;
+
+}
+
+.admin-type-chart{
+
+    height:260px;
+
+}
+
+}
+
+
+
+/* ===========================================
+        MOBILE
+=========================================== */
+
+@media (max-width:768px){
+
+.admin-chart-section{
+
+    grid-template-columns:1fr;
+
+    gap:18px;
+
+}
+
+.admin-trend-card,
+.admin-type-card{
+
+    padding:16px;
+
+    border-radius:14px;
+
+}
+
+/* Header */
+
+.admin-trend-header,
+.admin-type-header{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+}
+
+.admin-trend-header h3,
+.admin-type-header h3{
+
+    font-size:18px;
+
+}
+
+.admin-trend-filter{
+
+    width:140px;
+
+    font-size:13px;
+
+    padding:7px 12px;
+
+}
+
+/* Legend */
+
+.admin-trend-legend{
+
+    gap:12px;
+
+    margin-bottom:12px;
+
+}
+
+.legend-item{
+
+    gap:6px;
+
+}
+
+.legend-item p{
+
+    font-size:12px;
+
+}
+
+.legend-dot{
+
+    width:8px;
+
+    height:8px;
+
+}
+
+/* Trend Chart */
+
+.admin-trend-chart{
+
+    height:250px;
+
+}
+
+/* Donut */
+
+.admin-type-body{
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.admin-type-chart{
+
+    width:100%;
+
+    min-width:unset;
+
+    height:220px;
+
+}
+
+.admin-type-list{
+
+    width:100%;
+
+    gap:10px;
+
+}
+
+.admin-type-item{
+
+    padding-bottom:8px;
+
+    border-bottom:1px solid #f1f5f9;
+
+}
+
+.admin-type-item:last-child{
+
+    border-bottom:none;
+
+}
+
+.admin-type-left p{
+
+    font-size:13px;
+
+}
+
+.admin-type-item strong{
+
+    font-size:12px;
+
+}
+
+}
+
+
+
+/* ===========================================
+        SMALL MOBILE
+=========================================== */
+
+@media (max-width:480px){
+
+.admin-trend-card,
+.admin-type-card{
+
+    padding:14px;
+
+}
+
+.admin-trend-header h3,
+.admin-type-header h3{
+
+    font-size:16px;
+
+}
+
+.admin-trend-filter{
+
+    width:120px;
+
+    font-size:12px;
+
+}
+
+.admin-trend-legend{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:10px;
+
+}
+
+.legend-item p{
+
+    font-size:11px;
+
+}
+
+.admin-trend-chart{
+
+    height:220px;
+
+}
+
+.admin-type-chart{
+
+    height:190px;
+
+}
+
+.admin-type-left{
+
+    gap:8px;
+
+}
+
+.admin-type-color{
+
+    width:10px;
+
+    height:10px;
+
+}
+
+.admin-type-left p{
+
+    font-size:12px;
+
+}
+
+.admin-type-item strong{
+
+    font-size:11px;
+
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===========================================
+   STATUS + SOURCE SECTION
+=========================================== */
+
+.admin-bottom-chart-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+    margin-top:30px;
+}
+
+/* ===========================================
+   Common Card
+=========================================== */
+
+.admin-status-card,
+.admin-source-card{
+    background:#fff;
+    border:1px solid #edf2f7;
+    border-radius:18px;
+    padding:22px;
+    box-shadow:0 10px 30px rgba(15,23,42,.05);
+    transition:.3s;
+}
+
+.admin-status-card:hover,
+.admin-source-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 35px rgba(15,23,42,.08);
+}
+
+.admin-chart-card-header{
+    margin-bottom:22px;
+}
+
+.admin-chart-card-header h3{
+    font-size:20px;
+    font-weight:700;
+    color:#0f172a;
+}
+
+/* ===========================================
+   STATUS
+=========================================== */
+
+.admin-status-body{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+}
+
+.admin-status-chart{
+    width:48%;
+    min-width:240px;
+}
+
+.admin-status-legend{
+    width:52%;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.admin-status-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.admin-status-left{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#334155;
+    font-size:15px;
+    font-weight:600;
+}
+
+.admin-status-dot{
+    width:13px;
+    height:13px;
+    border-radius:50%;
+    flex-shrink:0;
+}
+
+.admin-status-row strong{
+    font-size:15px;
+    color:#0f172a;
+    white-space:nowrap;
+}
+
+/* ===========================================
+   SOURCE
+=========================================== */
+
+.admin-source-list{
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+}
+
+.admin-source-row{
+    display:grid;
+    grid-template-columns:130px 1fr 90px;
+    align-items:center;
+    gap:18px;
+}
+
+.admin-source-name{
+    font-size:15px;
+    font-weight:600;
+    color:#334155;
+}
+
+.admin-source-progress{
+    width:100%;
+    height:12px;
+    background:#edf2f7;
+    border-radius:30px;
+    overflow:hidden;
+}
+
+.admin-source-fill{
+    height:100%;
+    border-radius:30px;
+    transition:.5s;
+}
+
+.admin-source-value{
+    text-align:right;
+    font-size:14px;
+    color:#475569;
+    white-space:nowrap;
+}
+
+.admin-source-value strong{
+    color:#0f172a;
+    font-size:15px;
+    margin-right:6px;
+}
+
+/* ===========================================
+   Tablet
+=========================================== */
+
+@media(max-width:992px){
+
+.admin-bottom-chart-grid{
+    grid-template-columns:1fr;
+}
+
+.admin-status-body{
+    flex-direction:column;
+}
+
+.admin-status-chart{
+    width:100%;
+    min-width:auto;
+    height:260px;
+}
+
+.admin-status-legend{
+    width:100%;
+}
+
+.admin-source-row{
+    grid-template-columns:120px 1fr 80px;
+}
+
+}
+
+/* ===========================================
+   Mobile
+=========================================== */
+
+@media(max-width:768px){
+
+.admin-bottom-chart-grid{
+    gap:18px;
+    margin-top:20px;
+}
+
+.admin-status-card,
+.admin-source-card{
+    padding:16px;
+    border-radius:14px;
+}
+
+.admin-chart-card-header{
+    margin-bottom:16px;
+}
+
+.admin-chart-card-header h3{
+    font-size:18px;
+}
+
+.admin-status-chart{
+    height:220px;
+}
+
+.admin-status-row{
+    gap:10px;
+}
+
+.admin-status-left{
+    font-size:14px;
+    gap:8px;
+}
+
+.admin-status-dot{
+    width:10px;
+    height:10px;
+}
+
+.admin-status-row strong{
+    font-size:13px;
+}
+
+.admin-source-list{
+    gap:18px;
+}
+
+.admin-source-row{
+    grid-template-columns:95px 1fr 65px;
+    gap:10px;
+}
+
+.admin-source-name{
+    font-size:13px;
+}
+
+.admin-source-progress{
+    height:9px;
+}
+
+.admin-source-value{
+    font-size:12px;
+}
+
+.admin-source-value strong{
+    font-size:13px;
+}
+
+}
+
+/* ===========================================
+   Small Mobile
+=========================================== */
+
+@media(max-width:480px){
+
+.admin-status-card,
+.admin-source-card{
+    padding:14px;
+}
+
+.admin-chart-card-header h3{
+    font-size:17px;
+}
+
+.admin-status-chart{
+    height:190px;
+}
+
+.admin-status-row{
+    flex-wrap:wrap;
+}
+
+.admin-status-left{
+    font-size:13px;
+}
+
+.admin-source-row{
+    grid-template-columns:80px 1fr 58px;
+    gap:8px;
+}
+
+.admin-source-name{
+    font-size:12px;
+}
+
+.admin-source-progress{
+    height:8px;
+}
+
+.admin-source-value{
+    font-size:11px;
+}
+
+.admin-source-value strong{
+    font-size:12px;
+}
+
 }
