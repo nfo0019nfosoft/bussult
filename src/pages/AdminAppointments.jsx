@@ -590,7 +590,20 @@ useEffect(() => {
 
 
 
+useEffect(() => {
 
+  const token = localStorage.getItem("token");
+
+  const role = localStorage.getItem("role");
+
+  if (
+    !token ||
+    !["superadmin", "admin"].includes(role)
+  ) {
+    navigate("/admin");
+  }
+
+}, [navigate]);
 
 
 

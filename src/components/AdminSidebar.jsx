@@ -42,87 +42,119 @@ function AdminSidebar() {
     navigate("/admin");
 
   };
+  const role =
+  localStorage.getItem("role");
+const menuItemsTop = [
 
-  const menuItemsTop = [
-    {
-      name: "Dashboard",
-      icon: <FaTachometerAlt />,
-      path: "/admin-dashboard",
-    },
-    {
-      name: "Revenue Analytics",
-      icon: <FaChartLine />,
-      path: "/admin-revenue",
-    },
-    {
-      name: "Reports & Analytics",
-      icon: <FaFileAlt />,
-      path: "/admin-reports",
-    },
-    {
-      name: "Vendor Management",
-      icon: <FaUserTie />,
-      path: "/admin-vendors",
-    },
-    {
-      name: "User Management",
-      icon: <FaUsers />,
-      path: "/admin-users",
-    },
-    {
-      name: "Lead Management",
-      icon: <FaClipboardList />,
-      path: "/admin-leads",
-    },
-    {
-      name: "CRM",
-      icon: <FaHandshake />,
-      path: "/admin-crm",
-    },
-    {
-      name: "Appointments Management",
-      icon: <FaCalendarAlt />,
-      path: "/admin-appointments",
-    },
-    {
-      name: "Notifications",
-      icon: <FaBell />,
-      path: "/admin-notifications",
-    },
-    {
-      name: "Advertisement Management",
-      icon: <FaBullhorn />,
-      path: "/admin-ads",
-    },
-    {
-      name: "Affiliate Management",
-      icon: <FaNetworkWired />,
-      path: "/admin-affiliates",
-    },
-  ];
+  {
+    name: "Dashboard",
+    icon: <FaTachometerAlt />,
+    path: "/admin-dashboard",
+    roles: ["superadmin","admin","manager","sales","support"]
+  },
 
-  const menuItemsBottom = [
-    {
-      name: "Admin Accounts",
-      icon: <FaUserShield />,
-      path: "/admin-accounts",
-    },
-    {
-      name: "Support",
-      icon: <FaLifeRing />,
-      path: "/admin-support",
-    },
-    {
-      name: "Settings",
-      icon: <FaCog />,
-      path: "/admin-settings",
-    },
-    {
-      name: "Security",
-      icon: <FaShieldAlt />,
-      path: "/admin-security",
-    },
-  ];
+  {
+    name: "Revenue Analytics",
+    icon: <FaChartLine />,
+    path: "/admin-revenue",
+    roles: ["superadmin"]
+  },
+
+  {
+    name: "Reports & Analytics",
+    icon: <FaFileAlt />,
+    path: "/admin-reports",
+    roles: ["superadmin","admin","manager"]
+  },
+
+  {
+    name: "Vendor Management",
+    icon: <FaUserTie />,
+    path: "/admin-vendors",
+    roles: ["superadmin","admin"]
+  },
+
+  {
+    name: "User Management",
+    icon: <FaUsers />,
+    path: "/admin-users",
+    roles: ["superadmin","admin"]
+  },
+
+  {
+    name: "Lead Management",
+    icon: <FaClipboardList />,
+    path: "/admin-leads",
+    roles: ["superadmin","admin","sales"]
+  },
+
+  {
+    name: "CRM",
+    icon: <FaHandshake />,
+    path: "/admin-crm",
+    roles: ["superadmin","admin","sales"]
+  },
+
+  {
+    name: "Appointments Management",
+    icon: <FaCalendarAlt />,
+    path: "/admin-appointments",
+    roles: ["superadmin","admin","manager"]
+  },
+
+  {
+    name: "Notifications",
+    icon: <FaBell />,
+    path: "/admin-notifications",
+    roles: ["superadmin","admin","manager","sales","support"]
+  },
+
+  {
+    name: "Advertisement Management",
+    icon: <FaBullhorn />,
+    path: "/admin-ads",
+    roles: ["superadmin"]
+  },
+
+  {
+    name: "Affiliate Management",
+    icon: <FaNetworkWired />,
+    path: "/admin-affiliates",
+    roles: ["superadmin","admin"]
+  }
+
+];
+const menuItemsBottom = [
+
+  {
+    name: "Admin Accounts",
+    icon: <FaUserShield />,
+    path: "/admin-accounts-list",
+    roles: ["superadmin"]
+  },
+
+  {
+    name: "Support",
+    icon: <FaLifeRing />,
+    path: "/admin-support",
+    roles: ["superadmin","admin","support"]
+  },
+
+  {
+    name: "Settings",
+    icon: <FaCog />,
+    path: "/admin-settings",
+    roles: ["superadmin","admin"]
+  },
+
+  {
+    name: "Security",
+    icon: <FaShieldAlt />,
+    path: "/admin-security",
+    roles: ["superadmin"]
+  }
+
+];
 
   return (
 
@@ -147,32 +179,37 @@ function AdminSidebar() {
         <div className="admin-sidebar-menu">
 
           {/* TOP MENU */}
+{
+menuItemsTop
 
-          {
+.filter(item =>
+  item.roles.includes(role)
+)
 
-            menuItemsTop.map((item, index) => (
+.map((item,index)=>(
 
-              <NavLink
-                key={index}
-                to={item.path}
-                className={({ isActive }) =>
-                  isActive
-                    ? "admin-menu-link active"
-                    : "admin-menu-link"
-                }
-              >
+<NavLink
+key={index}
+to={item.path}
+className={({isActive})=>
+isActive
+?
+"admin-menu-link active"
+:
+"admin-menu-link"
+}
+>
 
-                {item.icon}
+{item.icon}
 
-                <span>
-                  {item.name}
-                </span>
+<span>
+{item.name}
+</span>
 
-              </NavLink>
+</NavLink>
 
-            ))
-
-          }
+))
+}
 
           {/* BLOG MANAGEMENT */}
 
@@ -244,32 +281,46 @@ function AdminSidebar() {
           }
 
           {/* BOTTOM MENU */}
+{
+menuItemsBottom
 
-          {
+.filter(item =>
+  item.roles.includes(role)
+)
 
-            menuItemsBottom.map((item, index) => (
+.map((item,index)=>(
 
-              <NavLink
-                key={index}
-                to={item.path}
-                className={({ isActive }) =>
-                  isActive
-                    ? "admin-menu-link active"
-                    : "admin-menu-link"
-                }
-              >
+<NavLink
+key={index}
+to={item.path}
+className={({isActive})=>
+isActive
+?
+"admin-menu-link active"
+:
+"admin-menu-link"
+}
+>
 
-                {item.icon}
+{item.icon}
 
-                <span>
-                  {item.name}
-                </span>
+<span>
+{item.name}
+</span>
 
-              </NavLink>
+</NavLink>
 
-            ))
+))
+}
+{
+["superadmin","admin"].includes(role) && (
 
-          }
+<>
+  {/* Blog Management code */}
+</>
+
+)
+}
 
         </div>
 

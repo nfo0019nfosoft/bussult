@@ -56,6 +56,8 @@ import AdminBlogs from "./pages/AdminBlogs";
 import AdminBlogDetails from "./pages/AdminBlogDetails";
 import AdminVendors from "./pages/AdminVendors";
 import AdminAppointments from "./pages/AdminAppointments";
+import AdminAccounts from "./pages/AdminAccounts";
+import AdminAccountsList from "./pages/AdminAccountsList";
 
 
 function Layout() {
@@ -96,6 +98,8 @@ function Layout() {
      "/user-settings",
       "/vendor-subscription",
       "/pricing-plans",
+      "/admin-accounts",
+        "/admin-accounts-list",
      
   ];
 
@@ -215,7 +219,16 @@ function Layout() {
 
 
 
+        <Route
+          path="/admin-accounts"
+          element={<AdminAccounts />}
+        />
 
+
+        <Route
+          path="/admin-accounts-list"
+          element={<AdminAccountsList />}
+        />
 
 
 

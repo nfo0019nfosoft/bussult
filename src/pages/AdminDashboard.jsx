@@ -6,14 +6,20 @@ import UserSidebar from "../components/AdminSidebar";
 function AdminDashboard() {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    const role = localStorage.getItem("role");
+//   useEffect(() => {
 
-    if (!token || role !== "admin") {
-      navigate("/admin");
-    }
-  }, [navigate]);
+//   const token = localStorage.getItem("token");
+
+//   const role = localStorage.getItem("role");
+
+//   if (
+//     !token ||
+//     !["superadmin", "admin"].includes(role)
+//   ) {
+//     navigate("/admin");
+//   }
+
+// }, [navigate]);
 
   return (
     <>
