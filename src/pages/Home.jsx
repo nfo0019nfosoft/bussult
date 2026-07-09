@@ -80,6 +80,56 @@ const [showAllFaqs, setShowAllFaqs] = useState(false);
 
 
 
+ 
+  const baseFaqs = [
+    {
+      q: "How can I find a trusted CA near me?",
+      a: "Browse verified Chartered Accountants, compare profiles, ratings and reviews to choose the right CA for your business or personal requirements.",
+    },
+    {
+      q: "How does online consultation work?",
+      a: "Book a consultation slot, connect with a CA through video or phone call and receive expert guidance from anywhere.",
+    },
+    {
+      q: "Is my data and payment information secure?",
+      a: "Yes. We use secure payment gateways and encrypted communication systems to keep your personal and financial information safe.",
+    },
+    {
+      q: "How are the fees and pricing decided?",
+      a: "Pricing depends on the service type, complexity and the experience level of the CA selected.",
+    },
+    {
+      q: "Can I upload documents online?",
+      a: "Yes. You can securely upload documents, share files with professionals and receive guidance online.",
+    },
+  ];
+ 
+  const extraFaqs = [
+    {
+      q: "Can I choose a CA based on specialization?",
+      a: "Yes. You can filter professionals based on GST, Taxation, Audit, Company Registration, ROC Compliance and other specialized services.",
+    },
+    {
+      q: "How quickly will I receive a response?",
+      a: "Most professionals respond within a few hours depending on their availability and service requirements.",
+    },
+    {
+      q: "Can I book appointments with multiple CAs?",
+      a: "Yes. You can compare professionals and schedule consultations with multiple experts before making a final decision.",
+    },
+    {
+      q: "Do you provide services for startups and businesses?",
+      a: "Absolutely. We support startups, MSMEs and enterprises with registration, taxation, compliance and advisory services.",
+    },
+    {
+      q: "Can I track the status of my enquiry?",
+      a: "Yes. Your dashboard allows you to monitor enquiry progress, appointments and responses from professionals.",
+    },
+  ];
+ 
+  const visibleFaqs = showAllFaqs
+    ? [...baseFaqs, ...extraFaqs]
+    : baseFaqs;
 
 
 
@@ -710,6 +760,13 @@ const fetchSavedVendors = async () => {
 
 
 
+
+
+
+
+
+
+
       {/* Top Rated CA & Firms */}
 
       <section
@@ -720,7 +777,7 @@ const fetchSavedVendors = async () => {
         <div className="top-ca-header">
           <h2>Top Rated CA & Firms</h2>
 
-          <a href="/find-ca" className="view-all-ca">
+          <a href="/find-ca"  className="popul-view-all">
             View All →
           </a>
         </div>
@@ -987,6 +1044,8 @@ const fetchSavedVendors = async () => {
 
 
 
+
+
       <section className="expert-banner">
 
         {/* LEFT IMAGE */}
@@ -1179,340 +1238,177 @@ const fetchSavedVendors = async () => {
 
 
 
+<section className="home-blog-section">
 
-      <section className="home-blog-section">
+  <div className="home-blog-header">
+    <div>
+      <span className="home-blog-eyebrow">Insights & Stories</span>
+      <h2>Latest from Our Blog</h2>
+    </div>
+    <Link to="/blogs"  className="popula-view-all">
+      View all articles →
+    </Link>
+  </div>
 
-        <div className="home-blog-header">
+  <div className="home-blog-grid">
+    {blogs.slice(0, 4).map((blog) => (
+      <Link key={blog._id} to={`/blog/${blog.slug}`} className="home-blog-card">
 
-          <h2>Latest from Our Blog</h2>
-
-          <Link
-            to="/blogs"
-            className="home-blog-viewall"
-          >
-            View All Blogs →
-          </Link>
-
+        <div className="home-blog-image">
+          <img src={blog.coverImage} alt={blog.title} />
+          <span className="home-blog-category">{blog.category}</span>
         </div>
 
-        <div className="home-blog-grid">
-
-          {
-
-            blogs.slice(0, 4).map((blog) => (
-
-              <Link
-                key={blog._id}
-                to={`/blog/${blog.slug}`}
-                className="home-blog-card"
-              >
-
-                <div className="home-blog-image">
-
-                  <img
-                    src={blog.coverImage}
-                    alt={blog.title}
-                  />
-
-                  <span className="home-blog-category">
-
-                    {blog.category}
-
-                  </span>
-
-                </div>
-
-                <div className="home-blog-content">
-
-                  <h3>
-
-                    {blog.title}
-
-                  </h3>
-
-                  <div className="home-blog-meta">
-
-                    <div className="home-blog-date">
-
-                      <FaRegCalendarAlt />
-
-                      <span>
-                        {blog.publishDate}
-                      </span>
-
-                    </div>
-
-                    <div className="home-blog-time">
-
-                      <FaRegClock />
-
-                      <span>
-                        {blog.readTime}
-                      </span>
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </Link>
-
-            ))
-
-          }
-
-        </div>
-
-      </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <section className="faq-section">
-
-        <div className="faq-container">
-
-          {/* LEFT FAQ */}
-
-          <div
-            className="faq-left"
-            data-aos="fade-right"
-            data-aos-duration="1000"
-          >
-
-            <h2>Frequently Asked Questions</h2>
-
-            <details className="faq-item" >
-              <summary className="faq-question">
-                <span>How can I find a trusted CA near me?</span>
-              </summary>
-
-              <div className="faq-answer">
-                Browse verified Chartered Accountants, compare profiles,
-                ratings and reviews to choose the right CA for your
-                business or personal requirements.
-              </div>
-            </details>
-
-            <details className="faq-item">
-              <summary className="faq-question">
-                <span>How does online consultation work?</span>
-              </summary>
-
-              <div className="faq-answer">
-                Book a consultation slot, connect with a CA through
-                video or phone call and receive expert guidance
-                from anywhere.
-              </div>
-            </details>
-
-            <details className="faq-item">
-              <summary className="faq-question">
-                <span>Is my data and payment information secure?</span>
-              </summary>
-
-              <div className="faq-answer">
-                Yes. We use secure payment gateways and encrypted
-                communication systems to keep your personal and
-                financial information safe.
-              </div>
-            </details>
-
-            <details className="faq-item">
-              <summary className="faq-question">
-                <span>How are the fees and pricing decided?</span>
-              </summary>
-
-              <div className="faq-answer">
-                Pricing depends on the service type, complexity
-                and the experience level of the CA selected.
-              </div>
-            </details>
-
-            <details className="faq-item">
-              <summary className="faq-question">
-                <span>Can I upload documents online?</span>
-              </summary>
-
-              <div className="faq-answer">
-                Yes. You can securely upload documents, share files
-                with professionals and receive guidance online.
-              </div>
-            </details>
-
-
-
-
-{
-showAllFaqs && (
-<>
-  <details className="faq-item">
-    <summary className="faq-question">
-      <span>Can I choose a CA based on specialization?</span>
-    </summary>
-
-    <div className="faq-answer">
-      Yes. You can filter professionals based on GST, Taxation,
-      Audit, Company Registration, ROC Compliance and other
-      specialized services.
-    </div>
-  </details>
-
-  <details className="faq-item">
-    <summary className="faq-question">
-      <span>How quickly will I receive a response?</span>
-    </summary>
-
-    <div className="faq-answer">
-      Most professionals respond within a few hours depending
-      on their availability and service requirements.
-    </div>
-  </details>
-
-  <details className="faq-item">
-    <summary className="faq-question">
-      <span>Can I book appointments with multiple CAs?</span>
-    </summary>
-
-    <div className="faq-answer">
-      Yes. You can compare professionals and schedule
-      consultations with multiple experts before making
-      a final decision.
-    </div>
-  </details>
-
-  <details className="faq-item">
-    <summary className="faq-question">
-      <span>Do you provide services for startups and businesses?</span>
-    </summary>
-
-    <div className="faq-answer">
-      Absolutely. We support startups, MSMEs and enterprises
-      with registration, taxation, compliance and advisory
-      services.
-    </div>
-  </details>
-
-  <details className="faq-item">
-    <summary className="faq-question">
-      <span>Can I track the status of my enquiry?</span>
-    </summary>
-
-    <div className="faq-answer">
-      Yes. Your dashboard allows you to monitor enquiry
-      progress, appointments and responses from professionals.
-    </div>
-  </details>
-</>
-)
-}
-
-<button
-  className="faq-link"
-  onClick={() =>
-    setShowAllFaqs(
-      !showAllFaqs
-    )
-  }
->
-
-{
-showAllFaqs
-? "Show Less FAQs"
-: "View All FAQs"
-}
-
-<i className="fas fa-arrow-right"></i>
-
-</button>
-
-          </div>
-
-          {/* RIGHT SUPPORT CARD */}
-
-          <div
-            className="support-card"
-            data-aos="fade-left"
-            data-aos-duration="1000"
-          >
-
-            <div className="support-content">
-
-              <div className="support-badge">
-                <i className="fas fa-headset"></i>
-                Support Available 24/7
-              </div>
-
-              <h3>
-
-                Need Help ?
-              </h3>
-
-              <p>
-                Get expert assistance for GST filing,
-                Income Tax, Business Registration,
-                Compliance and Professional Services.
-              </p>
-
-        <div className="support-buttons">
-
-  <Link to="/support" className="contact-btn">
-    Contact Support
-  </Link>
-
-  <a
-    href="https://wa.me/919177267680?text=Hello%20Bussult%20Team,%20I%20need%20assistance%20with%20your%20services."
-    target="_blank"
-    rel="noopener noreferrer"
-    className="chat-btn"
-  >
-    Live Chat
-  </a>
-
-</div>
-
+        <div className="home-blog-content">
+          <h3>{blog.title}</h3>
+          <div className="home-blog-meta">
+            <div className="home-blog-date">
+              <FaRegCalendarAlt />
+              <span>{blog.publishDate}</span>
             </div>
-
-            <div className="support-image">
-
-              <img
-                src={home4}
-                alt="Support Team"
-              />
-
+            <div className="home-blog-time">
+              <FaRegClock />
+              <span>{blog.readTime}</span>
             </div>
-
           </div>
-
         </div>
 
-   
-
-
-
-
-
-
-
-
-
-
+      </Link>
+    ))}
+  </div>
 
 </section>
 
+
+
+
+
+
+
+
+
+  <section className="faqx-section">
+ 
+      <div className="faqx-container">
+ 
+        {/* ================= LEFT — FAQ TIMELINE ================= */}
+ 
+        <div
+          className="faqx-panel"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        >
+ 
+          <div className="faqx-panel-head">
+            <span className="faqx-eyebrow">FAQ</span>
+            <h2>Frequently Asked Questions</h2>
+            <p>Everything you need to know before getting started.</p>
+          </div>
+ 
+          <div className="faqx-list">
+ 
+            {visibleFaqs.map((item, index) => (
+ 
+              <details className="faqx-row" key={index}>
+ 
+                <summary className="faqx-row-summary">
+ 
+                  <span className="faqx-row-index">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+ 
+                  <span className="faqx-row-question">
+                    {item.q}
+                  </span>
+ 
+                  <span className="faqx-row-toggle">+</span>
+ 
+                </summary>
+ 
+                <div className="faqx-row-answer">
+                  {item.a}
+                </div>
+ 
+              </details>
+ 
+            ))}
+ 
+          </div>
+ 
+          <button
+            className="faqx-toggle-btn"
+            onClick={() => setShowAllFaqs(!showAllFaqs)}
+          >
+            {showAllFaqs ? "Show Less FAQs" : "View All FAQs"}
+            <i className="fas fa-arrow-right"></i>
+          </button>
+ 
+        </div>
+ 
+        {/* ================= RIGHT — SUPPORT SPOTLIGHT ================= */}
+ 
+        <div
+          className="faqx-support"
+          data-aos="fade-left"
+          data-aos-duration="1000"
+        >
+ 
+          <div className="faqx-support-glow" />
+ 
+          <div className="faqx-support-visual">
+ 
+            <img
+              src={home4}
+              alt="Support Team"
+            />
+ 
+            <span className="faqx-floating-chip faqx-chip-top">
+              <i className="fas fa-headset"></i>
+              24/7 Live Support
+            </span>
+ 
+            <span className="faqx-floating-chip faqx-chip-bottom">
+              <i className="fas fa-shield-alt"></i>
+              Secure & Encrypted
+            </span>
+ 
+          </div>
+ 
+          <div className="faqx-support-content">
+ 
+            <h3>Need Help?</h3>
+ 
+            <p>
+              Get expert assistance for GST filing, Income Tax, Business
+              Registration, Compliance and Professional Services.
+            </p>
+ 
+            <div className="faqx-support-actions">
+ 
+              <Link to="/support" className="faqx-btn-primary">
+                Contact Support
+                <i className="fas fa-arrow-right"></i>
+              </Link>
+ 
+              <a
+                href="https://wa.me/919177267680?text=Hello%20Bussult%20Team,%20I%20need%20assistance%20with%20your%20services."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="faqx-btn-secondary"
+              >
+                <i className="fab fa-whatsapp"></i>
+                Live Chat
+              </a>
+ 
+            </div>
+ 
+          </div>
+ 
+        </div>
+ 
+      </div>
+ 
+    </section>
 
 
 

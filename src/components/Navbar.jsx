@@ -1,12 +1,12 @@
 import API_URL from "../config";
 import "./Navbar.css";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import logo from "../assets/logo.png";
+
 import {
   NavLink,
   Link,
-  useNavigate,
-  useLocation
+  useLocation,
 } from "react-router-dom";
 
 import {
@@ -14,80 +14,169 @@ import {
   FaTimes,
   FaChevronDown,
   FaCalendarAlt,
-  FaMapMarkerAlt,
   FaUserCircle,
-  FaPhoneAlt,
-  FaUserTag,
   FaSignOutAlt,
   FaUser,
   FaCog,
 } from "react-icons/fa";
 
 function Navbar() {
-const [menuOpen, setMenuOpen] = useState(false);
-const [serviceOpen, setServiceOpen] = useState(false);
-const [profileOpen, setProfileOpen] = useState(false);
-const location = useLocation();
 
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [serviceOpen, setServiceOpen] = useState(false);
+  const [profileOpen, setProfileOpen] = useState(false);
 
+  const location = useLocation();
 
-const navigate = useNavigate();
+  const profileRef = useRef();
 
+  const user = JSON.parse(
+    localStorage.getItem("user") || "null"
+  );
 
-const user = JSON.parse(
-  localStorage.getItem("user") || "null"
-);
+  useEffect(() => {
 
-const handleLogout = () => {
-  localStorage.removeItem("token");
-  localStorage.removeItem("user");
+    const closeOutside = (e) => {
 
-  window.location.href = "/";
-};
+      if (
+        profileRef.current &&
+        !profileRef.current.contains(e.target)
+      ) {
+        setProfileOpen(false);
+      }
 
-const closeMenu = () => {
-  setMenuOpen(false);
-  setServiceOpen(false);
-};
+    };
+
+    document.addEventListener(
+      "mousedown",
+      closeOutside
+    );
+
+    return () =>
+      document.removeEventListener(
+        "mousedown",
+        closeOutside
+      );
+
+  }, []);
+
+  useEffect(() => {
+
+    setMenuOpen(false);
+    setServiceOpen(false);
+    setProfileOpen(false);
+
+  }, [location.pathname]);
+
+  const handleLogout = () => {
+
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+
+    window.location.href = "/";
+
+  };
+
+  const closeMenu = () => {
+
+    setMenuOpen(false);
+    setServiceOpen(false);
+
+  };
 
   return (
+
     <header className="navbar">
+
       <div className="navbar-container">
 
-        <Link to="/" className="logo">
-          <img src={logo} alt="CA Connect" />
+        {/* ================= Logo ================= */}
+
+        <Link
+          to="/"
+          className="logo"
+        >
+          <img
+            src={logo}
+            alt="CA Connect"
+          />
         </Link>
 
-        <ul className={menuOpen ? "nav-links active" : "nav-links"}>
+        {/* ================= Menu ================= */}
+
+        <ul
+          className={
+            menuOpen
+              ? "nav-links active"
+              : "nav-links"
+          }
+        >
 
           <li>
-            <Link to="/" onClick={closeMenu}>
+
+            <NavLink
+              to="/"
+              end
+              onClick={closeMenu}
+              className={({ isActive }) =>
+                isActive ? "nav-active" : ""
+              }
+            >
               Home
-            </Link>
+            </NavLink>
+
           </li>
-<li>
-  <Link
+
+          <li>
+
+        <li>
+  <NavLink
     to="/find-ca"
     onClick={closeMenu}
-    className="active-link"
+    className={({ isActive }) =>
+      isActive ? "nav-highlight nav-active" : "nav-highlight"
+    }
   >
     Find CA
-  </Link>
+  </NavLink>
 </li>
+          </li>
 
-          <li className={serviceOpen ? "dropdown active" : "dropdown"}>
+          {/* ================= Services ================= */}
+
+          <li
+            className={
+              serviceOpen
+                ? "dropdown active"
+                : "dropdown"
+            }
+          >
 
             <div className="service-nav">
 
-              <Link to="/service" onClick={closeMenu}>
+              <NavLink
+                to="/service"
+                className={({ isActive }) =>
+                  isActive ? "nav-active" : ""
+                }
+              >
                 Services
-              </Link>
+              </NavLink>
 
               <FaChevronDown
-                className="down-icon"
+                className={
+                  serviceOpen
+                    ? "down-icon rotate"
+                    : "down-icon"
+                }
                 onClick={(e) => {
+
                   e.preventDefault();
-                  setServiceOpen(!serviceOpen);
+
+                  setServiceOpen(
+                    !serviceOpen
+                  );
+
                 }}
               />
 
@@ -96,44 +185,65 @@ const closeMenu = () => {
             <ul className="dropdown-menu">
 
               <li>
-                <Link to="/service" onClick={closeMenu}>
+                <Link
+                  to="/service"
+                  onClick={closeMenu}
+                >
                   GST Filing
                 </Link>
               </li>
 
               <li>
-                <Link to="/service" onClick={closeMenu}>
+                <Link
+                  to="/service"
+                  onClick={closeMenu}
+                >
                   Income Tax Filing
                 </Link>
               </li>
 
               <li>
-                <Link to="/service" onClick={closeMenu}>
+                <Link
+                  to="/service"
+                  onClick={closeMenu}
+                >
                   Company Registration
                 </Link>
               </li>
 
               <li>
-                <Link to="/service" onClick={closeMenu}>
+                <Link
+                  to="/service"
+                  onClick={closeMenu}
+                >
                   ROC Filing
                 </Link>
               </li>
 
-                <li>
-                <Link to="/service" onClick={closeMenu}>
+              <li>
+                <Link
+                  to="/service"
+                  onClick={closeMenu}
+                >
                   Audit & Assurance
                 </Link>
               </li>
 
-                <li>
-                <Link to="/service" onClick={closeMenu}>
-                  Bookkeping
+              <li>
+                <Link
+                  to="/service"
+                  onClick={closeMenu}
+                >
+                  Bookkeeping
                 </Link>
               </li>
 
-                <li>
-                <Link to="/service" onClick={closeMenu}>
-                 Payroll Services
+              <li>
+                <Link
+                  to="/service"
+                  onClick={closeMenu}
+                >
+                  Payroll Services
                 </Link>
               </li>
 
@@ -141,192 +251,256 @@ const closeMenu = () => {
 
           </li>
 
+          {/* AI Assistant */}
+
           <li>
-            <Link to="/ai-assistant" onClick={closeMenu}>
+            <NavLink
+              to="/ai-assistant"
+              onClick={closeMenu}
+              className={({ isActive }) =>
+                isActive ? "nav-active" : ""
+              }
+            >
               AI Assistant
-            </Link>
+            </NavLink>
           </li>
 
+          {/* Blogs */}
+
           <li>
-            <Link to="/blogs" onClick={closeMenu}>
+            <NavLink
+              to="/blogs"
+              onClick={closeMenu}
+              className={({ isActive }) =>
+                isActive ? "nav-active" : ""
+              }
+            >
               Blogs
-            </Link>
+            </NavLink>
           </li>
 
+          {/* About */}
+
           <li>
-            <Link to="/AboutUs" onClick={closeMenu}>
+            <NavLink
+              to="/AboutUs"
+              onClick={closeMenu}
+              className={({ isActive }) =>
+                isActive ? "nav-active" : ""
+              }
+            >
               About Us
-            </Link>
+            </NavLink>
           </li>
 
+          {/* Contact */}
+
           <li>
-            <Link to="/contact" onClick={closeMenu}>
-              Contact Us
-            </Link>
+            <NavLink
+              to="/contact"
+              onClick={closeMenu}
+              className={({ isActive }) =>
+                isActive ? "nav-active" : ""
+              }
+            >
+              Contact
+            </NavLink>
           </li>
+
+          {/* ================= Mobile Buttons ================= */}
 
           <li className="mobile-buttons">
 
             <Link
               to="/find-ca"
-              className="login-btn"
+              className="book-btn"
               onClick={closeMenu}
             >
               <FaCalendarAlt />
               Book Consultation
             </Link>
 
-{user ? (
-<div className="profil-wrapper">
+            {user ? (
 
-  <div
-    className="profile-trigger"
-    onClick={() =>
-      setProfileOpen(!profileOpen)
-    }
-  >
-    <FaUserCircle
-      className="profile-icon"
-    />
-  </div>
+              <div
+                className="profile-wrapper"
+                ref={profileRef}
+              >
 
-  {profileOpen && (
+                <div
+                  className="profile-trigger"
+                  onClick={() =>
+                    setProfileOpen(!profileOpen)
+                  }
+                >
+                  <FaUserCircle className="profile-icon" />
+                </div>
 
-    <div className="profile-popup">
+                {profileOpen && (
 
-      <Link
-        to="/user-profile"
-        className="profile-link"
-        onClick={() =>
-          setProfileOpen(false)
-        }
-      >
-        <FaUser />
-        My Profile
-      </Link>
+                  <div className="profile-popup">
 
-      <Link
-        to="/user-profile"
-        className="profile-link"
-        onClick={() =>
-          setProfileOpen(false)
-        }
-      >
-        <FaCog />
-        Settings
-      </Link>
+                    <Link
+                      to="/user-profile"
+                      className="profile-link"
+                      onClick={() =>
+                        setProfileOpen(false)
+                      }
+                    >
+                      <FaUser />
+                      My Profile
+                    </Link>
 
-      <button
-        onClick={handleLogout}
-        className="profile-link logout-btn"
-      >
-        <FaSignOutAlt />
-        Logout
-      </button>
+                    <Link
+                      to="/user-profile"
+                      className="profile-link"
+                      onClick={() =>
+                        setProfileOpen(false)
+                      }
+                    >
+                      <FaCog />
+                      Settings
+                    </Link>
 
-    </div>
+                    <button
+                      className="profile-link logout-btn"
+                      onClick={handleLogout}
+                    >
+                      <FaSignOutAlt />
+                      Logout
+                    </button>
 
-  )}
+                  </div>
 
-</div>
-) : (
-  <Link
-    to="/login"
-    className="consult-btn"
-  >
-    Login / Register
-  </Link>
-)}:          </li>
+                )}
+
+              </div>
+
+            ) : (
+
+              <Link
+                to="/login"
+                className="login-outline-btn"
+              >
+                Login / Register
+              </Link>
+
+            )}
+
+          </li>
 
         </ul>
 
+        {/* ================= Right Side ================= */}
+
         <div className="nav-actions">
 
-          <Link to="/find-ca" className="login-btn">
+          <Link
+            to="/find-ca"
+            className="book-btn"
+          >
             <FaCalendarAlt />
             Book Consultation
           </Link>
 
-        
-{user ? (
- <div className="profil-wrapper">
+          {user ? (
 
-  <div
-    className="profile-trigger"
-    onClick={() =>
-      setProfileOpen(!profileOpen)
-    }
-  >
-    <FaUserCircle
-      className="profile-icon"
-    />
-  </div>
+            <div
+              className="profile-wrapper"
+              ref={profileRef}
+            >
 
-  {profileOpen && (
+              <div
+                className="profile-trigger"
+                onClick={() =>
+                  setProfileOpen(!profileOpen)
+                }
+              >
+                <FaUserCircle className="profile-icon" />
+              </div>
 
-    <div className="profile-popup">
+              {profileOpen && (
 
-      <Link
-        to="/user-profile"
-        className="profile-link"
-        onClick={() =>
-          setProfileOpen(false)
-        }
-      >
-        <FaUser />
-        My Profile
-      </Link>
+                <div className="profile-popup">
 
-      <Link
-        to="/user-profile"
-        className="profile-link"
-        onClick={() =>
-          setProfileOpen(false)
-        }
-      >
-        <FaCog />
-        Settings
-      </Link>
+                  <Link
+                    to="/user-profile"
+                    className="profile-link"
+                    onClick={() =>
+                      setProfileOpen(false)
+                    }
+                  >
+                    <FaUser />
+                    My Profile
+                  </Link>
 
-      <button
-        onClick={handleLogout}
-        className="profile-link logout-btn"
-      >
-        <FaSignOutAlt />
-        Logout
-      </button>
+                  <Link
+                    to="/user-profile"
+                    className="profile-link"
+                    onClick={() =>
+                      setProfileOpen(false)
+                    }
+                  >
+                    <FaCog />
+                    Settings
+                  </Link>
 
-    </div>
+                  <button
+                    className="profile-link logout-btn"
+                    onClick={handleLogout}
+                  >
+                    <FaSignOutAlt />
+                    Logout
+                  </button>
 
-  )}
+                </div>
 
-</div>
-) : (
-  <Link
-    to="/login"
-    className="consult-btn"
-  >
-    Login / Register
-  </Link>
-)}
+              )}
+
+            </div>
+
+          ) : (
+
+            <Link
+              to="/login"
+              className="login-outline-btn"
+            >
+              Login / Register
+            </Link>
+
+          )}
+
         </div>
+
+        {/* ================= Hamburger ================= */}
 
         <div
           className="hamburger"
           onClick={() => {
+
             setMenuOpen(!menuOpen);
 
             if (menuOpen) {
               setServiceOpen(false);
             }
+
           }}
         >
-          {menuOpen ? <FaTimes /> : <FaBars />}
+
+          {
+            menuOpen
+              ? <FaTimes />
+              : <FaBars />
+          }
+
         </div>
 
       </div>
+
     </header>
+
   );
+
 }
 
 export default Navbar;

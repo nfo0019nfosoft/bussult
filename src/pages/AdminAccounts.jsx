@@ -919,7 +919,7 @@ onClick={sendLoginDetails}
 
 >
 
-<FaEnvelope />
+<FaEnvelope />&nbsp;&nbsp;
 
 Send Login Details
 

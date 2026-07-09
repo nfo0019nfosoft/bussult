@@ -52,62 +52,46 @@ function Footer() {
           <Link to="/RefundPolicy">Refund Policy</Link>
         </div>
 
-        {/* Follow Us + Newsletter */}
+        {/* Newsletter + Social */}
+        <div className="footer-column newsletter">
+          <h4>Newsletter</h4>
 
+          <p>Subscribe to get updates and useful tips.</p>
 
+          <input type="email" placeholder="Enter your email" />
 
-<div className="footer-column newsletter">
+          <button>Subscribe</button>
 
-  <h4>Newsletter</h4>
+          <div className="footer-social-icons">
 
-  <p>
-    Subscribe to get updates and useful tips.
-  </p>
+            <a href="https://www.linkedin.com/company/bussult/" target="_blank" rel="noreferrer">
+              <i className="fab fa-linkedin-in"></i>
+            </a>
 
-  <input
-    type="email"
-    placeholder="Enter your email"
-  />
+            <a href="https://www.youtube.com/@bussult" target="_blank" rel="noreferrer">
+              <i className="fab fa-youtube"></i>
+            </a>
 
-  <button>
-    Subscribe
-  </button>
+            <a href="https://www.instagram.com/bussult/" target="_blank" rel="noreferrer">
+              <i className="fab fa-instagram"></i>
+            </a>
 
-<div className="footer-social-icons">
+            <a href="https://www.facebook.com/people/Bussult/61591277069766/" target="_blank" rel="noreferrer">
+              <i className="fab fa-facebook-f"></i>
+            </a>
 
-  <a href="https://www.linkedin.com/company/bussult/" target="_blank" rel="noreferrer">
-    <i className="fab fa-linkedin-in"></i>
-  </a>
-
-  <a href="https://www.youtube.com/@bussult" target="_blank" rel="noreferrer">
-    <i className="fab fa-youtube"></i>
-  </a>
-
-  <a href="https://www.instagram.com/bussult/" target="_blank" rel="noreferrer">
-    <i className="fab fa-instagram"></i>
-  </a>
-
-  <a href="https://www.facebook.com/people/Bussult/61591277069766/" target="_blank" rel="noreferrer">
-    <i className="fab fa-facebook-f"></i>
-  </a>
-
-</div>
-
-</div>
+          </div>
+        </div>
 
       </div>
 
       <div className="footer-bottom">
 
-        <p>
-          © 2026 Bussult. All Rights Reserved.
-        </p>
+        <p>© 2026 Bussult. All Rights Reserved.</p>
 
         <div className="footer-bottom-right">
 
-          <p>
-            Made with ❤️ in India
-          </p>
+          <p>Made with ❤️ in India</p>
 
           <div className="footer-chat">
             <i className="fas fa-comments"></i>
