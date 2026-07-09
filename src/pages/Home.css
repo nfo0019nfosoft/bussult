@@ -8,6 +8,7 @@
     width:92%;
     max-width:1250px;
     margin:0 auto;
+    background: #f6f8fb !important;
 
     display:flex;
     align-items:center;
@@ -939,11 +940,11 @@ body{
   max-width: 1300px;
   margin: auto;
 
-  background:
+  /* background:
     radial-gradient(circle at 15% 0%, rgba(37,99,235,0.08), transparent 55%),
     radial-gradient(circle at 100% 100%, rgba(37,99,235,0.06), transparent 50%),
-    #f6f8fb !important;
-
+    #f6f8fb !important; */
+background: #f6f8fb !important;
   border-radius: 28px;
   overflow: hidden;
 }
@@ -3344,7 +3345,7 @@ body{
   padding: 6px 16px;
   border-radius: 50px;
 
-  background: var(--fx-blue-soft);
+  background: white;
   color: var(--fx-blue-dark);
 
   font-size: 12px;
