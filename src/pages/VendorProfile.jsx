@@ -20,7 +20,7 @@ import {
   FaSearch,
   FaBell,
   FaComments,
-  FaCheckCircle
+  FaCheckCircle,
 } from "react-icons/fa";
 
 import Sidebar from "../components/Sidebar";
