@@ -24,6 +24,9 @@ import {
   FaArrowRight,
   FaRegCalendarAlt,
   FaRegClock,
+  FaCalendarCheck,
+  FaChartLine,
+
 
 } from "react-icons/fa";
 import {
@@ -135,6 +138,111 @@ const [showAllFaqs, setShowAllFaqs] = useState(false);
 
 
 
+
+
+const topCategories = [
+  {
+    id: 1,
+    title: "Chartered\nAccountants",
+    items: [
+      "GST Filing",
+      "Tax Planning",
+      "ROC Compliance",
+      "Audit & Assurance",
+    ],
+    gradient: "tc-blue-card",
+    icon: "cat1.png",
+    image: "cat1.png",
+    aos: "fade-up",
+  },
+  {
+    id: 2,
+    title: "Legal\nExperts",
+    items: [
+      "Company Registration",
+      "Trademark & IP",
+      "Legal Compliance",
+      "Contract Drafting",
+    ],
+    gradient: "tc-purple-card",
+    icon: "cat1.png",
+    image: "cat1.png",
+    aos: "fade-up",
+  },
+  {
+    id: 3,
+    title: "Business\nConsultants",
+    items: [
+      "Business Strategy",
+      "Startup Consulting",
+      "Marketing Strategy",
+      "Growth Planning",
+    ],
+    gradient: "tc-green-card",
+    icon: "cat1.png",
+    image: "cat1.png",
+    aos: "fade-up",
+  },
+  {
+    id: 4,
+    title: "Loans &\nInsurance",
+    items: [
+      "Business Loans",
+      "Home Loan",
+      "Financial Advisory",
+      "Credit Solutions",
+    ],
+    gradient: "tc-orange-card",
+    icon: "cat1.png",
+    image: "cat1.png",
+    aos: "fade-up",
+  },
+];
+
+
+
+
+
+
+
+
+
+
+
+const whyChooseData = [
+  {
+    id: 1,
+    icon: <FaShieldAlt />,
+    title: "Verified Experts",
+    desc: "All experts are carefully verified & highly experienced.",
+    color: "wc-blue",
+    aos: "fade-up",
+  },
+  {
+    id: 2,
+    icon: <FaUsers />,
+    title: "Compare Profiles",
+    desc: "Compare ratings, experience and choose the right consultant.",
+    color: "wc-purple",
+    aos: "fade-up",
+  },
+  {
+    id: 3,
+    icon: <FaCalendarCheck />,
+    title: "Book Appointment",
+    desc: "Schedule appointments instantly at your convenience.",
+    color: "wc-green",
+    aos: "fade-up",
+  },
+  {
+    id: 4,
+    icon: <FaChartLine />,
+    title: "Consult & Grow",
+    desc: "Receive expert guidance to grow your business confidently.",
+    color: "wc-orange",
+    aos: "fade-up",
+  },
+];
 
 
   const topCities = [
@@ -665,7 +773,7 @@ const fetchSavedVendors = async () => {
 
 
   {/* HERO */}
-
+{/* 
    <section className="home-hero-section">
 
     <div className="home-hero-center">
@@ -706,12 +814,7 @@ const fetchSavedVendors = async () => {
       </div>
 
     </div>
-    </section>
-
-
-
-
-
+    </section> */}
 </section>
 
 
@@ -719,8 +822,148 @@ const fetchSavedVendors = async () => {
 
 
 
+    <section className="tcategories-section">
+
+      <div
+        className="tcategories-header"
+        data-aos="fade-down"
+        data-aos-duration="900"
+      >
+        <span className="tcategories-tag">
+          TOP CATEGORIES
+        </span>
+
+        <h2>
+          Top Categories
+        </h2>
+
+        <p>
+          Explore our most popular business consultation categories
+        </p>
+      </div>
+
+      <div className="tcategories-grid">
+
+        {topCategories.map((item) => (
+          <div
+            key={item.id}
+            className={`tcategories-card ${item.gradient}`}
+            data-aos={item.aos}
+            data-aos-delay={item.id * 100}
+            data-aos-duration="900"
+          >
+            <div className="tcategories-top">
+
+              <div className="tcategories-icon-circle">
+                <img
+                  src={item.icon}
+                  alt={item.title}
+                />
+              </div>
+
+              <h3>
+                {item.title.split("\n").map((line, index) => (
+                  <span key={index}>
+                    {line}
+                    <br />
+                  </span>
+                ))}
+              </h3>
+
+            </div>
+
+            <ul className="tcategories-list">
+              {item.items.map((point, i) => (
+                <li key={i}>
+                  <span className="tcategories-check">
+                    ✓
+                  </span>
+
+                  {point}
+                </li>
+              ))}
+            </ul>
+
+            <button className="tcategories-btn">
+              Explore Now
+              <span>➜</span>
+            </button>
+
+            <img
+              src={item.image}
+              alt=""
+              className="tcategories-floating-image"
+            />
+
+          </div>
+        ))}
+
+      </div>
+
+    </section>
+  
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section className="wc-section">
+
+      <div
+        className="wc-header"
+        data-aos="fade-down"
+        data-aos-duration="900"
+      >
+        <span className="wc-badge">
+          WHY CHOOSE US
+        </span>
+
+        <h2>
+          Why Choose <span>Bussult?</span>
+        </h2>
+
+        <p>
+          We make business consultation simple, fast and reliable.
+        </p>
+      </div>
+
+      <div className="wc-wrapper">
+
+        {/* Connecting Line */}
+       
+
+        {whyChooseData.map((item, index) => (
+          <div
+            className="wc-card"
+            key={item.id}
+            data-aos={item.aos}
+            data-aos-delay={index * 150}
+            data-aos-duration="900"
+          >
+            <div className={`wc-icon ${item.color}`}>
+              {item.icon}
+            </div>
+
+            <h4>{item.title}</h4>
+
+            <p>{item.desc}</p>
+          </div>
+        ))}
+
+      </div>
+
+    </section>
+  
 
 
 
