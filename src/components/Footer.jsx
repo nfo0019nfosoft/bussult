@@ -93,9 +93,7 @@ function Footer() {
 
           <p>Made with ❤️ in India</p>
 
-          <div className="footer-chat">
-            <i className="fas fa-comments"></i>
-          </div>
+        
 
         </div>
 

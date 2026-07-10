@@ -369,315 +369,387 @@ const fetchSavedVendors = async () => {
   return (
     <>
       {/* HERO SECTION */}
+{/* ===========================
+        HERO + SEARCH SECTION
+=========================== */}
 
-     <section className="home-hero-section">
+<section className="home-top-section">
 
-  <div
-    className="home-hero-left"
-    data-aos="fade-right"
-    data-aos-duration="1000"
-  >
+  {/* HERO */}
 
-    <span
-      className="home-hero-badge"
-      data-aos="fade-down"
-      data-aos-delay="100"
-    >
-      India's Most Trusted CA Marketplace
-    </span>
-
-    <h1
-      className="home-hero-title"
-      data-aos="fade-up"
-      data-aos-delay="200"
-    >
-      Find Trusted Experts for Every
-      <span>  Business  Need</span>
-    </h1>
-
-    <p
-      className="home-hero-description"
-      data-aos="fade-up"
-      data-aos-delay="350"
-    >
-     Connect with trusted Chartered Accountants, Legal Experts, Business Consultants,
-      and Insurance & Loan Advisors to gain expert guidance, make confident decisions,
-       and accelerate your business growth.
-    </p>
+  <section className="home-hero-section">
 
     <div
-      className="home-hero-features"
-      data-aos="fade-up"
-      data-aos-delay="500"
+      className="home-hero-left"
+      data-aos="fade-right"
+      data-aos-duration="1000"
     >
 
-      <div className="home-hero-feature">
-        <FaShieldAlt className="home-hero-feature-icon" />
-        <span>Verified Professionals</span>
-      </div>
+      <span
+        className="home-hero-badge"
+        data-aos="fade-down"
+        data-aos-delay="100"
+      >
+        India's Most Trusted CA Marketplace
+      </span>
 
-      <div className="home-hero-feature">
-        <FaWallet className="home-hero-feature-icon" />
-        <span>Transparent Pricing</span>
-      </div>
+      <h1
+        className="home-hero-title"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        Find Trusted Experts for Every
+        <span> Business Need</span>
+      </h1>
 
-      <div className="home-hero-feature">
-        <FaLock className="home-hero-feature-icon" />
-        <span>Secure & Reliable</span>
+      <p
+        className="home-hero-description"
+        data-aos="fade-up"
+        data-aos-delay="350"
+      >
+        Connect with trusted Chartered Accountants,
+        Legal Experts, Business Consultants,
+        and Insurance & Loan Advisors to gain
+        expert guidance, make confident decisions,
+        and accelerate your business growth.
+      </p>
+
+      <div
+        className="home-hero-features"
+        data-aos="fade-up"
+        data-aos-delay="500"
+      >
+
+        <div className="home-hero-feature">
+          <FaShieldAlt className="home-hero-feature-icon" />
+          <span>Verified Professionals</span>
+        </div>
+
+        <div className="home-hero-feature">
+          <FaWallet className="home-hero-feature-icon" />
+          <span>Transparent Pricing</span>
+        </div>
+
+        <div className="home-hero-feature">
+          <FaLock className="home-hero-feature-icon" />
+          <span>Secure & Reliable</span>
+        </div>
+
       </div>
 
     </div>
 
-  </div>
-
-  <div
-    className="home-hero-right"
-    data-aos="zoom-in"
-    data-aos-delay="400"
-    data-aos-duration="1200"
-  >
-    <img
-      src={heroImg}
-      alt="CA Dashboard"
-      className="home-hero-image"
-    />
-  </div>
-
-</section>
-
-
-
-<section className="home-search-section">
-
-  <div className="home-search-header">
-
-    <div className="home-search-title-row">
-      <HiOutlineUserGroup className="home-search-title-icon" />
-      <h3>Find CA / Firm</h3>
+    <div
+      className="home-hero-right"
+      data-aos="zoom-in"
+      data-aos-delay="400"
+      data-aos-duration="1200"
+    >
+      <img
+        src={heroImg}
+        alt="CA Dashboard"
+        className="home-hero-image"
+      />
     </div>
 
-    <div className="home-search-title-line"></div>
-
-  </div>
+  </section>
 
 
-  <div className="home-search-labels">
 
-    <span>What do you need help with?</span>
+  {/* ======================
+          SEARCH
+  ======================= */}
 
-    <span>Where?</span>
+  <section className="home-search-section">
 
-    <span>Select Business Type (Optional)</span>
+    <div className="home-search-header">
 
-    <span></span>
+      <div className="home-search-title-row">
 
-  </div>
+        <HiOutlineUserGroup
+          className="home-search-title-icon"
+        />
+
+        <h3>Find CA / Firm</h3>
+
+      </div>
+
+      <div className="home-search-title-line"></div>
+
+    </div>
 
 
-  <div className="home-search-fields">
 
-    <select
-      className="home-search-select"
-      value={service}
-      onChange={(e) => setService(e.target.value)}
-    >
-      <option value="">
-        Select Service
-      </option>
+    <div className="home-search-labels">
 
-      {allServices.map((item, index) => (
-        <option key={index} value={item}>
-          {item}
+      <span>
+        What do you need help with?
+      </span>
+
+      <span>
+        Where?
+      </span>
+
+      <span>
+        Select Business Type (Optional)
+      </span>
+
+      <span></span>
+
+    </div>
+
+
+
+    <div className="home-search-fields">
+
+      <select
+        className="home-search-select"
+        value={service}
+        onChange={(e) =>
+          setService(e.target.value)
+        }
+      >
+
+        <option value="">
+          Select Service
         </option>
-      ))}
-    </select>
 
-<div className="home-city-box">
+        {allServices.map((item, index) => (
 
-  <HiOutlineLocationMarker className="home-city-icon"/>
-{/* <select
-  className="home-search-select"
-  value={city}
-  onChange={(e)=>setCity(e.target.value)}
->
-  <option value="">Select City</option>
+          <option
+            key={index}
+            value={item}
+          >
+            {item}
+          </option>
 
-  {cities.map((city,index)=>(
-    <option
-      key={index}
-      value={city}
-    >
-      {city}
-    </option>
-  ))}
-</select> */}
+        ))}
+
+      </select>
 
 
 
+      <div className="home-city-box">
 
-<select
-    className="home-city-select"
-    value={city}
-    onChange={(e)=>setCity(e.target.value)}
-  >
-    <option value="">
-      Choose City
-    </option>
+        <HiOutlineLocationMarker
+          className="home-city-icon"
+        />
 
-    {topCities.map((city,index)=>(
-      <option
-        key={index}
-        value={city}
-      >
-        {city}
-      </option>
-    ))}
-  </select>
+        <select
+          className="home-city-select"
+          value={city}
+          onChange={(e) =>
+            setCity(e.target.value)
+          }
+        >
 
-</div>
+          <option value="">
+            Choose City
+          </option>
 
+          {topCities.map((city, index) => (
 
-    <select
-      className="home-search-select"
-      value={businessType}
-      onChange={(e) => setBusinessType(e.target.value)}
-    >
-      <option value="">
-        All Business Types
-      </option>
-
-      <option value="Individual">
-        Individual
-      </option>
-
-      <option value="Partnership">
-        Partnership
-      </option>
-
-      <option value="Company">
-        Company
-      </option>
-
-      <option value="LLP">
-        LLP
-      </option>
-    </select>
-
-
-    <button
-      type="button"
-      className="home-search-button"
-      onClick={() => handleSearch()}
-    >
-      <FaSearch />
-      Search Now
-    </button>
-
-  </div>
-
-
-  <div className="home-popular-searches">
-
-    <span>Popular Searches :</span>
-
-    {allServices.slice(0, 8).map((item, index) => (
-
-      <button
-        key={index}
-        type="button"
-        className="home-popular-search-button"
-        onClick={() => {
-          setService(item);
-          handleSearch(item);
-        }}
-      >
-        {item}
-      </button>
-
-    ))}
-
-  </div>
-
-
-  {searchDone && (
-
-    <div className="home-search-results">
-
-      {searchResults.length > 0 ? (
-
-        <div className="home-result-list">
-
-          {searchResults.map((vendor) => (
-
-            <div
-              key={vendor._id}
-              className="home-result-card"
+            <option
+              key={index}
+              value={city}
             >
-
-              <img
-                className="home-result-image"
-                src={
-                  vendor.photo
-                    ? `${API_URL}/uploads/${vendor.photo}`
-                    : "/avatar.png"
-                }
-                alt={vendor.fullName}
-              />
-
-              <div className="home-result-content">
-
-                <h4>
-                  {vendor.firmName || vendor.fullName}
-                </h4>
-
-                <p>
-                  📍 {vendor.city}, {vendor.state}
-                </p>
-
-                <p>
-                  {vendor.services?.length > 0
-                    ? vendor.services
-                        .map((s) => s.serviceName)
-                        .join(", ")
-                    : "No Services"}
-                </p>
-
-              </div>
-
-              <button
-                className="home-view-profile-btn"
-                onClick={() =>
-                  navigate(`/vendor/${vendor._id}`)
-                }
-              >
-                View Profile
-              </button>
-
-            </div>
+              {city}
+            </option>
 
           ))}
 
-        </div>
+        </select>
 
-      ) : (
+      </div>
 
-        <div className="home-no-results">
 
-          <h3>No CA / Firm Found</h3>
 
-          <p>
-            No Chartered Accountant available for your search.
-          </p>
+      <select
+        className="home-search-select"
+        value={businessType}
+        onChange={(e) =>
+          setBusinessType(e.target.value)
+        }
+      >
 
-        </div>
+        <option value="">
+          All Business Types
+        </option>
 
-      )}
+        <option value="Individual">
+          Individual
+        </option>
+
+        <option value="Partnership">
+          Partnership
+        </option>
+
+        <option value="Company">
+          Company
+        </option>
+
+        <option value="LLP">
+          LLP
+        </option>
+
+      </select>
+
+
+
+      <button
+        type="button"
+        className="home-search-button"
+        onClick={() => handleSearch()}
+      >
+
+        <FaSearch />
+
+        Search Now
+
+      </button>
 
     </div>
 
-  )}
+
+
+    <div className="home-popular-searches">
+
+      <span>
+        Popular Searches :
+      </span>
+
+      {allServices
+        .slice(0, 8)
+        .map((item, index) => (
+
+          <button
+            key={index}
+            type="button"
+            className="home-popular-search-button"
+            onClick={() => {
+
+              setService(item);
+
+              handleSearch(item);
+
+            }}
+          >
+            {item}
+          </button>
+
+      ))}
+
+    </div>
+
+
+
+    {searchDone && (
+
+      <div className="home-search-results">
+
+        {searchResults.length > 0 ? (
+
+          <div className="home-result-list">
+
+            {searchResults.map((vendor) => (
+
+              <div
+                key={vendor._id}
+                className="home-result-card"
+              >
+
+                <img
+                  className="home-result-image"
+                  src={
+                    vendor.photo
+                      ? `${API_URL}/uploads/${vendor.photo}`
+                      : "/avatar.png"
+                  }
+                  alt={vendor.fullName}
+                />
+
+                <div className="home-result-content">
+
+                  <h4>
+                    {vendor.firmName ||
+                      vendor.fullName}
+                  </h4>
+
+                  <p>
+                    📍 {vendor.city},
+                    {" "}
+                    {vendor.state}
+                  </p>
+
+                  <p>
+
+                    {vendor.services?.length > 0
+                      ? vendor.services
+                          .map(
+                            (s) =>
+                              s.serviceName
+                          )
+                          .join(", ")
+                      : "No Services"}
+
+                  </p>
+
+                </div>
+
+                <button
+                  className="home-view-profile-btn"
+                  onClick={() =>
+                    navigate(
+                      `/vendor/${vendor._id}`
+                    )
+                  }
+                >
+                  View Profile
+                </button>
+
+              </div>
+
+            ))}
+
+          </div>
+
+        ) : (
+
+          <div className="home-no-results">
+
+            <h3>
+              No CA / Firm Found
+            </h3>
+
+            <p>
+              No Chartered Accountant
+              available for your search.
+            </p>
+
+          </div>
+
+        )}
+
+      </div>
+
+    )}
+
+  </section>
 
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
       {/* Popular Services Section */}
@@ -929,104 +1001,164 @@ const fetchSavedVendors = async () => {
 
 
 
+{/* =========================
+    HOW IT WORKS
+========================= */}
 
-
-      {/* HOW IT WORKS */}
 <section className="how-section">
 
-  <div className="how-heading">
+  {/* TOP TAG */}
+
+  <div className="how-tag-wrapper">
+
     <span className="how-tag">
       SIMPLE PROCESS
     </span>
 
-    <h2>
-      HOW IT WORKS
-    </h2>
-
-    <p>
-      Connect with verified Chartered Accountants in just four simple steps.
-    </p>
   </div>
+
+  {/* MAIN BLUE BOX */}
 
   <div className="how-wrapper">
 
-    <div className="how-card">
+    {/* HEADING */}
 
-      <div className="how-icon">
-        <FaSearch />
-      </div>
+    <div className="how-heading">
 
-      <div className="how-title">
-        <span className="how-number">01</span>
-        <h4>SEARCH</h4>
-      </div>
+      <h2>
+        HOW IT WORKS
+      </h2>
 
       <p>
-        Search for the service you need and choose your preferred location.
+        Connect with verified Chartered Accountants
+        in just four simple steps.
       </p>
 
     </div>
 
-    <div className="how-arrow">
-      <i className="fas fa-arrow-right"></i>
-    </div>
+    {/* PROCESS */}
 
-    <div className="how-card">
+    <div className="how-process">
 
-      <div className="how-icon">
-        <FaClipboardList />
+      {/* STEP 1 */}
+
+      <div className="how-card">
+
+        <div className="how-icon">
+          <FaSearch />
+        </div>
+
+        <div className="how-title">
+
+          <span className="how-number">
+            01
+          </span>
+
+          <h4>
+            SEARCH
+          </h4>
+
+        </div>
+
+        <p>
+          Search for the service you need and
+          choose your preferred location.
+        </p>
+
       </div>
 
-      <div className="how-title">
-        <span className="how-number">02</span>
-        <h4>COMPARE</h4>
+      <div className="how-arrow">
+        <i className="fas fa-arrow-right"></i>
       </div>
 
-      <p>
-        Compare CA profiles, pricing, experience and customer reviews.
-      </p>
+      {/* STEP 2 */}
 
-    </div>
+      <div className="how-card">
 
-    <div className="how-arrow">
-      <i className="fas fa-arrow-right"></i>
-    </div>
+        <div className="how-icon">
+          <FaClipboardList />
+        </div>
 
-    <div className="how-card">
+        <div className="how-title">
 
-      <div className="how-icon">
-        <FaPaperPlane />
+          <span className="how-number">
+            02
+          </span>
+
+          <h4>
+            COMPARE
+          </h4>
+
+        </div>
+
+        <p>
+          Compare CA profiles, pricing,
+          experience and customer reviews.
+        </p>
+
       </div>
 
-      <div className="how-title">
-        <span className="how-number">03</span>
-        <h4>CONNECT</h4>
+      <div className="how-arrow">
+        <i className="fas fa-arrow-right"></i>
       </div>
 
-      <p>
-        Send enquiry or instantly book an online consultation.
-      </p>
+      {/* STEP 3 */}
 
-    </div>
+      <div className="how-card">
 
-    <div className="how-arrow">
-      <i className="fas fa-arrow-right"></i>
-    </div>
+        <div className="how-icon">
+          <FaPaperPlane />
+        </div>
 
-    <div className="how-card">
+        <div className="how-title">
 
-      <div className="how-icon">
-        <FaCheckCircle />
+          <span className="how-number">
+            03
+          </span>
+
+          <h4>
+            CONNECT
+          </h4>
+
+        </div>
+
+        <p>
+          Send enquiry or instantly
+          book an online consultation.
+        </p>
+
       </div>
 
-      <div className="how-title">
-        <span className="how-number">04</span>
-        <h4>GET IT DONE</h4>
+      <div className="how-arrow">
+        <i className="fas fa-arrow-right"></i>
       </div>
 
-      <p>
-        Complete your compliance work quickly and securely.
-      </p>
+      {/* STEP 4 */}
+
+      <div className="how-card">
+
+        <div className="how-icon">
+          <FaCheckCircle />
+        </div>
+
+        <div className="how-title">
+
+          <span className="how-number">
+            04
+          </span>
+
+          <h4>
+            GET IT DONE
+          </h4>
+
+        </div>
+
+        <p>
+          Complete your compliance work
+          quickly and securely.
+        </p>
+
+      </div>
 
     </div>
 
@@ -1045,7 +1177,7 @@ const fetchSavedVendors = async () => {
 
 
 
-
+     <section className="expert-section">
       <section className="expert-banner">
 
         {/* LEFT IMAGE */}
@@ -1124,6 +1256,7 @@ const fetchSavedVendors = async () => {
           <img src={home2} alt="Experts" />
         </div>
 
+      </section>
       </section>
 
 
