@@ -676,7 +676,7 @@ const fetchSavedVendors = async () => {
 
       <h1 className="home-hero-title">
         Find Trusted Experts for Every
-        <span> Business Need</span>
+         Business Need
       </h1>
 
       <p className="home-hero-description">
@@ -725,99 +725,83 @@ const fetchSavedVendors = async () => {
 
 
 
+<section className="popula-services-section">
 
+  <div className="popula-services-header" data-aos="fade-up">
+    <h2>POPULAR SERVICES</h2>
 
-
-      {/* Popular Services Section */}
-
-      <section className="popula-services-section">
-
-        <div
-          className="popula-services-header"
-          data-aos="fade-up"
-        >
-          <h2>Popular Services</h2>
-
-          <a href="/service" className="popula-view-all">
-            View All Services
-            <FaArrowRight />
-          </a>
-        </div>
-
-        <div className="popula-services-grid">
-
-      
-
- <div className="gst-service-card">
-
-  <div className="gst-service-icon-box">
-    <img
-      src="/gst.png"
-      alt="GST Filing"
-      className="gst-service-img"
-    />
+    
   </div>
 
-  <h4 className="gst-service-title">
-    GST Filing
-  </h4>
+  <div className="popula-services-grid">
 
-</div>
+    <a href="/service" className="gst-service-card">
+      <div className="gst-service-icon-box">
+        <img src="/gst.png" alt="GST Filing" className="gst-service-img" />
+      </div>
+      <h4 className="gst-service-title">GST Filing</h4>
+      <span className="gst-service-btn">Explore Service <FaArrowRight /></span>
+    </a>
 
-          <div className="popula-service-card">
-            <div className="popula-service-icon popula-blue">
-              <FaClipboardList />
-            </div>
-            <h4>Income Tax Filing</h4>
-          </div>
+    <a href="/service" className="gst-service-card">
+      <div className="gst-service-icon-box">
+        <img src="/gst.png" alt="Income Tax Filing" className="gst-service-img" />
+      </div>
+      <h4 className="gst-service-title">Income Tax Filing</h4>
+      <span className="gst-service-btn">Explore Service <FaArrowRight /></span>
+    </a>
 
-          <div className="popula-service-card">
-            <div className="popula-service-icon popula-purple">
-              <FaBuilding />
-            </div>
-            <h4>Company Registration</h4>
-          </div>
+    <a href="/service" className="gst-service-card">
+      <div className="gst-service-icon-box">
+        <img src="/gst.png" alt="Company Registration" className="gst-service-img" />
+      </div>
+      <h4 className="gst-service-title">Company Registration</h4>
+      <span className="gst-service-btn">Explore Service <FaArrowRight /></span>
+    </a>
 
-          <div className="popula-service-card">
-            <div className="popula-service-icon popula-red">
-              <FaClipboardList />
-            </div>
-            <h4>ROC Filing</h4>
-          </div>
+    <a href="/service" className="gst-service-card">
+      <div className="gst-service-icon-box">
+        <img src="/gst.png" alt="ROC Filing" className="gst-service-img" />
+      </div>
+      <h4 className="gst-service-title">ROC Filing</h4>
+      <span className="gst-service-btn">Explore Service <FaArrowRight /></span>
+    </a>
 
-          <div className="popula-service-card">
-            <div className="popula-service-icon popula-cyan">
-              <FaTrademark />
-            </div>
-            <h4>Trademark Registration</h4>
-          </div>
+    <a href="/service" className="gst-service-card">
+      <div className="gst-service-icon-box">
+        <img src="/gst.png" alt="Trademark Registration" className="gst-service-img" />
+      </div>
+      <h4 className="gst-service-title">Trademark Registration</h4>
+      <span className="gst-service-btn">Explore Service <FaArrowRight /></span>
+    </a>
 
-          <div className="popula-service-card">
-            <div className="popula-service-icon popula-orange">
-              <FaShieldAlt />
-            </div>
-            <h4>Audit & Assurance</h4>
-          </div>
+    <a href="/service" className="gst-service-card">
+      <div className="gst-service-icon-box">
+        <img src="/gst.png" alt="Audit & Assurance" className="gst-service-img" />
+      </div>
+      <h4 className="gst-service-title">Audit & Assurance</h4>
+      <span className="gst-service-btn">Explore Service <FaArrowRight /></span>
+    </a>
 
-          <div className="popula-service-card">
-            <div className="popula-service-icon popula-violet">
-              <FaBook />
-            </div>
-            <h4>Bookkeeping</h4>
-          </div>
+    <a href="/service" className="gst-service-card">
+      <div className="gst-service-icon-box">
+        <img src="/gst.png" alt="Bookkeeping" className="gst-service-img" />
+      </div>
+      <h4 className="gst-service-title">Bookkeeping</h4>
+      <span className="gst-service-btn">Explore Service <FaArrowRight /></span>
+    </a>
 
-          <div className="popula-service-card">
-            <div className="popula-service-icon popula-navy">
-              <FaUsers />
-            </div>
-            <h4>Payroll Services</h4>
-          </div>
+    <a href="/service" className="gst-service-card">
+      <div className="gst-service-icon-box">
+        <img src="/gst.png" alt="Payroll Services" className="gst-service-img" />
+      </div>
+      <h4 className="gst-service-title">Payroll Services</h4>
+      <span className="gst-service-btn">Explore Service <FaArrowRight /></span>
+    </a>
 
-        </div>
+  </div>
 
-      </section>
-
-
+</section>
 
 
 
@@ -832,13 +816,12 @@ const fetchSavedVendors = async () => {
         className="top-ca-section"
         data-aos="fade-up"
       >
+          <div className="top-ca-container">
 
         <div className="top-ca-header">
-          <h2>Top Rated CA & Firms</h2>
+          <h2>TOP RATED CA & FIRMS</h2>
 
-          <a href="/find-ca"  className="popul-view-all">
-            View All →
-          </a>
+        
         </div>
 
         <div className="ca-slider-wrapper">
@@ -978,6 +961,13 @@ const fetchSavedVendors = async () => {
 
           </Swiper>
 
+        </div>
+        <div className="top-ca-footer">
+  <a href="/service" className="popul-view-all">
+    View All Services
+    <FaArrowRight />
+  </a>
+</div>
         </div>
 
       </section>
@@ -1293,12 +1283,10 @@ const fetchSavedVendors = async () => {
 
   <div className="home-blog-header">
     <div>
-      <span className="home-blog-eyebrow">Insights & Stories</span>
+     
       <h2>Latest from Our Blog</h2>
     </div>
-    <Link to="/blogs"  className="popula-view-all">
-      View all articles →
-    </Link>
+  
   </div>
 
   <div className="home-blog-grid">
@@ -1327,6 +1315,15 @@ const fetchSavedVendors = async () => {
       </Link>
     ))}
   </div>
+
+
+
+  <div className="home-blog-footer">
+  <Link to="/blogs" className="home-blog-viewall">
+    View All Articles
+    <FaArrowRight />
+  </Link>
+</div>
 
 </section>
 
