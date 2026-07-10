@@ -368,95 +368,20 @@ const fetchSavedVendors = async () => {
 
   return (
     <>
-      {/* HERO SECTION */}
+  
 {/* ===========================
         HERO + SEARCH SECTION
 =========================== */}
 
 <section className="home-top-section">
 
-  {/* HERO */}
-
-  <section className="home-hero-section">
-
-    <div
-      className="home-hero-left"
-      data-aos="fade-right"
-      data-aos-duration="1000"
-    >
-
-      <span
-        className="home-hero-badge"
-        data-aos="fade-down"
-        data-aos-delay="100"
-      >
-        India's Most Trusted CA Marketplace
-      </span>
-
-      <h1
-        className="home-hero-title"
-        data-aos="fade-up"
-        data-aos-delay="200"
-      >
-        Find Trusted Experts for Every
-        <span> Business Need</span>
-      </h1>
-
-      <p
-        className="home-hero-description"
-        data-aos="fade-up"
-        data-aos-delay="350"
-      >
-        Connect with trusted Chartered Accountants,
-        Legal Experts, Business Consultants,
-        and Insurance & Loan Advisors to gain
-        expert guidance, make confident decisions,
-        and accelerate your business growth.
-      </p>
-
-      <div
-        className="home-hero-features"
-        data-aos="fade-up"
-        data-aos-delay="500"
-      >
-
-        <div className="home-hero-feature">
-          <FaShieldAlt className="home-hero-feature-icon" />
-          <span>Verified Professionals</span>
-        </div>
-
-        <div className="home-hero-feature">
-          <FaWallet className="home-hero-feature-icon" />
-          <span>Transparent Pricing</span>
-        </div>
-
-        <div className="home-hero-feature">
-          <FaLock className="home-hero-feature-icon" />
-          <span>Secure & Reliable</span>
-        </div>
-
-      </div>
-
-    </div>
-
-    <div
-      className="home-hero-right"
-      data-aos="zoom-in"
-      data-aos-delay="400"
-      data-aos-duration="1200"
-    >
-      <img
-        src={heroImg}
-        alt="CA Dashboard"
-        className="home-hero-image"
-      />
-    </div>
-
-  </section>
 
 
 
-  {/* ======================
+
+
+
+    {/* ======================
           SEARCH
   ======================= */}
 
@@ -736,6 +661,57 @@ const fetchSavedVendors = async () => {
 
   </section>
 
+
+
+
+  {/* HERO */}
+
+   <section className="home-hero-section">
+
+    <div className="home-hero-center">
+
+      <span className="home-hero-badge">
+        India's Most Trusted CA Marketplace
+      </span>
+
+      <h1 className="home-hero-title">
+        Find Trusted Experts for Every
+        <span> Business Need</span>
+      </h1>
+
+      <p className="home-hero-description">
+        Connect with trusted Chartered Accountants,
+        Legal Experts, Business Consultants,
+        Insurance & Loan Advisors and grow your business
+        with confidence.
+      </p>
+
+      <div className="home-hero-features">
+
+        <div className="home-hero-feature">
+          <FaShieldAlt />
+          Verified Professionals
+        </div>
+
+        <div className="home-hero-feature">
+          <FaWallet />
+          Transparent Pricing
+        </div>
+
+        <div className="home-hero-feature">
+          <FaLock />
+          Secure Platform
+        </div>
+
+      </div>
+
+    </div>
+    </section>
+
+
+
+
+
 </section>
 
 
@@ -770,12 +746,23 @@ const fetchSavedVendors = async () => {
 
         <div className="popula-services-grid">
 
-          <div className="popula-service-card">
-            <div className="popula-service-icon popula-green">
-              <FaFileInvoice />
-            </div>
-            <h4>GST Filing</h4>
-          </div>
+      
+
+ <div className="gst-service-card">
+
+  <div className="gst-service-icon-box">
+    <img
+      src="/gst.png"
+      alt="GST Filing"
+      className="gst-service-img"
+    />
+  </div>
+
+  <h4 className="gst-service-title">
+    GST Filing
+  </h4>
+
+</div>
 
           <div className="popula-service-card">
             <div className="popula-service-icon popula-blue">
@@ -1001,163 +988,94 @@ const fetchSavedVendors = async () => {
 
 
 
-{/* =========================
-    HOW IT WORKS
-========================= */}
-
+{/* HOW IT WORKS */}
 <section className="how-section">
 
-  {/* TOP TAG */}
-
-  <div className="how-tag-wrapper">
-
-    <span className="how-tag">
-      SIMPLE PROCESS
-    </span>
-
-  </div>
-
-  {/* MAIN BLUE BOX */}
+  
 
   <div className="how-wrapper">
 
-    {/* HEADING */}
-
     <div className="how-heading">
-
-      <h2>
-        HOW IT WORKS
-      </h2>
+      <h2>HOW IT WORKS</h2>
 
       <p>
-        Connect with verified Chartered Accountants
-        in just four simple steps.
+        Connect with verified Chartered Accountants in just four simple steps.
       </p>
-
     </div>
 
-    {/* PROCESS */}
-
+    {/* IMPORTANT */}
     <div className="how-process">
 
-      {/* STEP 1 */}
-
       <div className="how-card">
-
         <div className="how-icon">
           <FaSearch />
         </div>
 
         <div className="how-title">
-
-          <span className="how-number">
-            01
-          </span>
-
-          <h4>
-            SEARCH
-          </h4>
-
+          <span className="how-number">01</span>
+          <h4>SEARCH</h4>
         </div>
 
         <p>
-          Search for the service you need and
-          choose your preferred location.
+          Search for the service you need and choose your preferred location.
         </p>
-
       </div>
 
       <div className="how-arrow">
         <i className="fas fa-arrow-right"></i>
       </div>
 
-      {/* STEP 2 */}
-
       <div className="how-card">
-
         <div className="how-icon">
           <FaClipboardList />
         </div>
 
         <div className="how-title">
-
-          <span className="how-number">
-            02
-          </span>
-
-          <h4>
-            COMPARE
-          </h4>
-
+          <span className="how-number">02</span>
+          <h4>COMPARE</h4>
         </div>
 
         <p>
-          Compare CA profiles, pricing,
-          experience and customer reviews.
+          Compare CA profiles, pricing, experience and customer reviews.
         </p>
-
       </div>
 
       <div className="how-arrow">
         <i className="fas fa-arrow-right"></i>
       </div>
 
-      {/* STEP 3 */}
-
       <div className="how-card">
-
         <div className="how-icon">
           <FaPaperPlane />
         </div>
 
         <div className="how-title">
-
-          <span className="how-number">
-            03
-          </span>
-
-          <h4>
-            CONNECT
-          </h4>
-
+          <span className="how-number">03</span>
+          <h4>CONNECT</h4>
         </div>
 
         <p>
-          Send enquiry or instantly
-          book an online consultation.
+          Send enquiry or instantly book an online consultation.
         </p>
-
       </div>
 
       <div className="how-arrow">
         <i className="fas fa-arrow-right"></i>
       </div>
 
-      {/* STEP 4 */}
-
       <div className="how-card">
-
         <div className="how-icon">
           <FaCheckCircle />
         </div>
 
         <div className="how-title">
-
-          <span className="how-number">
-            04
-          </span>
-
-          <h4>
-            GET IT DONE
-          </h4>
-
+          <span className="how-number">04</span>
+          <h4>GET IT DONE</h4>
         </div>
 
         <p>
-          Complete your compliance work
-          quickly and securely.
+          Complete your compliance work quickly and securely.
         </p>
-
       </div>
 
     </div>
