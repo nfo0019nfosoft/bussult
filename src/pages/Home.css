@@ -1980,6 +1980,8 @@ background:#2563eb;
 .popula-services-section{
   background:#fbfdff;
   margin-bottom:0;
+    max-width: 1300px;
+  margin: auto;
 }
 
 .top-ca-section{
